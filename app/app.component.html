@@ -1,0 +1,10 @@
+<div id="app-wrapper">
+  <h1>{{title}}</h1>
+  <nav>
+    <a routerLink="/events">Events</a>
+    <a routerLink="/dailies">Dailies</a>
+    <a routerLink="/settings">Settings</a>
+  </nav>
+  <div>{{ -13 | timespan }}</div>
+  <router-outlet></router-outlet>
+</div>
