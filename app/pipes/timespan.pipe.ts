@@ -5,7 +5,7 @@ import { ILocalizationService, ILOCALIZATIONSERVICE } from '../services/localiza
 export class TimespanPipe implements PipeTransform {
   constructor(@Inject(ILOCALIZATIONSERVICE) private localizationService: ILocalizationService) { }
 
-  transform(milliseconds: number, outputAsFuzzy: boolean): string {
+  transform(milliseconds: number, outputAsFuzzy: boolean = false): string {
     if(milliseconds < 0)
       return this.localizationService.unspecifiedError;
     else if (milliseconds === 0)

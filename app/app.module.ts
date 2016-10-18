@@ -9,6 +9,7 @@ import { EventsComponent } from './components/events/events.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
 // local services
+import { ErrorService } from './services/error.service';
 import { EventsService } from './services/events.service';
 import { ILocalizationService } from './services/localization/ilocalization.service';
 
