@@ -3,6 +3,10 @@ import { OpaqueToken } from '@angular/core';
 export let ILOCALIZATIONSERVICE = new OpaqueToken('ILocalizationService');
 
 export interface ILocalizationService {
+  // expressions
+  readonly about: string;
+
+  // actual units of time
   readonly second: string;
   readonly seconds: string;
   readonly minute: string;
@@ -18,5 +22,12 @@ export interface ILocalizationService {
   readonly year: string;
   readonly years: string;
 
+  // colloquial time expressions
+  readonly longTime: string;
+  readonly aMinute: string;
+  readonly anHour: string;
+  readonly aDay: string;
+
+  // oops
   readonly unspecifiedError: string;
 }

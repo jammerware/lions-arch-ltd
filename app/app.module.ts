@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { DailiesComponent } from './components/dailies/dailies.component';
 import { EventsComponent } from './components/events/events.component';
+import { EventCardComponent } from './components/events/event-card/event-card.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
 // local services
 import { ErrorService } from './services/error.service';
 import { EventsService } from './services/events.service';
 import { ILocalizationService } from './services/localization/ilocalization.service';
+import { TimespanService } from './services/timespan.service';
 
 // local providers
 import { localizationServiceProvider } from './services/localization/localization-service.provider';
@@ -34,12 +36,14 @@ import { TimespanPipe } from './pipes/timespan.pipe';
     AppComponent,
     DailiesComponent,
     EventsComponent,
+    EventCardComponent,
     SettingsComponent,
     TimespanPipe
   ],
   providers: [
     EventsService,
-    localizationServiceProvider
+    localizationServiceProvider,
+    TimespanService
   ],
   bootstrap: [ AppComponent ]
 })

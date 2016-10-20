@@ -1,0 +1,26 @@
+.event-card {
+  background-color: #e2e8e9;
+  display:inline-block;
+  width: 280px;
+  padding:6px;
+  margin-right: 16px;
+}
+
+h3, h4 {
+  font-family: EasonPro;
+  font-weight: bold;
+  margin:0;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+
+.event-desc {
+  font-family: Arial, Helvetica, sans-serif;
+}

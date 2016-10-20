@@ -1,0 +1,10 @@
+<div class="event-card">
+  <h3>{{event.name}}</h3>
+  <h4>{{event.zone}}</h4>
+  <div class="event-desc">
+    {{event.description}}
+  </div>
+  <div class="event-next-occurrence">
+    {{ msTilNextOccurrence | timespan}}
+  </div>
+</div>
