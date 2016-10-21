@@ -4,7 +4,14 @@
   <div class="event-desc">
     {{event.description}}
   </div>
+  <div class="event-goal-contribution">
+    <ul>
+      <li *ngFor="let goalContribution of event.goalContributions">
+        {{goalContribution.description | markdown}}
+      </li>
+    </ul>
+  </div>
   <div class="event-next-occurrence">
-    {{ msTilNextOccurrence | timespan}}
+    {{msTilNextOccurrence | timespan}}
   </div>
 </div>

@@ -19,6 +19,7 @@ import { TimespanService } from './services/timespan.service';
 import { localizationServiceProvider } from './services/localization/localization-service.provider';
 
 // local pipes
+import { MarkdownPipe } from './pipes/markdown.pipe';
 import { TimespanPipe } from './pipes/timespan.pipe';
 
 // module config
@@ -38,6 +39,7 @@ import { TimespanPipe } from './pipes/timespan.pipe';
     EventsComponent,
     EventCardComponent,
     SettingsComponent,
+    MarkdownPipe,
     TimespanPipe
   ],
   providers: [
