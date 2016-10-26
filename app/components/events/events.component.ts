@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
-import { TimespanService } from '../../services/timespan.service';
 import { Event } from '../../models/event';
 
 @Component({
@@ -11,11 +10,10 @@ import { Event } from '../../models/event';
 export class EventsComponent implements OnInit {
   events: Event[];
 
-  constructor(private eventsService: EventsService, private timespanService: TimespanService) { }
+  constructor(private eventsService: EventsService) { }
 
   ngOnInit(): void {
     this.getEvents();
-    this.timespanService.getMsSinceMidnightUtc();
   }
 
   getEvents(): void {

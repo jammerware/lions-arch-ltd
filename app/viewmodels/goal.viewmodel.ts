@@ -1,6 +1,6 @@
-export class Goal {
+export class GoalViewModel {
   id: string;
   name: string;
   description: string;
-  key: string;
+  iconUrl: string;
 }

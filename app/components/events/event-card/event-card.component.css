@@ -21,6 +21,19 @@ h4 {
   margin-bottom: 12px;
 }
 
-.event-desc {
-  font-family: Arial, Helvetica, sans-serif;
+.event-next-occurrence {
+    margin-top:1em;
+}
+
+.event-countdown-text {
+  color: var(--color-subtle);
+}
+
+.event-countdown {
+  color: var(--color-primary);
+}
+
+.goal-icon {
+  width: 24px;
+  height: 24px;
 }

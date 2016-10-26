@@ -4,7 +4,7 @@ export let ILOCALIZATIONSERVICE = new OpaqueToken('ILocalizationService');
 
 export interface ILocalizationService {
   // expressions
-  readonly about: string;
+  readonly inAbout: string;
 
   // actual units of time
   readonly second: string;
@@ -30,4 +30,7 @@ export interface ILocalizationService {
 
   // oops
   readonly unspecifiedError: string;
+
+  // countdown text
+  getCountdownText(eventKey: string): string;
 }

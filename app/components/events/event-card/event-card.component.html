@@ -1,17 +1,19 @@
 <div class="event-card">
-  <h3>{{event.name}}</h3>
-  <h4>{{event.zone}}</h4>
+  <h3>{{viewmodel.name}}</h3>
+  <h4>{{viewmodel.zone}}</h4>
   <div class="event-desc">
-    {{event.description}}
+    {{viewmodel.description}}
   </div>
   <div class="event-goal-contribution">
     <ul>
-      <li *ngFor="let goalContribution of event.goalContributions">
-        {{goalContribution.description | markdown}}
+      <li *ngFor="let goalContribution of viewmodel.goalContributions">
+        <img class="goal-icon" [src]="goalContribution.goal.iconUrl" [alt]="goalContribution.goal.name" />
+        <span [innerHtml]="goalContribution.description | markdown"></span>
       </li>
     </ul>
   </div>
   <div class="event-next-occurrence">
-    {{msTilNextOccurrence | timespan}}
+    <span class="event-countdown-text">{{ viewmodel.countdownText }}</span>
+    <span class="event-countdown">{{ viewmodel.msTilNextOccurrence | timeUntil }}</span>
   </div>
 </div>

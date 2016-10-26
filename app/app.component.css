@@ -21,7 +21,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -52,6 +51,12 @@ table {
 :root {
   --color-primary: #2980b9;
   --color-accent: #ecf0f1;
+	--color-subtle: #aaaaaa;
+
+	/* rarity */
+	--color-rarity-legendary: #4c139d;
+	--color-rarity-ascended: #fb3e8d;
+	--color-rarity-exotic: #ffa405;
 }
 
 /* fonts */
@@ -64,6 +69,8 @@ table {
   font-family: "EasonPro";
   src: url(app/assets/fonts/easonpro-regular-webfont.woff);
 }
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 /* Master Styles */
 html, body {
@@ -87,7 +94,7 @@ a {
 
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Droid Sans, Arial, Helvetica, sans-serif;
 }
 
 /* app.component.html */
@@ -127,7 +134,6 @@ a {
 #app-nav a {
   color: var(--color-accent);
   margin: 0 20px 0px 0px;
-  font-family: Arial, sans-serif;
   font-size: 1.2em;
-	text-transform: lowercase;;
+	text-transform: lowercase;
 }
