@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 
 // local modules
 import { CoreModule } from './core/core.module';
@@ -20,7 +21,6 @@ import { ErrorService } from './services/error.service';
 import { EventsService } from './services/events.service';
 import { GoalsService } from './services/goals.service';
 import { ILocalizationService } from './services/localization/ilocalization.service';
-import { ImageService } from './services/image.service';
 
 // local pipes
 import { TimeUntilPipe } from './pipes/time-until.pipe';
@@ -35,10 +35,11 @@ import { localizationServiceProvider } from './services/localization/localizatio
     RouterModule.forRoot([
       { path: '', redirectTo: '/events', pathMatch: 'full' },
       { path: 'dailies', component: DailiesComponent },
-      { path: 'event/:id/:slug', component: EventComponent },
+      { path: 'event/:slug/:id', component: EventComponent },
       { path: 'events', component: EventsComponent },
       { path: 'settings', component: SettingsComponent }
     ]),
+    MaterialModule.forRoot(),
     CoreModule,
     SharedModule,
     TimespanModule
@@ -55,8 +56,7 @@ import { localizationServiceProvider } from './services/localization/localizatio
   providers: [
     EventsService,
     localizationServiceProvider,
-    GoalsService,
-    ImageService
+    GoalsService
   ],
   bootstrap: [ AppComponent ]
 })

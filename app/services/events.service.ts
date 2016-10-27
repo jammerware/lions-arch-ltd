@@ -24,7 +24,7 @@ const EVENTS: Event[] = [
         goalId: "d2382979-d918-4242-92b7-45d140ea399c" // hot legendary crafting
       },
       {
-        description: "If the map you're on during this event achieves tier 4 success and if you have 100% participation or greater at the end, you'll get your choice of an exotic armor piece in any slot or weight. Great for gearing up alts!",
+        description: "If you achieve 100% (or greater) participation on a map that reaches tier 4 during this event, you'll get your choice of an exotic armor piece in any slot or weight. Great for gearing up alts!",
         goalId: "56662053-9f3f-49da-86ab-88a7a328661b" // exotic armor
       }
     ],
@@ -100,6 +100,10 @@ const EVENTS: Event[] = [
 @Injectable()
 export class EventsService {
   constructor(private timespanService: TimespanService) { }
+
+  getEvent(id: string): Promise<Event> {
+    return Promise.resolve(EVENTS.find(e => e.id == id));
+  }
 
   getEvents(): Promise<Event[]> {
     return Promise.resolve(EVENTS);

@@ -70,7 +70,7 @@ table {
   src: url(app/assets/fonts/easonpro-regular-webfont.woff);
 }
 
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+/*@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);*/
 
 /* Master Styles */
 html, body {

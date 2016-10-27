@@ -1,0 +1,15 @@
+h2 {
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-family: EasonPro;
+    font-weight: lighter;
+    text-transform: lowercase;
+}
+
+h4 {
+    font-weight: lighter;
+    font-style: italic;
+    margin-bottom:24px;
+}

@@ -1,1 +1,23 @@
-<h2>This is an event.</h2>
+<div *ngIf="viewmodel">
+    <h3>{{viewmodel.zone}}'s</h3>
+    <h2>{{viewmodel.name}}</h2>
+    <h4>{{viewmodel.description}}</h4>
+    <md-tab-group>
+        <md-tab>
+            <template md-tab-label>GUIDE</template>
+            <template md-tab-content>
+                <div class="event-guide">
+                    {{viewmodel.guide}}
+                </div>
+            </template>
+        </md-tab>
+        <md-tab>
+            <template md-tab-label>GOALS</template>
+            <template md-tab-content>
+                <div class="event-goals">
+                    {{viewmodel.guide}}
+                </div>
+            </template>
+        </md-tab>
+    </md-tab-group>
+</div>

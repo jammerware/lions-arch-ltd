@@ -1,5 +1,5 @@
 <div class="event-card">
-  <h3>{{viewmodel.name}}</h3>
+  <h3><a routerLink="/event/{{viewmodel.slug}}/{{viewmodel.id}}">{{viewmodel.name}}</a></h3>
   <h4>{{viewmodel.zone}}</h4>
   <div class="event-desc">
     {{viewmodel.description}}

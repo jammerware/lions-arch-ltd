@@ -5,9 +5,10 @@ import { Goal } from '../../../models/goal';
 import { GoalContribution } from '../../../models/goal-contribution';
 import { EventCardViewModel } from '../../../viewmodels/event-card.viewmodel';
 import { GoalContributionViewModel} from '../../../viewmodels/goal-contribution.viewmodel';
+import { ContentService } from '../../../core/services/content.service';
 import { EventsService } from '../../../services/events.service';
 import { GoalsService } from '../../../services/goals.service';
-import { ImageService } from '../../../services/image.service';
+import { SluggingService } from '../../../core/services/slugging.service';
 import { ILocalizationService, ILOCALIZATIONSERVICE } from '../../../services/localization/ilocalization.service';
 
 @Component({
@@ -22,19 +23,15 @@ export class EventCardComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private contentService: ContentService,
     private eventsService: EventsService,
     private goalsService: GoalsService,
-    private imageService: ImageService,
+    private sluggingService: SluggingService,
     @Inject(ILOCALIZATIONSERVICE) private localizationService: ILocalizationService) { }
 
   ngOnInit(): void {
     this.viewmodel = this.composeEventCardViewModel(this.event);
     this.setMsTilNextOccurrence();
-  }
-
-  goToEventDetail(event: Event) {
-    let link = ['/event', event.name, event.id];
-    this.router.navigate(link);
   }
 
   private composeEventCardViewModel(event: Event): EventCardViewModel {
@@ -45,7 +42,8 @@ export class EventCardComponent implements OnInit {
       zone: event.zone,
       countdownText: this.localizationService.getCountdownText(event.key),
       goalContributions: [],
-      msTilNextOccurrence: 0
+      msTilNextOccurrence: 0,
+      slug: this.sluggingService.getSlug(event.name)
     };
 
     // todo: observable?
@@ -70,7 +68,7 @@ export class EventCardComponent implements OnInit {
         id: goalContribution.goalId,
         name: goal.name,
         description: goal.description,
-        iconUrl: this.imageService.getImageUrl(`app/assets/images/icons/${goal.key}.png`)
+        iconUrl: this.contentService.getContentUrl(`app/assets/images/icons/${goal.key}.png`)
       }
     };
   }
