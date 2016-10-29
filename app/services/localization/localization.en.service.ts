@@ -34,7 +34,7 @@ export class EnLocalizationService implements ILocalizationService {
   // countdown text
   private readonly COUNTDOWN_TEXT = {
     ab: "The lootsplosion begins",
-    ds: "The Mouth of Mordremoth opens",
+    ds: "The Mouth opens",
     vb: "Night falls",
   };
 

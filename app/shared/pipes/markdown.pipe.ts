@@ -12,7 +12,7 @@ export class MarkdownPipe implements PipeTransform {
     output = this.replaceItalics(output);
     output = this.replaceHeaders(output);
 
-    return output;
+    return `<div class="markdown">${output}</div>`;
   }
 
   replaceLinkSyntax(markdown: string): string {
@@ -34,7 +34,7 @@ export class MarkdownPipe implements PipeTransform {
   }
 
   replaceHeaders(markdown: string): string {
-    return markdown.replace(/(#{1,6})([\s\S]+)/, function(match, headerStrengthGroup, textGroup) {
+    return markdown.replace(/(#{1,6})(\s\S+)$/m, function(match, headerStrengthGroup, textGroup) {
       return `<h${headerStrengthGroup.length}>${textGroup}</h${headerStrengthGroup.length}>`;
     });
   }

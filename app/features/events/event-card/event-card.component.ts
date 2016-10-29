@@ -8,7 +8,6 @@ import { GoalContributionViewModel} from '../../../viewmodels/goal-contribution.
 import { ContentService } from '../../../core/services/content.service';
 import { EventsService } from '../../../services/events.service';
 import { GoalsService } from '../../../services/goals.service';
-import { SluggingService } from '../../../core/services/slugging.service';
 import { ILocalizationService, ILOCALIZATIONSERVICE } from '../../../services/localization/ilocalization.service';
 
 @Component({
@@ -26,7 +25,6 @@ export class EventCardComponent implements OnInit {
     private contentService: ContentService,
     private eventsService: EventsService,
     private goalsService: GoalsService,
-    private sluggingService: SluggingService,
     @Inject(ILOCALIZATIONSERVICE) private localizationService: ILocalizationService) { }
 
   ngOnInit(): void {
@@ -42,8 +40,7 @@ export class EventCardComponent implements OnInit {
       zone: event.zone,
       countdownText: this.localizationService.getCountdownText(event.key),
       goalContributions: [],
-      msTilNextOccurrence: 0,
-      slug: this.sluggingService.getSlug(event.name)
+      msTilNextOccurrence: 0
     };
 
     // todo: observable?

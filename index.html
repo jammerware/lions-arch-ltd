@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
     <link href="node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css" rel="stylesheet">
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
-    </style>
+    <link href="index.css" rel="stylesheet">
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
@@ -18,6 +16,16 @@
     <script>System.import('app').catch(function(err){ console.error(err); });</script>
   </head>
   <body>
-    <app>Loading...</app>
+    <app>
+      <div class="index-subtitle">
+        welcome to
+      </div>
+      <div class="index-title">
+        LION'S ARCH LTD
+      </div>
+      <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+    </app>
   </body>
 </html>

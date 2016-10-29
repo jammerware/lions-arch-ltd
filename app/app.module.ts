@@ -1,3 +1,4 @@
+// angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -8,12 +9,12 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { TimespanModule } from './timespan/timespan.module';
 
+// feature modules
+import { EventsModule } from './features/events/events.module';
+
 // local components
 import { AppComponent } from './app.component';
 import { DailiesComponent } from './components/dailies/dailies.component';
-import { EventComponent } from './components/events/event/event.component';
-import { EventsComponent } from './components/events/events.component';
-import { EventCardComponent } from './components/events/event-card/event-card.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
 // local services
@@ -35,21 +36,17 @@ import { localizationServiceProvider } from './services/localization/localizatio
     RouterModule.forRoot([
       { path: '', redirectTo: '/events', pathMatch: 'full' },
       { path: 'dailies', component: DailiesComponent },
-      { path: 'event/:slug/:id', component: EventComponent },
-      { path: 'events', component: EventsComponent },
       { path: 'settings', component: SettingsComponent }
     ]),
     MaterialModule.forRoot(),
     CoreModule,
     SharedModule,
+    EventsModule,
     TimespanModule
   ],
   declarations: [
     AppComponent,
     DailiesComponent,
-    EventComponent,
-    EventsComponent,
-    EventCardComponent,
     SettingsComponent,
     TimeUntilPipe
   ],

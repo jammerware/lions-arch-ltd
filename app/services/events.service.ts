@@ -30,7 +30,9 @@ const EVENTS: Event[] = [
     ],
     key: "vb",
     guide: `
+      # Overview
 
+      
     `
   },
   {
@@ -64,11 +66,14 @@ const EVENTS: Event[] = [
     ],
     key: "ab",
     guide: `
-      Assault on Tarir (or whatever it's called) is a single-stage event that is the culmination of
+      # Overview
+      
+      Assault on Tarir (or whatever it's called) is a single-stage event that is the culmination of events that occur across the zone
+      in preparation for the ultimate Mordrem assault on the Exalted city of Tarir. 
     `
   },
   {
-    id: "",
+    id: "f5c8aeb1-0949-4fa6-be6e-41a7ce19c567",
     name: "Shadow of the Dragon",
     zone: "Dragon's Stand",
     description: "Three lanes. Three towers. One mouth. Also a weird body. Don't forget your machetes!",
@@ -81,16 +86,20 @@ const EVENTS: Event[] = [
     interval: 5.4e+6,
     goalContributions: [
       {
-        description: "*This* _meta-event_ is the only source of [Crystalline Ore](https://wiki.guildwars2.com/wiki/Crystalline_Ore) in the game, which is used for all kinds of stuff",
-        goalId: "" // legendary crafting: hot
+        description: "This meta-event is the only source of [Crystalline Ore](https://wiki.guildwars2.com/wiki/Crystalline_Ore) in the game, which is used for all kinds of stuff",
+        goalId: "d2382979-d918-4242-92b7-45d140ea399c" // legendary crafting: hot
       },
       {
         description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons, and some of them lead to \"Specialization Collection\" achievements that grant relatively cheap ascended weapons if you have the required mastery.",
-        goalId: "" // ascended gear
+        goalId: "907320dc-3e21-4b78-83e4-a31eae8867d0" // ascended weapons
       },
       {
         description: "Most Heart of Thorns meta-events give good XP, but Dragon's Stand is one of the best. Pop an XP booster, do your local events, and spank some Mordrem. You'll be gliding on leylines before you know it.",
         goalId: "78c9fff9-2136-4bd8-9976-7c06ef898b32" // XP
+      },
+      {
+        description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons. These skins are unique, and by following their related collection achievement, you can even turn them into exotic Machined Weapons. And if you think the _plated_ ones look good...",
+        goalId: "c09db606-b8d4-4314-855b-a1cf51b628b8" // unique skins
       }
     ],
     key: "ds"

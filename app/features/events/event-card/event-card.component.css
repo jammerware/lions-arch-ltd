@@ -1,7 +1,7 @@
 .event-card {
   background-color: #e2e8e9;
   display:inline-block;
-  width: 280px;
+  width: 320px;
   padding:6px;
   margin-right: 16px;
 }
@@ -21,6 +21,10 @@ h4 {
   margin-bottom: 12px;
 }
 
+.event-desc {
+  height: 3.2em;
+}
+
 .event-next-occurrence {
     margin-top:1em;
 }
@@ -36,4 +40,14 @@ h4 {
 .goal-icon {
   width: 24px;
   height: 24px;
+}
+
+.event-goal-contribution {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top:2em;
+}
+
+.event-goal-contribution li {
+  margin-right: 0.75em;
 }

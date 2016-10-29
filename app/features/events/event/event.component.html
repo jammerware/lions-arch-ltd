@@ -6,16 +6,14 @@
         <md-tab>
             <template md-tab-label>GUIDE</template>
             <template md-tab-content>
-                <div class="event-guide">
-                    {{viewmodel.guide}}
+                <div class="tab-content event-goals" [innerHtml]="viewmodel.guide | markdown">
                 </div>
             </template>
         </md-tab>
         <md-tab>
             <template md-tab-label>GOALS</template>
             <template md-tab-content>
-                <div class="event-goals">
-                    {{viewmodel.guide}}
+                <div class="tab-content event-goals" [innerHtml]="viewmodel.guide | markdown">
                 </div>
             </template>
         </md-tab>

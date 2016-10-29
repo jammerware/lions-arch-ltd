@@ -16,9 +16,9 @@ const GOALS: Goal[] = [
   },
   {
     id: "907320dc-3e21-4b78-83e4-a31eae8867d0",
-    name: "Ascended Gear",
+    name: "Ascended Weapons",
     description: "Pink is the new purple.",
-    key: "ascended-gear"
+    key: "ascended-weapons"
   },
   {
     id: "56662053-9f3f-49da-86ab-88a7a328661b",
@@ -36,7 +36,7 @@ const GOALS: Goal[] = [
     id: "78c9fff9-2136-4bd8-9976-7c06ef898b32",
     name: "Mastery Experience",
     description: "Wait, you don't have Leyline Gliding yet?",
-    key: "mastery-xp"
+    key: "xp"
   },
   {
     id: "d2382979-d918-4242-92b7-45d140ea399c",
@@ -45,16 +45,16 @@ const GOALS: Goal[] = [
     key: "hot-legendary"
   },
   {
-    id: "",
+    id: "c09db606-b8d4-4314-855b-a1cf51b628b8",
     name: "Unique Runes",
     description: "Because Runes of the Commander should _totally_ be this difficult to get.",
-    key: "unique-runes"
+    key: "runes"
   },
   {
     id: "005449d2-391d-48cc-abca-77758e5c2bdf",
     name: "Unique Skins",
     description: "Beauty is in the eye of the beholder... except when you're talking about machined weapon skins. Those are just awesome.",
-    key: "unique-skins"
+    key: "skins"
   },
 ];
 

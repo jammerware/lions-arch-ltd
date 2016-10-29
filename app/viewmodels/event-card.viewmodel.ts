@@ -8,5 +8,4 @@ export class EventCardViewModel {
   countdownText: string;
   goalContributions: GoalContributionViewModel[];
   msTilNextOccurrence: number;
-  slug: string;
 }
