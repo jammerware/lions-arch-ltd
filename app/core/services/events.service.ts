@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 
 import { Event } from '../../shared/models/event';
 import { TimespanService } from '../../timespan/timespan.service';
