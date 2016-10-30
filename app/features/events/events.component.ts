@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { EventsService } from '../../services/events.service';
-import { Event } from '../../models/event';
+import { EventsService } from '../../core/services/events.service';
+import { Event } from '../../shared/models/event';
 
 @Component({
   moduleId: module.id,
@@ -17,6 +17,6 @@ export class EventsComponent implements OnInit {
   }
 
   getEvents(): void {
-    this.eventsService.getEvents().then(events => this.events = events);
+    this.eventsService.getEvents().subscribe(events => this.events = events);
   }
 }

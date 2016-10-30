@@ -1,7 +1,7 @@
 import { Inject, Pipe, PipeTransform } from '@angular/core';
-import { Timespan } from '../timespan/timespan';
-import { TimespanService } from '../timespan/timespan.service';
-import { ILocalizationService, ILOCALIZATIONSERVICE } from '../services/localization/ilocalization.service';
+import { Timespan } from '../../timespan/timespan';
+import { TimespanService } from '../../timespan/timespan.service';
+import { ILocalizationService, ILOCALIZATIONSERVICE } from '../../core/services/localization/ilocalization.service';
 
 @Pipe({name: 'timeUntil'})
 export class TimeUntilPipe implements PipeTransform {

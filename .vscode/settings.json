@@ -3,6 +3,7 @@
         "node_modules/": true,
         "typings/": true,
         "app/**/*.js": true,
-        "**/*.js.map": true
+        "**/*.js.map": true,
+        "**/*.spec.js": true
     }
 }

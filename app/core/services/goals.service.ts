@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Goal } from '../models/goal';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
+import { Goal } from '../../shared/models/goal';
 
 const GOALS: Goal[] = [
   {
@@ -60,7 +63,7 @@ const GOALS: Goal[] = [
 
 @Injectable()
 export class GoalsService {
-  getGoals(): Promise<Goal[]> {
-    return Promise.resolve(GOALS);
+  getGoals(): Observable<Goal[]> {
+    return Observable.of<Goal[]>(GOALS);
   }
 }

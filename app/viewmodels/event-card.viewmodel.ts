@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/observable';
 import { GoalContributionViewModel } from './goal-contribution.viewmodel';
 
 export class EventCardViewModel {
@@ -6,6 +7,6 @@ export class EventCardViewModel {
   zone: string;
   description: string;
   countdownText: string;
-  goalContributions: GoalContributionViewModel[];
+  goalContributions: Observable<GoalContributionViewModel[]>;
   msTilNextOccurrence: number;
 }

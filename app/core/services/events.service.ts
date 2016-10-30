@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Event } from '../models/event';
-import { TimespanService } from '../timespan/timespan.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
+import { Event } from '../../shared/models/event';
+import { TimespanService } from '../../timespan/timespan.service';
 
 const EVENTS: Event[] = [
   {
@@ -110,15 +113,15 @@ const EVENTS: Event[] = [
 export class EventsService {
   constructor(private timespanService: TimespanService) { }
 
-  getEvent(id: string): Promise<Event> {
-    return Promise.resolve(EVENTS.find(e => e.id == id));
+  getEvent(id: string): Observable<Event> {
+    return Observable.of<Event>(EVENTS.find(e => e.id == id));
   }
 
-  getEvents(): Promise<Event[]> {
-    return Promise.resolve(EVENTS);
+  getEvents(): Observable<Event[]> {
+    return Observable.of<Event[]>(EVENTS);
   }
 
-  getMsTilNextOccurrenceOf(event: Event): Promise<number> {
+  getMsTilNextOccurrenceOf(event: Event): Observable<number> {
     let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
     let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
     let timeOfNextEvent = 0;
@@ -127,6 +130,6 @@ export class EventsService {
       timeOfNextEvent = i;
     }
 
-    return Promise.resolve(timeOfNextEvent - msSinceMidnightUtc);
+    return Observable.of<number>(timeOfNextEvent - msSinceMidnightUtc);
   }
 }

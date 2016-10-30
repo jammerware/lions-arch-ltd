@@ -1,5 +1,5 @@
-import { TimeUntilPipe } from '../../app/pipes/time-until.pipe';
-import { EnLocalizationService } from '../../app/services/localization/localization.en.service';
+import { TimeUntilPipe } from '../../app/shared/pipes/time-until.pipe';
+import { EnLocalizationService } from '../../app/core/services/localization/localization.en.service';
 
 describe("The timespan pipe", function() {
   it("just toString()s positive integers", function() {

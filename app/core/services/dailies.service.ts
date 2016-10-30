@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Daily } from '../models/daily';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
+import { Daily } from '../../shared/models/daily';
 
 const DAILIES: Daily[] = [
   {
@@ -18,7 +21,7 @@ const DAILIES: Daily[] = [
 
 @Injectable()
 export class DailiesService {
-  getDailies(): Promise<Daily[]> {
-    return Promise.resolve(DAILIES);
+  getDailies(): Observable<Daily[]> {
+    return Observable.of<Daily[]>(DAILIES);
   }
 }

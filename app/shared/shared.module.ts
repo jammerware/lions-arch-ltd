@@ -1,12 +1,26 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SlugPipe } from './pipes/slug.pipe';
-
-import { CommonModule } from '@angular/common';
+import { TimeUntilPipe } from './pipes/time-until.pipe';
 
 @NgModule({
-  declarations: [MarkdownPipe, SlugPipe],
-  exports: [MarkdownPipe, SlugPipe, CommonModule]
+  declarations: [
+    MarkdownPipe, 
+    SlugPipe,
+    TimeUntilPipe
+  ],
+  imports: [
+    MaterialModule.forRoot(),
+  ],
+  exports: [
+    CommonModule,
+    MarkdownPipe,
+    MaterialModule,
+    SlugPipe,
+    TimeUntilPipe
+  ]
 })
 export class SharedModule { }

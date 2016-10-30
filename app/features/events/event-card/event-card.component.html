@@ -5,7 +5,7 @@
     {{viewmodel.description}}
   </div>
   <ul class="event-goal-contribution">
-      <li *ngFor="let goalContribution of viewmodel.goalContributions">
+      <li *ngFor="let goalContribution of viewmodel.goalContributions | async">
         <img 
           class="goal-icon" 
           *ngIf="goalContribution.goal.iconUrl"
