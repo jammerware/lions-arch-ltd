@@ -42,6 +42,12 @@ const GOALS: Goal[] = [
     key: "xp"
   },
   {
+    id: "a4ce8e59-f752-4572-89b0-c37481865a7c",
+    name: "Legendary Crafting (Classic)",
+    description: "Because who resists the call of Eternity?",
+    key: "legendary"
+  },
+  {
     id: "d2382979-d918-4242-92b7-45d140ea399c",
     name: "Legendary Crafting (Heart of Thorns)",
     description: "Forge powerful and unique weapons by searching the Heart of Maguuma high and low, undertaking the boldest and bravest of adventures, and spending just _staggering_ amounts of gold.",

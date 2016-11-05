@@ -81,7 +81,7 @@ const EVENTS: Event[] = [
     description: "Three lanes. Three towers. One mouth. Also a weird body. Don't forget your machetes!",
     waypoints: [
       { name: "Pact Base North", code: "" },
-      { name: "Pact Base South", code: ""}
+      { name: "Pact Base South", code: "" }
     ],
     duration: 5.4e+6,
     offsetFromUtcMidnight: 0,
@@ -105,6 +105,24 @@ const EVENTS: Event[] = [
       }
     ],
     key: "ds"
+  },
+  {
+    id: "a36077c4-b80a-40f1-b26d-da8728fc9344",
+    name: "Sandstorm!",
+    zone: "Dry Top",
+    description: "The most profitable recurring environmental disaster since Disney World.",
+    waypoints: [
+
+    ],
+    duration: 1.2e+6,
+    offsetFromUtcMidnight: 2.4e+6,
+    interval: 3.6e+6,
+    goalContributions: [
+      {
+        description: "",
+        goalId: "a4ce8e59-f752-4572-89b0-c37481865a7c" // legendary crafting: classic
+      }
+    ]
   }
 ];
 
