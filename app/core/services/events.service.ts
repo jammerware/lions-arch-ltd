@@ -122,7 +122,8 @@ const EVENTS: Event[] = [
         description: "",
         goalId: "a4ce8e59-f752-4572-89b0-c37481865a7c" // legendary crafting: classic
       }
-    ]
+    ],
+    key: 'dt'
   }
 ];
 
