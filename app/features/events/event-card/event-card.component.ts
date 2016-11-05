@@ -1,5 +1,4 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs/observable';
 
 import { EventsService } from '../../../core/services/events.service';
@@ -23,7 +22,6 @@ export class EventCardComponent implements OnInit {
   viewmodel: EventCardViewModel;
 
   constructor(
-    private router: Router,
     private eventsService: EventsService,
     private goalContributionsService: GoalContributionsService,
     @Inject(ILOCALIZATIONSERVICE) private localizationService: ILocalizationService) { }

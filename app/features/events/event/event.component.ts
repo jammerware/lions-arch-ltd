@@ -30,7 +30,8 @@ export class EventComponent implements OnInit {
       name: event.name,
       zone: event.zone,
       description: event.description,
-      guide: event.guide
+      guide: event.guide,
+      goalContributions: event.goalContributions
     };
   }
 }

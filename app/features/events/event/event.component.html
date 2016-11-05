@@ -13,8 +13,11 @@
         <md-tab>
             <template md-tab-label>GOALS</template>
             <template md-tab-content>
-                <div class="tab-content event-goals" [innerHtml]="viewmodel.guide | markdown">
-                </div>
+                <ul class="goal-contributions">
+                    <li *ngFor="let goalContribution of viewmodel.goalContributions">
+                        <goal-contribution />
+                    </li>
+                </ul>
             </template>
         </md-tab>
     </md-tab-group>
