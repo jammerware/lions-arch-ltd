@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { GoalContributionsModule } from '../goal-contributions/goal-contributions.module';
 
 import { EventsComponent }   from './events.component';
 import { EventCardComponent } from './event-card/event-card.component';
@@ -8,7 +9,8 @@ import { EventsRoutingModule } from './events-routing.module';
 
 @NgModule({
     imports: [
-        EventsRoutingModule, 
+        EventsRoutingModule,
+        GoalContributionsModule, 
         SharedModule 
     ],
     exports: [ EventsRoutingModule ],

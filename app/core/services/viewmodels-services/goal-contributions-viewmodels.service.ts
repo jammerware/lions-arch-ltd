@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/observable';
 
-import { ContentService } from './content.service';
-import { ErrorService } from './error.service';
-import { GoalsService } from './goals.service';
-
-import { Goal } from '../../shared/models/goal';
-import { GoalContribution } from '../../shared/models/goal-contribution';
-import { GoalContributionViewModel } from '../../viewmodels/goal-contribution.viewmodel';
+import { ContentService } from '../content.service';
+import { ErrorService } from '../error.service';
+import { Goal } from '../../../shared/models/goal';
+import { GoalContribution } from '../../../shared/models/goal-contribution';
+import { GoalContributionViewModel } from '../../../shared/viewmodels/goal-contribution.viewmodel';
+import { GoalsService } from '../goals.service';
 
 @Injectable()
-export class GoalContributionsService {
+export class GoalContributionsViewModelsService {
     constructor(
         private contentService: ContentService,
-        private goalsService: GoalsService,
-        private errorService: ErrorService
-    ) {} 
+        private errorService: ErrorService,
+        private goalsService: GoalsService
+    ) { }
 
-    getGoalContributionViewModels(goalContributions: GoalContribution[]): Observable<GoalContributionViewModel[]> {
-        return this
-            .goalsService
+    getViewModels(goalContributions: GoalContribution[]): Observable<GoalContributionViewModel[]> {
+        return this.goalsService
             .getGoals()
             .map(
                 goals => this.composeGoalContributionViewModels(goalContributions, goals),
