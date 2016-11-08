@@ -20,6 +20,7 @@
       // angular material
       '@angular/material': 'npm:@angular/material/material.umd.js',
       // other libraries
+      'clipboard': 'npm:clipboard',
       'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
     },

@@ -5,22 +5,26 @@ import { MaterialModule } from '@angular/material';
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SlugPipe } from './pipes/slug.pipe';
 import { TimeUntilPipe } from './pipes/time-until.pipe';
+import { WaypointComponent } from './components/waypoint/waypoint.component';
 
 @NgModule({
   declarations: [
     MarkdownPipe, 
     SlugPipe,
-    TimeUntilPipe
+    TimeUntilPipe,
+    WaypointComponent
   ],
   imports: [
     MaterialModule.forRoot(),
   ],
   exports: [
+    MaterialModule,
     CommonModule,
     MarkdownPipe,
     MaterialModule,
     SlugPipe,
-    TimeUntilPipe
+    TimeUntilPipe,
+    WaypointComponent
   ]
 })
 export class SharedModule { }

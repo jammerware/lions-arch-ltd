@@ -5,6 +5,7 @@ export let ILOCALIZATIONSERVICE = new OpaqueToken('ILocalizationService');
 export interface ILocalizationService {
   // expressions
   readonly inAbout: string;
+  readonly inALongTime: string;
 
   // actual units of time
   readonly second: string;
@@ -23,7 +24,6 @@ export interface ILocalizationService {
   readonly years: string;
 
   // colloquial time expressions
-  readonly longTime: string;
   readonly aMinute: string;
   readonly anHour: string;
   readonly aDay: string;

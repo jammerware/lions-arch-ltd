@@ -1,4 +1,4 @@
 <h2>Events</h2>
 <div class="events">
-  <event-card [event]="event" *ngFor="let event of events"></event-card>
+  <event-card [event]="event" *ngFor="let event of events | async"></event-card>
 </div>

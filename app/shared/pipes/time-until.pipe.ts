@@ -34,6 +34,6 @@ export class TimeUntilPipe implements PipeTransform {
       return `${this.localizationService.inAbout} ${remaining} ${this.localizationService.days}`;
     }
 
-    return this.localizationService.longTime;
+    return this.localizationService.inALongTime;
   }
 }

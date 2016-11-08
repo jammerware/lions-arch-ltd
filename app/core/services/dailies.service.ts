@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
 import { Daily } from '../../shared/models/daily';
 
 const DAILIES: Daily[] = [

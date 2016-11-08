@@ -1,9 +1,10 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/observable';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
 import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   moduleId: module.id,
@@ -13,11 +14,19 @@ import { EventViewModelsService } from '../../../core/services/viewmodels-servic
 })
 export class EventCardComponent implements OnInit {
   @Input() event: Event;
-  viewmodel: Observable<EventViewModel>;
+
+  viewModel: EventViewModel;
+  private viewModelObservableSubscription: Subscription; 
 
   constructor(private eventViewModelsService: EventViewModelsService) { }
 
   ngOnInit(): void {
-    this.viewmodel = this.eventViewModelsService.getViewModel(event);
+    this.viewModelObservableSubscription = this.eventViewModelsService
+      .getViewModel(this.event)
+      .subscribe(vm => this.viewModel = vm);
+  }
+
+  ngOnDestroy(): void {
+    this.viewModelObservableSubscription.unsubscribe();
   }
 }

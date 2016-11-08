@@ -5,6 +5,8 @@ import { Inject, Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'markdown'})
 export class MarkdownPipe implements PipeTransform {
   transform(markdown: string): string {
+    if(!markdown) return '';
+    
     let output = markdown;
 
     output = this.replaceLinkSyntax(output);
@@ -15,26 +17,37 @@ export class MarkdownPipe implements PipeTransform {
     return `<div class="markdown">${output}</div>`;
   }
 
+  replaceBreaks(markdown: string): string {
+    let paragraphs: string[] = markdown.split('\n\n');
+    let output: string[] = [];
+
+    for(let paragraph of paragraphs) {
+      output.push();
+    }
+
+    return output.join();
+  }
+
   replaceLinkSyntax(markdown: string): string {
-    return markdown.replace(/\[([^\]]+)\]\((\S+)\)/, function(match, group1, group2) {
+    return markdown.replace(/\[([^\]]+)\]\((\S+)\)/g, function(match, group1, group2) {
       return `<a rel="noopener noreferrer" target="_blank" href="${group2}">${group1}</a>`;
     });
   }
 
   replaceBold(markdown: string): string {
-    return markdown.replace(/\*([^*]+)\*/, function(match, group1) {
+    return markdown.replace(/\*([^*]+)\*/g, function(match, group1) {
       return `<strong>${group1}</strong>`;
     });
   }
 
   replaceItalics(markdown: string): string {
-    return markdown.replace(/_([^_]+)_/, function(match, group1) {
+    return markdown.replace(/_([^_]+)_/g, function(match, group1) {
       return `<em>${group1}</em>`;
     });
   }
 
   replaceHeaders(markdown: string): string {
-    return markdown.replace(/(#{1,6})(\s\S+)$/m, function(match, headerStrengthGroup, textGroup) {
+    return markdown.replace(/(#{1,6})(\s\S+)$/gm, function(match, headerStrengthGroup, textGroup) {
       return `<h${headerStrengthGroup.length}>${textGroup}</h${headerStrengthGroup.length}>`;
     });
   }

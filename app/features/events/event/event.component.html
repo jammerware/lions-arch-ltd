@@ -1,24 +1,24 @@
-<div *ngIf="viewmodel">
-    <h3>{{viewmodel.zone}}'s</h3>
-    <h2>{{viewmodel.name}}</h2>
-    <h4>{{viewmodel.description}}</h4>
-    <md-tab-group>
-        <md-tab>
-            <template md-tab-label>GUIDE</template>
-            <template md-tab-content>
-                <div class="tab-content event-goals" [innerHtml]="viewmodel.guide | markdown">
-                </div>
-            </template>
-        </md-tab>
-        <md-tab>
-            <template md-tab-label>GOALS</template>
-            <template md-tab-content>
-                <ul class="goal-contributions">
-                    <li *ngFor="let goalContribution of viewmodel.goalContributions">
-                        <goal-contribution />
-                    </li>
-                </ul>
-            </template>
-        </md-tab>
-    </md-tab-group>
-</div>
+<h3>{{viewModel?.zone}}'s</h3>
+<h2>{{viewModel?.name}}</h2>
+<h4>{{viewModel?.description}}</h4>
+<waypoint [waypoint]="viewModel?.primaryWaypoint"></waypoint>
+
+<md-tab-group>
+    <md-tab>
+        <template md-tab-label>GUIDE</template>
+        <template md-tab-content>
+            <div class="tab-content event-goals" [innerHtml]="viewModel?.guide | markdown">
+            </div>
+        </template>
+    </md-tab>
+    <md-tab>
+        <template md-tab-label>GOALS</template>
+        <template md-tab-content>
+            <ul class="tab-content goal-contributions">
+                <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
+                    <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
+                </li>
+            </ul>
+        </template>
+    </md-tab>
+</md-tab-group>

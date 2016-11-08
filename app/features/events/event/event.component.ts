@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+
 import { Event } from '../../../shared/models/event';
-import { EventViewModel } from '../../../viewmodels/event.viewmodel';
+import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
+import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
 import { EventsService } from '../../../core/services/events.service';
 
 @Component({
@@ -11,27 +13,25 @@ import { EventsService } from '../../../core/services/events.service';
   templateUrl: 'event.component.html'
 })
 export class EventComponent implements OnInit {
-  public viewmodel: EventViewModel;
+  public viewModel: EventViewModel;
 
-  constructor(private route: ActivatedRoute, private eventsService: EventsService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private eventsService: EventsService,
+    private eventViewModelsService: EventViewModelsService
+  ) { }
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = params['id'];
-      this
-        .eventsService
-        .getEvents()
-        .subscribe(events => this.viewmodel = this.composeEventViewModel(events.find(e => e.id == id)));
-    });
-  }
 
-  composeEventViewModel(event: Event): EventViewModel {
-    return {
-      name: event.name,
-      zone: event.zone,
-      description: event.description,
-      guide: event.guide,
-      goalContributions: event.goalContributions
-    };
+      // TODO: this can't be right
+      this.eventsService
+        .getEvent(id)
+        .subscribe(event => this.eventViewModelsService
+          .getViewModel(event)
+          .subscribe(vm => this.viewModel = vm)
+        );
+    });
   }
 }

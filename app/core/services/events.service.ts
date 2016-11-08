@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { Event } from '../../shared/models/event';
 import { TimespanService } from '../../timespan/timespan.service';
@@ -10,6 +11,7 @@ const EVENTS: Event[] = [
     name: "Night and the Enemy",
     zone: "Verdant Brink",
     description: "Help Pact forces survive the darkest of nights against the servants of Mordremoth.",
+    primaryWaypoint: { name: "Pact Encampment", code: "[&BAgIAAA=]" },
     waypoints: [
       { name: "Jaka Itzel", code: "[&BOAHAAA=]" },
       { name: "Mellaggan's Valor", code: "[&BNUHAAA=]" },
@@ -22,11 +24,11 @@ const EVENTS: Event[] = [
     interval: 7.2e+6,
     goalContributions: [
       {
-        description: "Keep an eye out for Airship Cargo nodes while you're running around during the night. You can crack them open with Pact Crowbars to get Airship Oil (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
+        description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
         goalId: "d2382979-d918-4242-92b7-45d140ea399c" // hot legendary crafting
       },
       {
-        description: "If you achieve 100% (or greater) participation on a map that reaches tier 4 during this event, you'll get your choice of an exotic armor piece in any slot or weight. Great for gearing up alts!",
+        description: "If you achieve 100% (or greater) participation on a map that reaches tier 4 during this event, you'll get your [choice of an exotic armor piece](https://wiki.guildwars2.com/wiki/Bladed_Armor_Box) in any slot or weight. Great for gearing up alts!",
         goalId: "56662053-9f3f-49da-86ab-88a7a328661b" // exotic armor
       }
     ],
@@ -42,6 +44,7 @@ const EVENTS: Event[] = [
     name: "The Octovine",
     zone: "Auric Basin",
     description: "Stop the Mordrem from taking Tarir. Don't screw up South.",
+    primaryWaypoint: { name: "Forgotten City", code: "[&BMYHAAA=]" },
     waypoints: [
       { name: "Northwatch", code: "[&BN0HAAA=]" },
       { name: "Eastwatch", code: "[&BGwIAAA=]" },
@@ -50,7 +53,7 @@ const EVENTS: Event[] = [
       { name: "Forgotten City", code: "[&BMYHAAA=]" }
     ],
     duration: 1.2e+6,
-    offsetFromUtcMidnight: 5.4e+6,
+    offsetFromUtcMidnight: 0,
     interval: 5.4e+6,
     goalContributions: [
       {
@@ -58,12 +61,12 @@ const EVENTS: Event[] = [
         goalId: "b40fb9c2-65a2-46d4-a3c3-dbb1b907bdd5" // ascended gear
       },
       {
-        description: "Exalted Chests of all sizes under Tarir drop auric silver, auric dust, and auric ingots. Once you have the mastery that allows you to converse with the Exalted vendor in Tarir, you can purchase recipes that combine these items to make sweet Auric weapons.",
+        description: "Exalted Chests of all sizes under Tarir drop auric silver, auric dust, and auric ingots. Once you have the mastery that allows you to converse with the Exalted vendor in Tarir, you can purchase recipes that combine these items to make sweet [Auric weapons](https://wiki.guildwars2.com/wiki/Auric_weapons).",
         goalId: "9779ac23-34ee-4033-97a9-85688cd939b9" // exotic crafting
       },
       {
         description: "Exalted Chests have a high chance to drop [Bloodstone Dust](https://wiki.guildwars2.com/wiki/Pile_of_Bloodstone_Dust), which is a reagent for just about every ascended recipe ever. Plus, you can feed it to [Herta](https://wiki.guildwars2.com/wiki/Herta), who's never as hungry as you'd expect.",
-        goalId: "56662053-9f3f-49da-86ab-88a7a328661b" // ascended crafting
+        goalId: "566c01d0-380e-413b-9173-3012cb1e25d2" // ascended crafting
       }
     ],
     key: "ab",
@@ -71,7 +74,12 @@ const EVENTS: Event[] = [
       # Overview
       
       Assault on Tarir (or whatever it's called) is a single-stage event that is the culmination of events that occur across the zone
-      in preparation for the ultimate Mordrem assault on the Exalted city of Tarir. 
+      in preparation for the ultimate Mordrem assault on the Exalted city of Tarir.
+
+      - south Sage Bombmaker
+      - west: poisoned mushrooms
+      - east: flying bombing run
+      - north: bramble begone turrets
     `
   },
   {
@@ -79,9 +87,10 @@ const EVENTS: Event[] = [
     name: "Shadow of the Dragon",
     zone: "Dragon's Stand",
     description: "Three lanes. Three towers. One mouth. Also a weird body. Don't forget your machetes!",
+    primaryWaypoint: { name: "Pact Base Camp", code: "[&BBAIAAA=]" },
     waypoints: [
-      { name: "Pact Base North", code: "" },
-      { name: "Pact Base South", code: "" }
+      { name: "Pact Base Camp", code: "[&BBAIAAA=]" },
+      { name: "Pact Base Camp Southern", code: "[&BHoIAAA=]" }
     ],
     duration: 5.4e+6,
     offsetFromUtcMidnight: 0,
@@ -111,8 +120,12 @@ const EVENTS: Event[] = [
     name: "Sandstorm!",
     zone: "Dry Top",
     description: "The most profitable recurring environmental disaster since Disney World.",
+    primaryWaypoint: { name: "Prosperity", code: "[&BHoHAAA=]" },
     waypoints: [
-
+      { name: "Dry Top Entry", code: "[&BIAHAAA=]" },
+      { name: "Prosperity", code: "[&BHoHAAA=]" },
+      { name: "Restoration Refuge", code: "[&BIgHAAA=]" },
+      { name: "Repair Station", code: "[&BJcHAAA=]" }
     ],
     duration: 1.2e+6,
     offsetFromUtcMidnight: 2.4e+6,
@@ -132,14 +145,14 @@ export class EventsService {
   constructor(private timespanService: TimespanService) { }
 
   getEvent(id: string): Observable<Event> {
-    return Observable.of<Event>(EVENTS.find(e => e.id == id));
+    return Observable.of(EVENTS.find(e => e.id == id));
   }
 
   getEvents(): Observable<Event[]> {
     return Observable.of<Event[]>(EVENTS);
   }
 
-  getMsTilNextOccurrenceOf(event: Event): Observable<number> {
+  getMsTilNextOccurrenceOf(event: Event): number {
     let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
     let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
     let timeOfNextEvent = 0;
@@ -148,6 +161,6 @@ export class EventsService {
       timeOfNextEvent = i;
     }
 
-    return Observable.of<number>(timeOfNextEvent - msSinceMidnightUtc);
+    return timeOfNextEvent - msSinceMidnightUtc;
   }
 }

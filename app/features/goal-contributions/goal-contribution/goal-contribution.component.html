@@ -1,1 +1,7 @@
-Hi, I'm a goal contribution!
+<div class="goal-contribution">
+    <img class="goal-contribution-large" [src]="goalContribution?.goal.iconUrl" />
+    <div class="goal-contribution-info">
+        <h3 class="goal-name">{{goalContribution?.goal.name}}</h3>
+        <div class="goal-contribution-info" [innerHtml]="goalContribution?.description | markdown"></div>
+    </div>
+</div>

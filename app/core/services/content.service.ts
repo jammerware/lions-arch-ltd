@@ -7,5 +7,5 @@ export class ContentService {
   
   getContentUrl(fileName: string): string {
     return Location.joinWithSlash(this.locationStrategy.getBaseHref(), fileName);
-  }
+  }  
 }

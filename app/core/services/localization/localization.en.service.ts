@@ -5,6 +5,7 @@ import { ILocalizationService } from './ilocalization.service';
 export class EnLocalizationService implements ILocalizationService {
   // expressions
   inAbout: string = "in about";
+  inALongTime: string = "in a really freaking long time";
 
   // actual units of time
   second: string = "second";
@@ -26,7 +27,6 @@ export class EnLocalizationService implements ILocalizationService {
   aMinute: string = "a minute";
   anHour: string = "an hour";
   aDay: string = "a day";
-  longTime: string = "a really freaking long time";
 
   // oops
   unspecifiedError: string = 'Something\'s not quite right...';

@@ -1,0 +1,11 @@
+.goal-contribution {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.2em;
+}
+
+img.goal-contribution-large {
+    height: 48px;
+    width: 48px;
+    margin-right: 1.1em;
+}
