@@ -2,10 +2,9 @@
     "files.exclude": {
         "node_modules/": true,
         "typings/": true,
-        "app/**/*.js": true,
+        "src/**/*.js": true,
         "**/*.js.map": true,
         "**/*.spec.js": true
-    }
-,
-"typescript.tsdk": "./node_modules/typescript/lib"
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }

@@ -1,9 +1,0 @@
-{
-  "name": "lions-arch-ltd",
-  "dependencies": {},
-  "globalDependencies": {
-    "clipboard": "registry:dt/clipboard#1.5.9+20160316155526",
-    "jasmine": "registry:dt/jasmine#2.5.0+20161003201800",
-    "node": "registry:dt/node#6.0.0+20161019125345"
-  }
-}
