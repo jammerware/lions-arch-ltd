@@ -21,7 +21,7 @@ export class GoalContributionsViewModelsService {
             .getGoals()
             .map(
                 goals => this.composeGoalContributionViewModels(goalContributions, goals),
-                error => this.errorService.logError(error)
+                (error: any) => this.errorService.logError(error)
             );
     }
 
@@ -29,7 +29,7 @@ export class GoalContributionsViewModelsService {
         let result: GoalContributionViewModel[] = [];
 
         for(let goalContribution of goalContributions) {
-            var goal = goals.find(g => g.id == goalContribution.goalId);
+            let goal = goals.find(g => g.id === goalContribution.goalId);
             
             result.push({
                 description: goalContribution.description,
