@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { ContentService } from '../content.service';
+import { AssetService } from '../asset.service';
 import { ErrorService } from '../error.service';
 import { Goal } from '../../../shared/models/goal';
 import { GoalContribution } from '../../../shared/models/goal-contribution';
@@ -11,7 +11,7 @@ import { GoalsService } from '../goals.service';
 @Injectable()
 export class GoalContributionsViewModelsService {
     constructor(
-        private contentService: ContentService,
+        private assetService: AssetService,
         private errorService: ErrorService,
         private goalsService: GoalsService
     ) { }
@@ -37,7 +37,7 @@ export class GoalContributionsViewModelsService {
                     id: goalContribution.goalId,
                     name: goal.name,
                     description: goal.description,
-                    iconUrl: this.contentService.getContentUrl(`assets/images/icons/${goal.key}.png`)
+                    iconUrl: this.assetService.getUrl(`images/icons/${goal.key}.png`)
                 }
             });
         };

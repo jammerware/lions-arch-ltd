@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { TimespanModule } from '../timespan/timespan.module';
 
+import { AssetService } from './services/asset.service';
 import { ClipboardService } from './services/clipboard.service';
-import { ContentService } from './services/content.service';
 import { ErrorService } from './services/error.service';
 import { EventsService } from './services/events.service';
 import { EventViewModelsService } from './services/viewmodels-services/event-viewmodels.service';
@@ -17,8 +17,8 @@ import { ToastService } from './services/toast.service';
 
 @NgModule({
   providers: [
+    AssetService,
     ClipboardService,
-    ContentService,
     ErrorService,
     EventsService,
     EventViewModelsService,
