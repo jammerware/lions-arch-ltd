@@ -52,7 +52,7 @@ export const EVENTS: Event[] = [
     interval: 5.4e+6,
     goalContributions: [
       {
-        description: "Most of the [Luminate's Backplate](https://wiki.guildwars2.com/wiki/Luminate's_Backplate_(achievement)) collection is connected to this event, so get cracking if you want to look like a giant floaty shinything. And also have an ascended backpack.",
+        description: "Most of the [Luminate's Backplate](https://wiki.guildwars2.com/wiki/Luminate's_Backplate_(achievement)) collection is connected to this event, so get cracking if you want to look like a giant floaty shinything. And also have an [ascended backpack](https://wiki.guildwars2.com/wiki/Luminate's_Backplate).",
         goalId: "b40fb9c2-65a2-46d4-a3c3-dbb1b907bdd5" // ascended gear
       },
       {
@@ -60,7 +60,7 @@ export const EVENTS: Event[] = [
         goalId: "9779ac23-34ee-4033-97a9-85688cd939b9" // exotic crafting
       },
       {
-        description: "Exalted Chests have a high chance to drop [Bloodstone Dust](https://wiki.guildwars2.com/wiki/Pile_of_Bloodstone_Dust), which is a reagent for just about every ascended recipe ever. Plus, you can feed it to [Herta](https://wiki.guildwars2.com/wiki/Herta), who's never as hungry as you'd expect.",
+        description: "Exalted Chests have a high chance to drop [Bloodstone Dust](https://wiki.guildwars2.com/wiki/Pile_of_Bloodstone_Dust), which is a reagent for just about every ascended recipe ever. Plus, you can feed it to [Herta](https://wiki.guildwars2.com/wiki/Herta).",
         goalId: "566c01d0-380e-413b-9173-3012cb1e25d2" // ascended crafting
       }
     ],
@@ -68,7 +68,7 @@ export const EVENTS: Event[] = [
     guide: `
       # Overview
       
-      Assault on Tarir (or whatever it's called) is a single-stage event that is the culmination of events that occur across the zone
+      Battle in Tarir (or whatever it's called) is a single-stage event that is the culmination of events that occur across the zone
       in preparation for the ultimate Mordrem assault on the Exalted city of Tarir.
 
       - south Sage Bombmaker
@@ -127,7 +127,7 @@ export const EVENTS: Event[] = [
     interval: 3.6e+6,
     goalContributions: [
       {
-        description: "",
+        description: "Who can resist the call of Eternity?",
         goalId: "a4ce8e59-f752-4572-89b0-c37481865a7c" // legendary crafting: classic
       }
     ],
