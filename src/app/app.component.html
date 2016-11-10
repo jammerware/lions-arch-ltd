@@ -1,13 +1,13 @@
 <div id="app">
-  <div id="app-content">
-    <router-outlet></router-outlet>
-  </div>
-  <div id="app-nav">
+  <div id="app-titlebar">
     <h1>{{title}}</h1>
     <nav>
       <a routerLink="/events">Events</a>
       <a routerLink="/dailies">Dailies</a>
       <a routerLink="/settings">Settings</a>
     </nav>
+  </div>
+  <div id="app-content">
+    <router-outlet></router-outlet>
   </div>
 </div>

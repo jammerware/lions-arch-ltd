@@ -3,3 +3,4 @@
 
 declare var System: any;
 declare module 'clipboard';
+declare module 'showdown';

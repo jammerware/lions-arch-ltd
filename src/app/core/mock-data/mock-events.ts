@@ -8,11 +8,31 @@ export const EVENTS: Event[] = [
     description: "Help Pact forces survive the darkest of nights against the servants of Mordremoth.",
     primaryWaypoint: { name: "Pact Encampment", code: "[&BAgIAAA=]" },
     waypoints: [
-      { name: "Jaka Itzel", code: "[&BOAHAAA=]" },
-      { name: "Mellaggan's Valor", code: "[&BNUHAAA=]" },
-      { name: "Pact Encampment", code: "[&BAgIAAA=]" },
-      { name: "Shipwreck Peak", code: "[&BN4HAAA=]" },
-      { name: "Shrouded Ruins", code: "[&BAEIAAA=]" }
+      { 
+        name: "Faren's Flyer", 
+        code: "[&BO8HAAA=]",
+        description: "Helicopters that land at camps near Faren's Flyer take players up to the [Axemaster Gwyllion](https://wiki.guildwars2.com/wiki/Kill_Axemaster_Gwyllion) boss event." 
+      },
+      { 
+        name: "Jaka Itzel", 
+        code: "[&BOAHAAA=]", 
+        description: "Helicopters that land at camps near the Jaka Itzel waypoint take players up to the [Champions Cotoni and Huetzi](https://wiki.guildwars2.com/wiki/Kill_Cotoni_and_Huetzi) boss event." 
+      },
+      { 
+        name: "Mellaggan's Valor", 
+        code: "[&BNUHAAA=]",
+        description: "Helicopters that land at camps near Mellaggan's Valor take players up to the [Mordrem Tetrad](https://wiki.guildwars2.com/wiki/Kill_the_tetrad_of_Mordrem_champions) boss event."
+      },
+      { 
+        name: "Pact Encampment", 
+        code: "[&BAgIAAA=]",
+        description: "Helicopters that land at camps near the Pact Encampment waypoint take players up to the [Wyvern Matriarch](https://wiki.guildwars2.com/wiki/Kill_the_wyvern_matriarch) boss event." 
+      },
+      { 
+        name: "Shipwreck Peak", 
+        code: "[&BN4HAAA=]",
+        description: "Helicopters that land at camps just south of the Shipwreck Peak waypoint take players up to the [Wyvern Patriarch](https://wiki.guildwars2.com/wiki/Kill_the_Wyvern_Patriarch) boss event."
+      }
     ],
     duration: 2.7e+6,
     offsetFromUtcMidnight: 4.5e+6,
@@ -28,8 +48,7 @@ export const EVENTS: Event[] = [
       }
     ],
     key: "vb",
-    guide: `
-      # Overview
+    guide: `# Overview
 
       
     `
@@ -41,11 +60,31 @@ export const EVENTS: Event[] = [
     description: "Stop the Mordrem from taking Tarir. Don't screw up South.",
     primaryWaypoint: { name: "Forgotten City", code: "[&BMYHAAA=]" },
     waypoints: [
-      { name: "Northwatch", code: "[&BN0HAAA=]" },
-      { name: "Eastwatch", code: "[&BGwIAAA=]" },
-      { name: "Southwatch", code: "[&BAIIAAA=]" },
-      { name: "Westwatch Peak", code: "[&BAYIAAA=]" },
-      { name: "Forgotten City", code: "[&BMYHAAA=]" }
+      { 
+        name: "Northwatch", 
+        code: "[&BN0HAAA=]",
+        description: "Northwatch is the closest waypoint to the northern octovine event." 
+      },
+      { 
+        name: "Eastwatch", 
+        code: "[&BGwIAAA=]",
+        description: "Eastwatch is the closest waypoint to the eastern octovine event. If you have the Nuhoch Wallows mastery, you can also take a wallow from this waypoint to the western octovine." 
+      },
+      { 
+        name: "Southwatch", 
+        code: "[&BAIIAAA=]",
+        description: "Southwatch is the closest waypoint to the southern octovine event." 
+      },
+      { 
+        name: "Westwatch Peak", 
+        code: "[&BAYIAAA=]",
+        description: "Westwatch is the closest waypoint to the southern octovine event. If you have the Nuhoch Wallows mastery, you can also take a wallow from this waypoint to the eastern octovine."
+      },
+      { 
+        name: "Forgotten City", 
+        code: "[&BMYHAAA=]",
+        description: "Situated directly in the heart of Tarir, this waypoint becomes contested once the event begins. However, it's a good central location to port to if you're traveling to Auric Basin in preparation of a sweet octovine beatdown."
+      }
     ],
     duration: 1.2e+6,
     offsetFromUtcMidnight: 0,
@@ -65,17 +104,29 @@ export const EVENTS: Event[] = [
       }
     ],
     key: "ab",
-    guide: `
-      # Overview
+    guide: `#Overview
       
-      Battle in Tarir (or whatever it's called) is a single-stage event that is the culmination of events that occur across the zone
-      in preparation for the ultimate Mordrem assault on the Exalted city of Tarir.
+The Octovine (which the game insists on calling [Battle in Tarir](https://wiki.guildwars2.com/wiki/Battle_in_Tarir) for reasons that are beyond us) is a single-stage event that acts as the culmination of events that occur across the zone in preparation for the ultimate Mordrem assault on the Exalted city of Tarir. The goal of the event is to defeat four Mordrem structures called [Octovines](https://wiki.guildwars2.com/wiki/Octovine) that spawn at cardinal directions (north, south, east, and west) around the city center. 
 
-      - south Sage Bombmaker
-      - west: poisoned mushrooms
-      - east: flying bombing run
-      - north: bramble begone turrets
-    `
+#Mechanics
+All four octovines share some common characteristics. Each one starts with 15 layers of slime protection, and while it has any number of these stacks, it's invulnerable to damage. Each octovine sub-event has unique mechanics that let players remove stacks (see below). When the last stack is removed, a notification will appear (_"The octovine is vulnerable!"_), and you'll have 15 seconds to unleash havoc on your octovine.
+
+**NOTE:** When the first Octovine is defeated, a two-minute timer begins. If all three remaining Octovines aren't defeated within the timer, all four (including any defeated Octovines) will regain 50% of their health. Depending on how much time is left in the event when this happens, it isn't a guaranteed event failure, but it can make things harder.
+
+
+##North
+Unlike the other octovines, the northern one begins the event covered in a thick layer of brambles. You'll need to remove these in order to begin removing stacks of slime protection from the octovine itself. Fortunately, the [Priory Alchemist](https://wiki.guildwars2.com/wiki/Priory_Alchemist)    stands nearby and has brewed up something special to help take down brambles AND the octovine. She stands next to a box of Bramble Begone kits, and these are the key to the event. Once you've grabbed one,  you can use the ability **Herbicide Spray** (bound to 1 by default) to remove the brambles from the octovine, and **Herbicide Turret** to start stripping stacks of slime protection from it once the brambles have been dealt with. 
+
+Note that you can only use your Bramble Begone to create an Herbicide Turret if you haven't used any of its power to destroy the brambles.
+
+##East
+The eastern Octovine is probably the most approachable, especially for newcomers to the meta-event. The [Sage Siegemaster](https://wiki.guildwars2.com/wiki/Sage_Siegemaster) waits nearby to direct players to nearby piles of exalted bombs. Picking up the bombs replaces your default abilities with the ability to throw three bombs at the Octovine (bound by default to keys 1-3). Once you've grabbed your bombs, take the updraft in front of the Siegemaster to gain some height, and unload all three bombs on the hapless Octovine. Each bomb removes one stack of slime protection.
+
+##South
+The core mechanic of the southern Octovine is centered around the [Sage Bombmaker](https://wiki.guildwars2.com/wiki/Sage_Bombmaker), who stands directly across the courtyard from the Octovine. Periodically, she'll create a large bomb that slowly drifts toward the Octovine. If it reaches its target, it'll remove five stacks of slime protection from the Octovine. Players can expedite the bomb's journey through the courtyard by damaging the bomb from behind, propelling it forward. However, if the bomb takes too much damage from the mordrem in the courtyard, it'll explode prematurely, dealing heavy damage to players nearby. For this reason, the southern event demands participation from players piloting Exalted Armor - we recommend at least three of these, but it's hard too have too many armors here. 
+
+##West
+The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in the western courtyard next to a pool of green goo that transforms anyone who steps into it into an adorable mushroom. In addition to being a massive boost to the attractiveness of some characters, becoming a mushroom grants you two abilities that are key to taking down the western Octovine. If you can hop, skip, or jump your way across the courtyard to get close enough to the Octovine to activate "Poison Spores" (bound to 1 by default), you'll remove a few stacks of slime protection. To this end, you're also given the ability "Jump" on 2 that propels you high into the air. If you've unlocked the gliding mastery, you can also glide in mushroom form, which is pretty useful for avoiding the mordrem congregated in your path.`
   },
   {
     id: "f5c8aeb1-0949-4fa6-be6e-41a7ce19c567",
@@ -117,10 +168,21 @@ export const EVENTS: Event[] = [
     description: "The most profitable recurring environmental disaster since Disney World.",
     primaryWaypoint: { name: "Prosperity", code: "[&BHoHAAA=]" },
     waypoints: [
-      { name: "Dry Top Entry", code: "[&BIAHAAA=]" },
-      { name: "Prosperity", code: "[&BHoHAAA=]" },
-      { name: "Restoration Refuge", code: "[&BIgHAAA=]" },
-      { name: "Repair Station", code: "[&BJcHAAA=]" }
+      { 
+        name: "Prosperity", 
+        code: "[&BHoHAAA=]",
+        description: "This is the unofficial central waypoint of the event. Multiple key events occur near here, including the Sand Giant, the [Haze escort event](https://wiki.guildwars2.com/wiki/Escort_Haze_to_safety), and the dust tornado." 
+      },
+      { 
+        name: "Restoration Refuge", 
+        code: "[&BIgHAAA=]",
+        description: "No idea. This seems important, though. \"Refuge\" has a nice ring to it." 
+      },
+      { 
+        name: "Repair Station", 
+        code: "[&BJcHAAA=]",
+        description: "This waypoint is the one nearest the [skritt queen](https://wiki.guildwars2.com/wiki/Defeat_Queen_Chrii'kkt_IV_and_her_royal_subjects) and a few other events."
+      }
     ],
     duration: 1.2e+6,
     offsetFromUtcMidnight: 2.4e+6,
