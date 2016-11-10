@@ -37,7 +37,7 @@ export class GoalContributionsViewModelsService {
                     id: goalContribution.goalId,
                     name: goal.name,
                     description: goal.description,
-                    iconUrl: this.contentService.getContentUrl(`app/assets/images/icons/${goal.key}.png`)
+                    iconUrl: this.contentService.getContentUrl(`assets/images/icons/${goal.key}.png`)
                 }
             });
         };

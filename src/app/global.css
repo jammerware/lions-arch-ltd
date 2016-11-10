@@ -62,12 +62,12 @@ table {
 /* fonts */
 @font-face {
   font-family: "EasonPro-Caps";
-  src: url(app/assets/fonts/easonpro-displaycaps-webfont.woff);
+  src: url(assets/fonts/easonpro-displaycaps-webfont.woff);
 }
 
 @font-face {
   font-family: "EasonPro";
-  src: url(app/assets/fonts/easonpro-regular-webfont.woff);
+  src: url(assets/fonts/easonpro-regular-webfont.woff);
 }
 
 /* Master Styles */
