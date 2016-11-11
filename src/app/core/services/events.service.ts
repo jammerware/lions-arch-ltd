@@ -11,14 +11,14 @@ export class EventsService {
   constructor(private timespanService: TimespanService) { }
 
   getEvent(id: string): Observable<Event> {
-    return Observable.of(EVENTS.find(e => e.id == id));
+    return Observable.of(EVENTS.find(e => e.id === id));
   }
 
   getEvents(): Observable<Event[]> {
-    return Observable.of<Event[]>(EVENTS);
+    return Observable.of(EVENTS);
   }
 
-  getMsTilNextOccurrenceOf(event: Event): number {
+  getMsTilNextOccurrenceOf(event: Event): Observable<number> {
     let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
     let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
     let timeOfNextEvent = 0;
@@ -27,6 +27,7 @@ export class EventsService {
       timeOfNextEvent = i;
     }
 
-    return timeOfNextEvent - msSinceMidnightUtc;
+    let observable = Observable.of(timeOfNextEvent - msSinceMidnightUtc);
+    return observable;
   }
 }

@@ -15,6 +15,6 @@
     </ul>
   <div class="event-next-occurrence">
     <span class="event-countdown-text">{{ viewModel?.countdownText }}</span>
-    <span class="event-countdown">{{ viewModel?.msTilNextOccurrence | timeUntil }}</span>
+    <span class="event-countdown">{{ viewModel?.msTilNextOccurrence | async | timeUntil }}</span>
   </div>
 </div>

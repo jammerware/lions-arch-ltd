@@ -6,31 +6,26 @@ export const EVENTS: Event[] = [
     name: "Night and the Enemy",
     zone: "Verdant Brink",
     description: "Help Pact forces survive the darkest of nights against the servants of Mordremoth.",
-    primaryWaypoint: { name: "Pact Encampment", code: "[&BAgIAAA=]" },
+    primaryWaypointId: "58151f49-8998-4c51-b6d1-351ca5ee7bb9",
     waypoints: [
-      { 
-        name: "Faren's Flyer", 
-        code: "[&BO8HAAA=]",
+      {
+        waypointId: "8a8469e9-7f6b-4a58-ad20-f3420dac3468",
         description: "Helicopters that land at camps near Faren's Flyer take players up to the [Axemaster Gwyllion](https://wiki.guildwars2.com/wiki/Kill_Axemaster_Gwyllion) boss event." 
       },
-      { 
-        name: "Jaka Itzel", 
-        code: "[&BOAHAAA=]", 
+      {
+        waypointId: "5ad9f305-f23f-4a14-85e8-c4586684ac72",
         description: "Helicopters that land at camps near the Jaka Itzel waypoint take players up to the [Champions Cotoni and Huetzi](https://wiki.guildwars2.com/wiki/Kill_Cotoni_and_Huetzi) boss event." 
       },
-      { 
-        name: "Mellaggan's Valor", 
-        code: "[&BNUHAAA=]",
+      {
+        waypointId: "ffeb2cc3-75a6-43e6-a973-421af2d3a107",
         description: "Helicopters that land at camps near Mellaggan's Valor take players up to the [Mordrem Tetrad](https://wiki.guildwars2.com/wiki/Kill_the_tetrad_of_Mordrem_champions) boss event."
       },
-      { 
-        name: "Pact Encampment", 
-        code: "[&BAgIAAA=]",
+      {
+        waypointId: "58151f49-8998-4c51-b6d1-351ca5ee7bb9",
         description: "Helicopters that land at camps near the Pact Encampment waypoint take players up to the [Wyvern Matriarch](https://wiki.guildwars2.com/wiki/Kill_the_wyvern_matriarch) boss event." 
       },
-      { 
-        name: "Shipwreck Peak", 
-        code: "[&BN4HAAA=]",
+      {
+        waypointId: "7c458799-f14f-4e8f-801e-91352d7b6828",
         description: "Helicopters that land at camps just south of the Shipwreck Peak waypoint take players up to the [Wyvern Patriarch](https://wiki.guildwars2.com/wiki/Kill_the_Wyvern_Patriarch) boss event."
       }
     ],
@@ -58,31 +53,26 @@ export const EVENTS: Event[] = [
     name: "The Octovine",
     zone: "Auric Basin",
     description: "Stop the Mordrem from taking Tarir. Don't screw up South.",
-    primaryWaypoint: { name: "Forgotten City", code: "[&BMYHAAA=]" },
+    primaryWaypointId: "299425a1-b208-4b7b-9bbe-b216bc5e85e1",
     waypoints: [
       { 
-        name: "Northwatch", 
-        code: "[&BN0HAAA=]",
+        waypointId: "11f0c660-6360-4255-9378-65bc19d7c976",
         description: "Northwatch is the closest waypoint to the northern octovine event." 
       },
-      { 
-        name: "Eastwatch", 
-        code: "[&BGwIAAA=]",
+      {
+        waypointId: "74682ca2-891e-4ec7-a5c6-caac0d4781e5",
         description: "Eastwatch is the closest waypoint to the eastern octovine event. If you have the Nuhoch Wallows mastery, you can also take a wallow from this waypoint to the western octovine." 
       },
-      { 
-        name: "Southwatch", 
-        code: "[&BAIIAAA=]",
+      {
+        waypointId: "bdbc4ba9-47fd-43b8-a6b2-e5bcf5f59458",
         description: "Southwatch is the closest waypoint to the southern octovine event." 
       },
-      { 
-        name: "Westwatch Peak", 
-        code: "[&BAYIAAA=]",
+      {
+        waypointId: "b1414c58-ed92-4225-8045-91ab390f7f4e",
         description: "Westwatch is the closest waypoint to the southern octovine event. If you have the Nuhoch Wallows mastery, you can also take a wallow from this waypoint to the eastern octovine."
       },
-      { 
-        name: "Forgotten City", 
-        code: "[&BMYHAAA=]",
+      {
+        waypointId: "299425a1-b208-4b7b-9bbe-b216bc5e85e1",
         description: "Situated directly in the heart of Tarir, this waypoint becomes contested once the event begins. However, it's a good central location to port to if you're traveling to Auric Basin in preparation of a sweet octovine beatdown."
       }
     ],
@@ -133,10 +123,16 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
     name: "Shadow of the Dragon",
     zone: "Dragon's Stand",
     description: "Three lanes. Three towers. One mouth. Also a weird body. Don't forget your machetes!",
-    primaryWaypoint: { name: "Pact Base Camp", code: "[&BBAIAAA=]" },
+    primaryWaypointId: "95718376-f193-49bb-895e-ebe66c966c41",
     waypoints: [
-      { name: "Pact Base Camp", code: "[&BBAIAAA=]" },
-      { name: "Pact Base Camp Southern", code: "[&BHoIAAA=]" }
+      {
+        waypointId: "95718376-f193-49bb-895e-ebe66c966c41",
+        description: "From here to anywhere."
+      },
+      {
+        waypointId: "84b876d6-d215-4e6d-8497-4a6f227def52",
+        description: "Pod farming has to start from somewhere, right?"
+      }
     ],
     duration: 5.4e+6,
     offsetFromUtcMidnight: 0,
@@ -166,21 +162,18 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
     name: "Sandstorm!",
     zone: "Dry Top",
     description: "The most profitable recurring environmental disaster since Disney World.",
-    primaryWaypoint: { name: "Prosperity", code: "[&BHoHAAA=]" },
+    primaryWaypointId: "9941ef2d-98eb-4c82-afc1-58fb2e2961c9",
     waypoints: [
-      { 
-        name: "Prosperity", 
-        code: "[&BHoHAAA=]",
+      {
+        waypointId: "9941ef2d-98eb-4c82-afc1-58fb2e2961c9",
         description: "This is the unofficial central waypoint of the event. Multiple key events occur near here, including the Sand Giant, the [Haze escort event](https://wiki.guildwars2.com/wiki/Escort_Haze_to_safety), and the dust tornado." 
       },
-      { 
-        name: "Restoration Refuge", 
-        code: "[&BIgHAAA=]",
+      {
+        waypointId: "e9cfb5f5-bcfe-479f-8073-c71ecf1ebbe8",
         description: "No idea. This seems important, though. \"Refuge\" has a nice ring to it." 
       },
-      { 
-        name: "Repair Station", 
-        code: "[&BJcHAAA=]",
+      {
+        waypointId: "9bf28b0e-e164-40f5-bcfe-88613f3316a9",
         description: "This waypoint is the one nearest the [skritt queen](https://wiki.guildwars2.com/wiki/Defeat_Queen_Chrii'kkt_IV_and_her_royal_subjects) and a few other events."
       }
     ],

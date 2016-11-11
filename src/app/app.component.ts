@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app',
+  selector: 'app-lal',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css', './global.css'],
   /* this makes it so that CSS that i put in global.css applies globally, but it seems scary */

@@ -1,5 +1,5 @@
 h2 {
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 
 h3 {
@@ -12,6 +12,14 @@ h4 {
     font-weight: lighter;
     font-style: italic;
     margin-bottom:48px;
+}
+
+.subtle-label {
+    color: var(--color-subtle);
+}
+
+.event-start-info {
+    margin-bottom: 1.8em;
 }
 
 .event-content {

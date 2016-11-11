@@ -4,7 +4,10 @@
         "typings/": true,
         "src/**/*.js": true,
         "**/*.js.map": true,
-        "**/*.spec.js": true
+        "**/*.map": true,
+        "**/*.spec.js": true,
+        "dist/": true
     },
-    "typescript.tsdk": "./node_modules/typescript/lib"
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "codeGuid.showNotificationWhenGuidGenerated": false
 }
