@@ -9,4 +9,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+// TODO: don't be a dork
+setTimeout(() => { platformBrowserDynamic().bootstrapModule(AppModule) }, 2000);

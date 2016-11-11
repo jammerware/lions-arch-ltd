@@ -5,13 +5,13 @@
 }
 
 #app-content {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   flex: 1;
   padding: 1em;
 }
 
 #app-titlebar {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   display: flex;
   flex-shrink: 0;
   height: 4.2em;
@@ -20,7 +20,7 @@
 }
 
 #app-titlebar h1 {
-  color: var(--color-accent);
+  color: var(--color-primary);
   display: inline;
   flex: 1;
   font-family: EasonPro-Caps;
@@ -35,7 +35,7 @@ nav {
 }
 
 nav a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 20px 0px 0px;
   font-size: 1.2em;
 	text-transform: lowercase;

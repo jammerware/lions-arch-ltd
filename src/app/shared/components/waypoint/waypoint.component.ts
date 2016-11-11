@@ -23,6 +23,8 @@ export class WaypointComponent implements OnInit {
 
     ngOnInit() { 
         this.iconUrl = this.assetService.getUrl('images/icons/waypoint.png');
-        this.clipboardService.init((clipboardEvent: any) => this.toastService.show(`Copied ${this.waypoint.code} to clipboard.`, this.viewContainerRef));
+        this.clipboardService.init((clipboardEvent: any) => {
+            this.toastService.show(`Copied ${this.waypoint.code} to clipboard.`, this.viewContainerRef)
+        });
     }
 }

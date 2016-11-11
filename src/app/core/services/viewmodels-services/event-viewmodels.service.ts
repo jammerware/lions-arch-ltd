@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import 'rxjs';
 
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';

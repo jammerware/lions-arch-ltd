@@ -1,0 +1,79 @@
+/* variables */
+:root {
+	--color-accent: #2980b9;
+	--color-primary: #ecf0f1;
+	--color-subtle: #aaaaaa;
+
+	/* rarity */
+	--color-rarity-legendary: #4c139d;
+	--color-rarity-ascended: #fb3e8d;
+	--color-rarity-exotic: #ffa405;
+}
+
+/* fonts */
+@font-face {
+  font-family: "EasonPro-Caps";
+  src: url(../assets/fonts/easonpro-displaycaps-webfont.woff);
+}
+
+@font-face {
+  font-family: "EasonPro";
+  src: url(../assets/fonts/easonpro-regular-webfont.woff);
+}
+
+/* Master Styles */
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+h2 {
+  color: var(--color-accent);
+  font-family: EasonPro-Caps;
+	font-size: 1.7em;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+a {
+	color: var(--color-accent);
+  text-decoration: none;
+}
+
+* {
+  font-family: Droid Sans, Arial, Helvetica, sans-serif;
+}
+
+/* controls */
+.tab-content {
+	margin-top:1.2em;
+}
+
+/* styles for markdown pipe */
+.markdown {
+	line-height: 1.3em;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+	color: var(--color-accent);
+	font-family: EasonPro;
+	margin-bottom:0.2em;
+}
+
+.markdown h1 {
+	font-size: 1.7em;
+}
+
+.markdown h2 {
+	font-size: 1.3em;
+}
+
+.markdown p {
+	margin-bottom: 1.3em;
+}
+
+.markdown ul {
+	list-style: square inside;
+}

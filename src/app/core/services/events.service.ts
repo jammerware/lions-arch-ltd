@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 import 'rxjs/add/observable/of';
 
 import { Event } from '../../shared/models/event';
@@ -23,10 +24,10 @@ export class EventsService {
     let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
     let timeOfNextEvent = 0;
 
-    for(let i = event.offsetFromUtcMidnight; timeOfNextEvent < msSinceMidnightUtc; i += event.interval) {
+    for(let i = event.offsetFromUtcMidnight; timeOfNextEvent < msSinceMidnightUtc - event.duration; i += event.interval) {
       timeOfNextEvent = i;
     }
-
+    
     let observable = Observable.of(timeOfNextEvent - msSinceMidnightUtc);
     return observable;
   }
