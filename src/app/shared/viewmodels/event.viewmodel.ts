@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs/Observable';
 
-import { GoalContributionViewModel } from './goal-contribution.viewmodel';
-import { EventWaypointViewModel } from '../viewmodels/event-waypoint.viewmodel';
 import { Waypoint } from '../models/waypoint';
+import { EventWaypointViewModel } from '../viewmodels/event-waypoint.viewmodel';
+import { GoalContributionViewModel } from './goal-contribution.viewmodel';
 
 export class EventViewModel {
     id: string;
@@ -12,7 +12,7 @@ export class EventViewModel {
     primaryWaypoint: Observable<Waypoint>;
     waypoints: Observable<EventWaypointViewModel[]>;
     guide?: string;
-    countdownText: string;
+    countdownLocalization: string;
     goalContributions: Observable<GoalContributionViewModel[]>;
-    msTilNextOccurrence: Observable<number>;
+    msTilNextOccurrence: number;
 }

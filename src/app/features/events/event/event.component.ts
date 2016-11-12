@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
 import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
-import { EventsService } from '../../../core/services/events.service';
+import { EventsService } from '../../../core/services/events-service/events.service';
 
 @Component({
   selector: 'event',

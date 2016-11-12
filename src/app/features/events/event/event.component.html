@@ -4,7 +4,7 @@
     <waypoint [waypoint]="viewModel?.primaryWaypoint | async"></waypoint>
     |
     <span class="subtle-label">starts</span>
-    <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
+    <span class="accent-label">{{viewModel?.msTilNextOccurrence | timeUntil}}</span>
 </div>
 
 <h4>{{viewModel?.description}}</h4>

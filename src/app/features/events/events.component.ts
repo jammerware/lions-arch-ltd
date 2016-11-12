@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { EventsService } from '../../core/services/events.service';
+import { EventsService } from '../../core/services/events-service/events.service';
 import { Event } from '../../shared/models/event';
 
 @Component({

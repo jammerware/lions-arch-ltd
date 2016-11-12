@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ILocalizationService } from './ilocalization.service';
+import { EventCountdownLocalization } from '../../../shared/models/event-countdown-localization';
 
 @Injectable()
 export class EnLocalizationService implements ILocalizationService {
   // expressions
+  about: string = 'about';
+  ago: string = 'ago';
   inAbout: string = 'in about';
+  inLessThanAMinute: string = 'in less than a minute';
   inALongTime: string = 'in a really freaking long time';
 
   // actual units of time
@@ -29,16 +33,26 @@ export class EnLocalizationService implements ILocalizationService {
   aDay: string = 'a day';
 
   // oops
-  unspecifiedError: string = 'Something\'s not quite right...';
+  unspecifiedError: string = '...';
 
   // countdown text
   private readonly COUNTDOWN_TEXT: any = {
-    ab: 'The lootsplosion begins',
-    ds: 'The Mouth opens',
-    vb: 'Night falls',
+    ab: {
+      pastTenseCountdown: 'The lootsplosion began',
+      presentTenseCountdown: 'The lootsplosion begins'
+    },
+    ds: {
+      pastTenseCountdown: 'The Mouth opened',
+      presentTenseCountdown: 'The Mouth opens',
+    },
+    vb: {
+      pastTenseCountdown: 'Night fell',
+      presentTenseCountdown: 'Night falls'
+    },
   };
 
-  public getCountdownText(eventKey: string): string {
-    return this.COUNTDOWN_TEXT[eventKey] || 'Starts';
+  public getCountdownLocalization(eventKey: string, msUntilActiveOccurrnce: number): string {
+    let countdownLocalization: EventCountdownLocalization = this.COUNTDOWN_TEXT[eventKey] || { pastTenseCountdown: 'Started', presentTenseCountdown: 'Starts' };
+    return msUntilActiveOccurrnce >= 0 ? countdownLocalization.presentTenseCountdown : countdownLocalization.pastTenseCountdown;
   }
 }

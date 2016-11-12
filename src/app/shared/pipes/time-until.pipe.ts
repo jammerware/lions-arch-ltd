@@ -8,30 +8,38 @@ export class TimeUntilPipe implements PipeTransform {
   constructor(@Inject(ILOCALIZATIONSERVICE) private localizationService: ILocalizationService) { }
 
   transform(milliseconds: number): string {
-    if(!milliseconds || milliseconds < 0)
-      return this.localizationService.unspecifiedError;
-    else if (milliseconds < 60000)
-      return "anytime now!"
+    if (milliseconds < 60000 && milliseconds >= 0)
+      return this.localizationService.inLessThanAMinute;
+
+    // resolve negative values
+    let about: string = `${this.localizationService.inAbout} `;
+    let ago: string = '';
+
+    if(milliseconds < 0) {
+      ago = ` ${this.localizationService.ago}`;
+      about = `${this.localizationService.about}`;
+      milliseconds = Math.abs(milliseconds);
+    }
 
     // minutes
     var remaining = Math.round(milliseconds / 60000);
     if(remaining < 60) {
-      if(remaining == 1) return `${this.localizationService.inAbout} ${this.localizationService.aMinute}`;
-      return `${this.localizationService.inAbout} ${remaining} ${this.localizationService.minutes}`;
+      if(remaining == 1) return `${about} ${this.localizationService.aMinute}`;
+      return `${about} ${remaining} ${this.localizationService.minutes}${ago}`;
     }
 
     // hours
     remaining = Math.round(remaining / 60);
     if(remaining < 24) {
-      if(remaining == 1) return `${this.localizationService.inAbout} ${this.localizationService.anHour}`;
-      return `${this.localizationService.inAbout} ${remaining} ${this.localizationService.hours}`;
+      if(remaining == 1) return `${about} ${this.localizationService.anHour}`;
+      return `${about} ${remaining} ${this.localizationService.hours}${ago}`;
     }
 
     // days
     remaining = Math.round(remaining / 24);
     if(remaining < 7) {
-      if(remaining == 1) return `${this.localizationService.inAbout} ${this.localizationService.aDay}`;
-      return `${this.localizationService.inAbout} ${remaining} ${this.localizationService.days}`;
+      if(remaining == 1) return `${about} ${this.localizationService.aDay}`;
+      return `${about} ${remaining} ${this.localizationService.days}${ago}`;
     }
 
     return this.localizationService.inALongTime;

@@ -1,11 +1,15 @@
 import { OpaqueToken } from '@angular/core';
+import { EventCountdownLocalization } from '../../../shared/models/event-countdown-localization';
 
 export let ILOCALIZATIONSERVICE = new OpaqueToken('ILocalizationService');
 
 export interface ILocalizationService {
   // expressions
+  readonly about: string;
+  readonly ago: string;
   readonly inAbout: string;
   readonly inALongTime: string;
+  readonly inLessThanAMinute: string;
 
   // actual units of time
   readonly second: string;
@@ -32,5 +36,5 @@ export interface ILocalizationService {
   readonly unspecifiedError: string;
 
   // countdown text
-  getCountdownText(eventKey: string): string;
+  getCountdownLocalization(eventKey: string, msUntilActiveOccurrence: number): string;
 }
