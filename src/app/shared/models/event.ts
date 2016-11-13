@@ -1,6 +1,7 @@
 import { IGoalContributor } from './igoalcontributor';
 import { GoalContribution } from './goal-contribution';
 import { EventWaypoint } from './event-waypoint';
+import { Timespan } from '../../timespan/timespan';
 
 export class Event implements IGoalContributor {
   id: string;
@@ -11,8 +12,7 @@ export class Event implements IGoalContributor {
   primaryWaypointId: string;
   waypoints: EventWaypoint[];
   duration?: number; // length of the event. we'll do this in ms for now. can be null if the event length is dependent on performance
-  offsetFromUtcMidnight: number; // how many ms after utc midnight the first occurence starts
-  interval: number; // number of ms between the beginning instances of the event (keep an eye on whether this is different than duration)
+  occurrenceOffsets: Timespan[];
   goalContributions: GoalContribution[];
   guide?: string;
 }

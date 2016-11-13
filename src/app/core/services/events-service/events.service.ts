@@ -3,7 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 import { Event } from '../../../shared/models/event';
-import { EVENTS } from '../../mock-data/mock-events';
+import { MOCK_EVENTS } from '../../mock-data/mock-events';
+import { Timespan } from '../../../timespan/timespan';
 import { TimespanService } from '../../../timespan/timespan.service';
 
 @Injectable()
@@ -11,39 +12,35 @@ export class EventsService {
   constructor(private timespanService: TimespanService) { }
 
   getEvent(id: string): Observable<Event> {
-    return Observable.of(EVENTS.find(e => e.id === id));
+    return Observable.of(MOCK_EVENTS.find(e => e.id === id));
   }
 
   getEvents(): Observable<Event[]> {
-    return Observable.of(EVENTS);
+    return Observable.of(MOCK_EVENTS);
   }
 
   getOffsetOfNextOccurrenceSync(event: Event): number {
-    let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
-    let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
-    let timeOfNextEvent = event.offsetFromUtcMidnight;
+    // TODO: the next event after 15 minutes ago
+    let msInADay = Timespan.fromHours(24).totalMilliseconds;
+    let nowish = (this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds - 72000 + msInADay) % msInADay;
+    let eventOffsetIndex = 0;
+    let eventOffset = event.occurrenceOffsets[eventOffsetIndex];
 
-    // if we're 20 minutes or less into the event's active occurrence, report that it's going on right now
-    while(timeOfNextEvent < msSinceMidnightUtc - 72000) {
-      timeOfNextEvent += event.interval;
+    while (nowish - eventOffset.totalMilliseconds < 0) {
+      eventOffsetIndex++;
+      eventOffset = event.occurrenceOffsets[eventOffsetIndex];
     }
 
-    return timeOfNextEvent;
+    console.log(eventOffset);
+
+    return eventOffset.totalMilliseconds;
   }
 
   getMsTilNextOccurrenceOfSync(event: Event): number {
-    let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
-    let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
-    let timeOfNextEvent = event.offsetFromUtcMidnight;
-
-    // if we're 20 minutes or less into the event's active occurrence, report that it's going on right now
-    while(timeOfNextEvent < msSinceMidnightUtc - 72000) {
-      timeOfNextEvent += event.interval;
-    }
-
-    console.log("Final time of next event", timeOfNextEvent);
-    
-    return timeOfNextEvent - msSinceMidnightUtc;
+    let msSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds;
+    let offsetOfNextEvent = this.getOffsetOfNextOccurrenceSync(event);
+  
+    return offsetOfNextEvent - msSinceMidnightUtc;
   }
 
   getMsTilNextOccurrenceOf(event: Event): Observable<number> {

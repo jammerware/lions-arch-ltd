@@ -1,6 +1,7 @@
 import { Event } from '../../shared/models/event';
+import { Timespan } from '../../timespan/timespan';
 
-export const EVENTS: Event[] = [
+export const MOCK_EVENTS: Event[] = [
   {
     id: "215af12c-e3be-4cc7-b041-c87f7a71fee7",
     name: "Night and the Enemy",
@@ -30,8 +31,20 @@ export const EVENTS: Event[] = [
       }
     ],
     duration: 2.7e+6,
-    offsetFromUtcMidnight: 4.5e+6,
-    interval: 7.2e+6,
+    occurrenceOffsets: [
+      Timespan.fromMinutes(45),
+      Timespan.fromHours(2.75),
+      Timespan.fromHours(4.75),
+      Timespan.fromHours(6.75),
+      Timespan.fromHours(8.75),
+      Timespan.fromHours(10.75),
+      Timespan.fromHours(12.75),
+      Timespan.fromHours(14.75),
+      Timespan.fromHours(16.75),
+      Timespan.fromHours(18.75),
+      Timespan.fromHours(20.75),
+      Timespan.fromHours(22.75)
+    ],
     goalContributions: [
       {
         description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
@@ -77,8 +90,20 @@ export const EVENTS: Event[] = [
       }
     ],
     duration: 1.2e+6,
-    offsetFromUtcMidnight: 0,
-    interval: 5.4e+6,
+    occurrenceOffsets: [
+      Timespan.fromMilliseconds(0),
+      Timespan.fromHours(2),
+      Timespan.fromHours(4),
+      Timespan.fromHours(6),
+      Timespan.fromHours(8),
+      Timespan.fromHours(10),
+      Timespan.fromHours(12),
+      Timespan.fromHours(14),
+      Timespan.fromHours(16),
+      Timespan.fromHours(18),
+      Timespan.fromHours(20),
+      Timespan.fromHours(22),
+    ],
     goalContributions: [
       {
         description: "Most of the [Luminate's Backplate](https://wiki.guildwars2.com/wiki/Luminate's_Backplate_(achievement)) collection is connected to this event, so get cracking if you want to look like a giant floaty shinything. And also have an [ascended backpack](https://wiki.guildwars2.com/wiki/Luminate's_Backplate).",
@@ -135,8 +160,20 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
       }
     ],
     duration: 5.4e+6,
-    offsetFromUtcMidnight: 0,
-    interval: 5.4e+6,
+    occurrenceOffsets: [
+      Timespan.fromMinutes(30),
+      Timespan.fromHours(2.5),
+      Timespan.fromHours(4.5),
+      Timespan.fromHours(6.5),
+      Timespan.fromHours(8.5),
+      Timespan.fromHours(10.5),
+      Timespan.fromHours(12.5),
+      Timespan.fromHours(14.5),
+      Timespan.fromHours(16.5),
+      Timespan.fromHours(18.5),
+      Timespan.fromHours(20.5),
+      Timespan.fromHours(22.5),
+    ],
     goalContributions: [
       {
         description: "This meta-event is the only source of [Crystalline Ore](https://wiki.guildwars2.com/wiki/Crystalline_Ore) in the game, which is used for all kinds of stuff",
@@ -178,8 +215,32 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
       }
     ],
     duration: 1.2e+6,
-    offsetFromUtcMidnight: 2.4e+6,
-    interval: 3.6e+6,
+    occurrenceOffsets: [
+      Timespan.fromMinutes(40),
+      Timespan.fromHours(1.6667),
+      Timespan.fromHours(2.6667),
+      Timespan.fromHours(3.6667),
+      Timespan.fromHours(4.6667),
+      Timespan.fromHours(5.667),
+      Timespan.fromHours(6.667),
+      Timespan.fromHours(7.667),
+      Timespan.fromHours(8.667),
+      Timespan.fromHours(9.667),
+      Timespan.fromHours(10.667),
+      Timespan.fromHours(11.667),
+      Timespan.fromHours(12.667),
+      Timespan.fromHours(13.667),
+      Timespan.fromHours(14.667),
+      Timespan.fromHours(15.667),
+      Timespan.fromHours(16.667),
+      Timespan.fromHours(17.667),
+      Timespan.fromHours(18.667),
+      Timespan.fromHours(19.667),
+      Timespan.fromHours(20.667),
+      Timespan.fromHours(21.667),
+      Timespan.fromHours(22.667),
+      Timespan.fromHours(23.667)
+    ],
     goalContributions: [
       {
         description: "Who can resist the call of Eternity?",
