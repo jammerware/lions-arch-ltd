@@ -18,6 +18,19 @@ export class EventsService {
     return Observable.of(EVENTS);
   }
 
+  getOffsetOfNextOccurrenceSync(event: Event): number {
+    let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
+    let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
+    let timeOfNextEvent = event.offsetFromUtcMidnight;
+
+    // if we're 20 minutes or less into the event's active occurrence, report that it's going on right now
+    while(timeOfNextEvent < msSinceMidnightUtc - 72000) {
+      timeOfNextEvent += event.interval;
+    }
+
+    return timeOfNextEvent;
+  }
+
   getMsTilNextOccurrenceOfSync(event: Event): number {
     let timespanSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc();
     let msSinceMidnightUtc = timespanSinceMidnightUtc.totalMilliseconds;
@@ -25,9 +38,10 @@ export class EventsService {
 
     // if we're 20 minutes or less into the event's active occurrence, report that it's going on right now
     while(timeOfNextEvent < msSinceMidnightUtc - 72000) {
-      console.log(timeOfNextEvent);
       timeOfNextEvent += event.interval;
     }
+
+    console.log("Final time of next event", timeOfNextEvent);
     
     return timeOfNextEvent - msSinceMidnightUtc;
   }
