@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
+
 import 'rxjs/add/observable/of';
-import 'rxjs';
+import 'rxjs/add/observable/interval';
 
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
@@ -21,23 +22,19 @@ export class EventViewModelsService {
         private waypointsService: WaypointsService
     ) { }
 
-    public getViewModel(event: Event): Observable<EventViewModel> {
-        // TODO: learn how to literally anything with observables, because WOW
-        return this.eventsService
-            .getMsTilNextOccurrenceOf(event)
-            .map((ms) => {
-                return {
-                    id: event.id,
-                    name: event.name,
-                    zone: event.zone,
-                    description: event.description,
-                    primaryWaypoint: this.waypointsService.getWaypoint(event.primaryWaypointId),
-                    waypoints: this.eventWaypointViewModelsService.getEventWaypointViewModels(event.waypoints),
-                    guide: event.guide,
-                    goalContributions: this.goalContributionsViewModelsService.getViewModels(event.goalContributions),
-                    msTilNextOccurrence: ms,
-                    countdownLocalization: this.localizationService.getCountdownLocalization(event.key, ms)
-                }
-            });
+    public getViewModel(event: Event): EventViewModel {
+        return {
+            id: event.id,
+            name: event.name,
+            zone: event.zone,
+            description: event.description,
+            primaryWaypoint: this.waypointsService.getWaypoint(event.primaryWaypointId),
+            waypoints: this.eventWaypointViewModelsService.getEventWaypointViewModels(event.waypoints),
+            guide: event.guide,
+            goalContributions: this.goalContributionsViewModelsService.getViewModels(event.goalContributions),
+            msTilNextOccurrence: this.eventsService.getMsTilNextOccurrenceOf(event),
+            // TODO: call to getCountdownLocalization
+            countdownLocalization: this.localizationService.getCountdownLocalization(event.key, 1)
+        };
     }
 }

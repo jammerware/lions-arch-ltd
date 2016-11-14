@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
 import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
@@ -23,12 +24,10 @@ export class EventComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       let id = params['id'];
 
-      // TODO: this can't be right
       this.eventsService
         .getEvent(id)
-        .subscribe(event => this.eventViewModelsService
-          .getViewModel(event)
-          .subscribe(vm => this.viewModel = vm)
+        .subscribe(event =>
+          this.viewModel = this.eventViewModelsService.getViewModel(event)
         );
     });
   }

@@ -14,5 +14,5 @@ export class EventViewModel {
     guide?: string;
     countdownLocalization: string;
     goalContributions: Observable<GoalContributionViewModel[]>;
-    msTilNextOccurrence: number;
+    msTilNextOccurrence: Observable<number>;
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/interval';
 
 import { Event } from '../../../shared/models/event';
 import { MOCK_EVENTS } from '../../mock-data/mock-events';
@@ -20,9 +21,8 @@ export class EventsService {
   }
 
   getOffsetOfNextOccurrenceSync(event: Event): number {
-    // TODO: the next event after 15 minutes ago
     let msInADay = Timespan.fromHours(24).totalMilliseconds;
-    let nowish = (this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds - 72000 + msInADay) % msInADay;
+    let nowish = (this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds - 900000 + msInADay) % msInADay;
     let eventOffsetIndex = 0;
     let eventOffset = event.occurrenceOffsets[eventOffsetIndex];
 
@@ -41,6 +41,8 @@ export class EventsService {
   }
 
   getMsTilNextOccurrenceOf(event: Event): Observable<number> {
-    return Observable.of(this.getMsTilNextOccurrenceOfSync(event));
+    return Observable
+      .interval(20000)
+      .map(() =>  { return this.getMsTilNextOccurrenceOfSync(event); });
   }
 }

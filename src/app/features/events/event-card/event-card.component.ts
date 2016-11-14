@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
@@ -11,21 +10,14 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./event-card.component.css'],
   templateUrl: './event-card.component.html'
 })
-export class EventCardComponent implements OnInit, OnDestroy {
+export class EventCardComponent implements OnInit {
   @Input() event: Event;
 
-  viewModel: EventViewModel;
-  private viewModelObservableSubscription: Subscription; 
+  private viewModel: EventViewModel; 
 
   constructor(private eventViewModelsService: EventViewModelsService) { }
 
   ngOnInit(): void {
-    this.viewModelObservableSubscription = this.eventViewModelsService
-      .getViewModel(this.event)
-      .subscribe(vm => this.viewModel = vm);
-  }
-
-  ngOnDestroy(): void {
-    this.viewModelObservableSubscription.unsubscribe();
+    this.viewModel = this.eventViewModelsService.getViewModel(this.event);
   }
 }
