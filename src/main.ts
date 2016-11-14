@@ -10,4 +10,4 @@ if (environment.production) {
 }
 
 // TODO: don't be a dork
-setTimeout(() => { platformBrowserDynamic().bootstrapModule(AppModule) }, 2000);
+setTimeout(() => { platformBrowserDynamic().bootstrapModule(AppModule); }, 2000);
