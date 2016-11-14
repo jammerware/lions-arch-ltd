@@ -9,6 +9,6 @@ export class Gw2ApiDailiesService {
     constructor(private http: Http) { }
 
     public getDailies(): Observable<Daily[]> {
-
+        
     }
 }
