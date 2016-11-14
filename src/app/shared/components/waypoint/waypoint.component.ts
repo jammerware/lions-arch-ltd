@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewContainerRef } from '@angular/core';
 
 import { AssetService } from '../../../core/services/asset.service';
 import { ClipboardService } from '../../../core/services/clipboard.service';
+import { NotificationsService } from '../../../core/services/notifications.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { Waypoint } from '../../models/waypoint';
 
@@ -17,14 +18,16 @@ export class WaypointComponent implements OnInit {
     constructor(
         private clipboardService: ClipboardService,
         private assetService: AssetService,
+        private notificationsService: NotificationsService,
         private toastService: ToastService,
         private viewContainerRef: ViewContainerRef
     ) { }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.iconUrl = this.assetService.getUrl('images/icons/waypoint.png');
         this.clipboardService.init((clipboardEvent: any) => {
-            this.toastService.show(`Copied ${this.waypoint.code} to clipboard.`, this.viewContainerRef)
+            this.toastService.show(`Copied ${this.waypoint.code} to clipboard.`, this.viewContainerRef);
+            this.notificationsService.say('Copied to your clipboard, son!');
         });
     }
 }

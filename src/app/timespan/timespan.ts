@@ -14,6 +14,8 @@ export class Timespan {
   totalMilliseconds: number;
 
   static fromMilliseconds(milliseconds: number): Timespan {
+    milliseconds = milliseconds || 0;
+
     return {
       milliseconds: milliseconds % 1000,
       seconds: Math.floor(milliseconds / 1000),
@@ -29,11 +31,23 @@ export class Timespan {
     };
   }
 
+  static from(hours?: number, minutes?: number, seconds?: number) {
+    return this.fromMilliseconds(
+      this.fromHours(hours).totalMilliseconds +
+      this.fromMinutes(minutes).totalMilliseconds +
+      this.fromSeconds(seconds).totalMilliseconds
+    );
+  }
+  
+  static fromSeconds(seconds: number): Timespan {
+    return this.fromMilliseconds((seconds || 0) * 1000);
+  }
+
   static fromMinutes(minutes: number): Timespan {
-    return this.fromMilliseconds(minutes * 6e4);
+    return this.fromMilliseconds((minutes || 0) * 6e4);
   }
 
   static fromHours(hours: number): Timespan {
-    return this.fromMilliseconds(hours * 3.6e6);
+    return this.fromMilliseconds((hours || 0) * 3.6e6);
   }
 }

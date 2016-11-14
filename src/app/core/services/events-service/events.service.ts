@@ -26,12 +26,9 @@ export class EventsService {
     let eventOffsetIndex = 0;
     let eventOffset = event.occurrenceOffsets[eventOffsetIndex];
 
-    while (nowish - eventOffset.totalMilliseconds < 0) {
-      eventOffsetIndex++;
+    while (nowish - eventOffset.totalMilliseconds > 0 && event.occurrenceOffsets[++eventOffsetIndex]) {
       eventOffset = event.occurrenceOffsets[eventOffsetIndex];
     }
-
-    console.log(eventOffset);
 
     return eventOffset.totalMilliseconds;
   }

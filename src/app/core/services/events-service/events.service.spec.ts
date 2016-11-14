@@ -17,7 +17,7 @@ function getTestEventWithOffsets(offsets: Timespan[]): Event {
         key: 'te',
         primaryWaypointId: '',
         waypoints: [],
-        occurrenceOffsets: offsets,
+        occurrenceOffsets: offsets || [ Timespan.fromMilliseconds(0) ],
         goalContributions: []
     }
 }
@@ -177,32 +177,22 @@ describe('Events service', () => {
       // arrange
       let event = getTestEventWithOffsets([
         Timespan.fromMinutes(40),
-        Timespan.fromHours(1.6667),
-        Timespan.fromHours(2.6667),
-        Timespan.fromHours(3.6667),
-        Timespan.fromHours(4.6667),
-        Timespan.fromHours(5.667),
-        Timespan.fromHours(6.667),
-        Timespan.fromHours(7.667),
-        Timespan.fromHours(8.667),
-        Timespan.fromHours(9.667),
-        Timespan.fromHours(10.667),
-        Timespan.fromHours(11.667),
-        Timespan.fromHours(12.667),
-        Timespan.fromHours(13.667),
-        Timespan.fromHours(14.667),
-        Timespan.fromHours(15.667),
-        Timespan.fromHours(16.667),
-        Timespan.fromHours(17.667),
-        Timespan.fromHours(18.667),
-        Timespan.fromHours(19.667),
-        Timespan.fromHours(20.667),
-        Timespan.fromHours(21.667),
-        Timespan.fromHours(22.667),
-        Timespan.fromHours(23.667)
+        Timespan.from(1, 40),
+        Timespan.from(2, 40),
+        Timespan.from(3, 40),
+        Timespan.from(4, 40),
+        Timespan.from(5, 40),
+        Timespan.from(6, 40),
+        Timespan.from(7, 40),
+        Timespan.from(8, 40),
+        Timespan.from(9, 40),
+        Timespan.from(10, 40),
+        Timespan.from(11, 40),
+        Timespan.from(12, 40),
+        Timespan.from(13, 40),
       ]);
 
-      let fakeNow = new Date(2016, 11, 11, 13, 40);
+      let fakeNow = new Date(2016, 11, 11, 13, 5);
       let fakeNowService: NowService = {
         get(): Date {
             return fakeNow;
@@ -217,9 +207,9 @@ describe('Events service', () => {
       let eventsService: EventsService = new EventsService(fakeTimespanService);
 
       // act
-      let result = eventsService.getMsTilNextOccurrenceOfSync(event);
+      let result = eventsService.getOffsetOfNextOccurrenceSync(event);
 
       // assert
-      expect(result).toBe(Timespan.fromHours(14).totalMilliseconds - Timespan.fromMinutes(20).totalMilliseconds);
+      expect(result).toBe(Timespan.from(13, 40).totalMilliseconds);
   });
 });

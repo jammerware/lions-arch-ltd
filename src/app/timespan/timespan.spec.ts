@@ -97,11 +97,19 @@ describe('The timespan class', function() {
         expect(timespan.centuries).toBe(1);
     });
 
-    it('should create a timespan with 1 decade when constructed with 3.154e13 as the argument to fromMilliseconds', function() {
+    it('should create a timespan with 1 millenium when constructed with 3.154e13 as the argument to fromMilliseconds', function() {
         // arrange/act
         let timespan = Timespan.fromMilliseconds(3.154e13);
 
         // assert
         expect(timespan.millennia).toBe(1);
+    });
+
+    it('should create a timespan with expected total milliseconds equal to 13 hours, 40 minutes when "from" is called with 13 and 40', function() {
+        // arrange/act
+        let timespan = Timespan.from(13, 40);
+
+        // assert
+        expect(timespan.totalMilliseconds).toBe(49200000);
     });
 });
