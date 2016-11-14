@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 // feature modules
+import { DailiesModule } from './features/dailies/dailies.module';
 import { EventsModule } from './features/events/events.module';
 
 // local components
@@ -21,6 +22,7 @@ import { AppComponent } from './app.component';
     ]),
     CoreModule,
     SharedModule,
+    DailiesModule,
     EventsModule
   ],
   declarations: [
