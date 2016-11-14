@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PushNotificationsService } from 'angular2-notifications';
-import 'rxjs/observable';
+import 'rxjs/Observable';
 
 import { ErrorService } from './error.service';
 
@@ -17,7 +17,8 @@ export class NotificationsService {
         }
     }
 
-    say(message: string): void {
+    public say(message: string): void {
+        this.requestPermission();
         this.pushNotificationsService.create("Heads up!", {
             body: message,
             renotify: false

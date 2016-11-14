@@ -9,6 +9,6 @@ export class ToastService {
 
     show(message: string, viewContainerRef: ViewContainerRef): void {
         let config = new MdSnackBarConfig(viewContainerRef);
-        this.snackBar.open(message, null, config);
+        this.snackBar.open(message, "Cool!" , config);
     }
 }
