@@ -1,7 +1,12 @@
 // external modules
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { PushNotificationsModule } from 'angular2-notifications';
 
+// GW2 API modules
+import { Gw2ApiModule } from '../gw2-api/gw2-api.module';
+
+// general application services
 import { AssetService } from './services/asset.service';
 import { ClipboardService } from './services/clipboard.service';
 import { ErrorService } from './services/error.service';
@@ -20,6 +25,8 @@ import { WaypointsService } from './services/waypoints.service';
 
 @NgModule({
   imports: [
+    Gw2ApiModule,
+    HttpModule,
     PushNotificationsModule
   ],
   providers: [
