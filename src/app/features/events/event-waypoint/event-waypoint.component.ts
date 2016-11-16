@@ -3,6 +3,7 @@ import { EventWaypointViewModel } from '../../../shared/viewmodels/event-waypoin
 
 @Component({
     selector: 'event-waypoint',
+    styleUrls: [ 'event-waypoint.component.css' ],
     templateUrl: './event-waypoint.component.html'
 })
 export class EventWaypointComponent {

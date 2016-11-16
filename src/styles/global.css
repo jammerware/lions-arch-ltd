@@ -55,6 +55,11 @@ a {
   margin-right: 16px;
 }
 
+.link-button {
+	color: var(--color-accent);
+	font-size: 1em;
+}
+
 .tab-content {
 	margin-top:1.2em;
 }

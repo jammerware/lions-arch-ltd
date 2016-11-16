@@ -1,0 +1,4 @@
+.event-waypoint {
+    display: flex;
+    flex-direction: row;
+}
