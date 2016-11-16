@@ -3,4 +3,5 @@ export class Achievement {
     name: string;
     description: string;
     requirement: string;
+    iconUrl: string;
 }

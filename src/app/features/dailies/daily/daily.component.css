@@ -1,0 +1,15 @@
+.daily {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5em;
+}
+
+.daily-description {
+    color: var(--color-subtle);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.daily-requirement {
+    margin-top: 1em;
+}

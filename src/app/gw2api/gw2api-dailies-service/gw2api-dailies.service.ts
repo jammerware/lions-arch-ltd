@@ -8,6 +8,7 @@ import { DailyContentRequirement } from './models/daily-content-requirement';
 import { DailyGroup } from './models/daily-group';
 import { DailyGroupType } from './models/daily-group-type';
 
+// NOTE: daily fractals: https://api.guildwars2.com/v2/achievements/categories/88
 const API_ENDPOINT: string = 'https://api.guildwars2.com/v2/achievements/daily';
 
 @Injectable()

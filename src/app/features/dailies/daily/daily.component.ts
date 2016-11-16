@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { DailyViewModel } from '../viewmodels/daily.viewmodel';
 
 @Component({
-    selector: 'lal-daily-card',
-    styleUrls: [ 'daily-card.component.css' ],
-    templateUrl: 'daily-card.component.html'
+    selector: 'lal-daily',
+    styleUrls: [ 'daily.component.css' ],
+    templateUrl: 'daily.component.html'
 })
-export class DailyCardComponent {
+export class DailyComponent {
     @Input() private daily: DailyViewModel;
 }

@@ -1,0 +1,13 @@
+<div class="daily">
+    <div class="daily-icon">
+        <img 
+            class="game-content-list-icon" 
+            [src]="(daily.achievement | async)?.iconUrl" 
+            [alt]="(daily.achievement | async)?.name" />
+    </div>
+    <div class="daily-info">
+        <h3>{{ (daily.achievement | async)?.name}}</h3>
+        <div class="daily-description" *ngIf="(daily.achievement | async)?.description">{{(daily.achievement | async)?.description}}</div>
+        <div class="daily-requirement" *ngIf="(daily.achievement | async)?.requirement">{{(daily.achievement | async)?.requirement}}</div>
+    </div>
+</div>

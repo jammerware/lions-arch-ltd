@@ -23,14 +23,31 @@ export class Gw2ApiAchievementsService {
             });
     }
 
+    getAchievements(ids: number[]): Observable<Achievement[]> {
+        return this.http
+            .get(API_ENDPOINT + `?ids=${ids.toString()}`)
+            .map((r) => {
+                let achievements: Achievement[] = [];
+
+                if(r.ok) {
+                    for(let achievementJson of r.json()) {
+                        achievements.push(this.parseAchievement(achievementJson));
+                    }
+                }
+
+                return null;
+            })
+    }
+
     parseAchievement(json: any): Achievement {
-        if(json.text == "no such id") return null;
+        if(json.text && json.text == "no such id") return null;
 
         return {
             id: json.id,
             name: json.name,
             description: json.description,
-            requirement: json.requirement
+            requirement: json.requirement,
+            iconUrl: json.icon
         };
     }
 }
