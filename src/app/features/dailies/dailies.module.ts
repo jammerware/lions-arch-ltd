@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // GW2 API modules
-import { Gw2ApiModule } from '../../gw2-api/gw2-api.module';
+import { Gw2ApiModule } from '../../gw2api/gw2api.module';
 
+import { DailyViewModelsService } from './services/daily-viewmodels.service';
 import { DailiesRoutingModule } from './dailies-routing.module';
-import { DailiesComponent } from './dailies.component';
+import { DailyCardComponent } from './daily-card/daily-card.component';
+import { DailiesLandingComponent } from './dailies-landing/dailies-landing.component';
 
 @NgModule({
     imports: [
@@ -14,6 +16,10 @@ import { DailiesComponent } from './dailies.component';
         Gw2ApiModule
     ],
     exports: [DailiesRoutingModule],
-    declarations: [DailiesComponent]
+    providers: [DailyViewModelsService],
+    declarations: [
+        DailyCardComponent,
+        DailiesLandingComponent
+    ]
 })
 export class DailiesModule { }

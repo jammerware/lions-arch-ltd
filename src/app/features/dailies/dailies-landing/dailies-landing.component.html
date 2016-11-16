@@ -1,0 +1,8 @@
+<h2>Dailies</h2>
+
+<div class="daily-group" *ngFor="let dailyGroup of dailyGroups">
+    <h3>{{dailyGroup.name}}</h3>
+    <div class="daily-cards">
+        <lal-daily-card [daily]="daily" *ngFor="let daily of dailyGroup.dailies"></lal-daily-card>
+    </div>
+</div>

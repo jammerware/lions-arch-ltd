@@ -32,7 +32,7 @@ html, body {
 h2 {
   color: var(--color-accent);
   font-family: EasonPro-Caps;
-	font-size: 1.7em;
+	font-size: 2.2em;
 	font-weight: bold;
 	margin-bottom: 1em;
 }
@@ -47,6 +47,14 @@ a {
 }
 
 /* controls */
+.content-card {
+  background-color: #e2e8e9;
+  width: 320px;
+  padding:6px;
+  margin: 0 1em 1em 0;
+  margin-right: 16px;
+}
+
 .tab-content {
 	margin-top:1.2em;
 }

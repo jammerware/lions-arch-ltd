@@ -1,0 +1,10 @@
+.daily-cards {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+h3 {
+    color: var(--color-accent);
+    font-family: EasonPro;
+    font-size: 1.8em;
+}

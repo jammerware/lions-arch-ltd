@@ -3,10 +3,10 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Daily } from '../models/daily';
-import { DailyContentRequirement } from '../models/daily-content-requirement';
-import { DailyGroup } from '../models/daily-group';
-import { DailyGroupType } from '../models/daily-group-type';
+import { Daily } from './models/daily';
+import { DailyContentRequirement } from './models/daily-content-requirement';
+import { DailyGroup } from './models/daily-group';
+import { DailyGroupType } from './models/daily-group-type';
 
 const API_ENDPOINT: string = 'https://api.guildwars2.com/v2/achievements/daily';
 
