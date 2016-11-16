@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/map';
 
 import { Event } from '../../../shared/models/event';
 import { MOCK_EVENTS } from '../../mock-data/mock-events';

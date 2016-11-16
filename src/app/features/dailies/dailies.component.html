@@ -1,1 +1,5 @@
 <h2>Dailies</h2>
+
+<div *ngFor="let daily of (dailies | async)">
+    {{daily.type.toString()}}
+</div>

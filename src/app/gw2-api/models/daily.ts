@@ -1,5 +1,8 @@
+import { DailyLevel } from './daily-level';
+import { DailyContentRequirement } from './daily-content-requirement';
+
 export class Daily {
-    id: string;
-    name: string;
-    description: string;
+    achievementId: number;
+    level: DailyLevel;
+    contentRequirement: DailyContentRequirement[];
 }
