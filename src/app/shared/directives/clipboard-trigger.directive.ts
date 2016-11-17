@@ -1,12 +1,17 @@
 import { Directive, ElementRef, Input, Renderer } from '@angular/core';
 import { ClipboardService } from '../../core/services/clipboard.service';
 
-@Directive({ selector: 'lal-clipboard-trigger' })
+@Directive({ selector: '[lalClipboardTrigger]' })
 export class ClipboardTriggerDirective {
-    @Input() private clipboardText: string;
+    @Input('lalClipboardTrigger') clipboardText: string;
+    @Input() donk: string;
 
     constructor(el: ElementRef, renderer: Renderer) {
-        renderer.setElementClass(el, ClipboardService.ClipboardTriggerClass, true);
-        renderer.setElementAttribute(el, 'attr.data-clipboard-text', this.clipboardText);
+        renderer.setElementClass(el.nativeElement, ClipboardService.ClipboardTriggerClass, true);
+        renderer.setElementAttribute(el.nativeElement, 'type', 'button');
+        renderer.setElementAttribute(el.nativeElement, 'data-clipboard-text', "the say anything game");
+
+        console.log('clipboardText is ', this.clipboardText);
+        console.log('donk is', this.donk);
     }
 }
