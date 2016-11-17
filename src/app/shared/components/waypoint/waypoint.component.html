@@ -1,4 +1,4 @@
-<button class="clipboard-trigger" [attr.data-clipboard-text]="waypoint.code">
+<button [lal-clipboard-trigger]="waypoint.code">
     <img class="waypoint-icon" [src]="iconUrl" [alt]="waypoint.name" />
     <span class="waypoint-name">{{waypoint.name}}</span>
 </button>
