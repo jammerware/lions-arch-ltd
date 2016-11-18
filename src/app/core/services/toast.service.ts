@@ -7,8 +7,14 @@ export class ToastService {
         private snackBar: MdSnackBar
     ) { }
 
-    show(message: string, viewContainerRef: ViewContainerRef): void {
-        let config = new MdSnackBarConfig(viewContainerRef);
-        this.snackBar.open(message, "Cool!" , config);
+    show(message: string, viewContainerRef: ViewContainerRef = null): void {
+
+        let donkConfig: MdSnackBarConfig = {
+            // TODO: when angular material publishes the build that has duration
+            // duration: 2000,
+            viewContainerRef: viewContainerRef
+        };
+        
+        this.snackBar.open(message, "Got it" , donkConfig);
     }
 }

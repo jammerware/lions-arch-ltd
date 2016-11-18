@@ -6,7 +6,8 @@ import { DailiesLandingComponent } from './dailies-landing/dailies-landing.compo
 @NgModule({
     imports: [
         RouterModule.forChild([
-            { path: 'dailies', component: DailiesLandingComponent }
+            { path: 'dailies', component: DailiesLandingComponent },
+            { path: 'dailies/:type', component: DailiesLandingComponent }
         ])
     ],
     exports: [RouterModule]

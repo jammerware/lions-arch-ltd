@@ -1,11 +1,8 @@
 import { fakeAsync, tick } from '@angular/core/testing';
-import { Http, Response, ResponseOptions, BaseRequestOptions } from '@angular/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 
 import { FakeHttpService } from '../../../test/fake-http.service';
 import { Gw2ApiDailiesService } from './gw2api-dailies.service';
-import { Daily } from './models/daily';
 import { DailyContentRequirement } from './models/daily-content-requirement';
 import { DailyGroup } from './models/daily-group';
 import { DailyGroupType } from './models/daily-group-type';
@@ -21,7 +18,7 @@ describe('The GW2API dailies service', function() {
         let service = getService();
 
         // act
-        let result = service.adaptDailies(json);
+        let result = service.parseDailies(json);
 
         // assert
         expect(result.length).toBe(1);
@@ -38,7 +35,7 @@ describe('The GW2API dailies service', function() {
         let service = getService();
 
         // act
-        let result = service.adaptDailyGroup('wvw', json['wvw']);
+        let result = service.parseDailyGroup('wvw', json['wvw']);
 
         // assert
         expect(result.type).toBe(DailyGroupType.wvw);
@@ -50,7 +47,7 @@ describe('The GW2API dailies service', function() {
         let service = getService();
 
         // act
-        let result = service.adaptDailyGroup('blonk', json);
+        let result = service.parseDailyGroup('blonk', json);
 
         // assert
         expect(result).toBeNull();
@@ -62,7 +59,7 @@ describe('The GW2API dailies service', function() {
         let service = getService();
 
         // act
-        let result = service.adaptDailyGroup('special', json);
+        let result = service.parseDailyGroup('special', json);
 
         // assert
         expect(result).toBeNull();
@@ -79,7 +76,7 @@ describe('The GW2API dailies service', function() {
 
         // act
         let dailies: DailyGroup[];
-        let result = service.getDailies().subscribe(r => dailies = r);
+        service.getDailies().subscribe(r => dailies = r);
         tick();
 
         // assert

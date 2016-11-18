@@ -11,32 +11,22 @@
 
 <div class="event-content">
     <md-tab-group>
-        <md-tab *ngIf="viewModel?.guide">
-            <template md-tab-label>QUICK GUIDE</template>
-            <template md-tab-content>
-                <div class="tab-content event-goals" [innerHtml]="viewModel?.guide | markdown">
-                </div>
-            </template>
+        <md-tab *ngIf="viewModel?.guide" label="QUICK GUIDE">
+            <div class="tab-content event-goals" [innerHtml]="viewModel?.guide | markdown"></div>
         </md-tab>
-        <md-tab>
-            <template md-tab-label>WAYPOINTS</template>
-            <template md-tab-content>
-                <ul class="tab-content">
-                    <li *ngFor="let waypoint of viewModel?.waypoints | async">
-                        <event-waypoint [eventWaypointViewModel]="waypoint"></event-waypoint>
-                    </li>
-                </ul>
-            </template>
+        <md-tab label="WAYPOINTS">
+            <ul class="tab-content">
+                <li *ngFor="let waypoint of viewModel?.waypoints | async">
+                    <event-waypoint [eventWaypointViewModel]="waypoint"></event-waypoint>
+                </li>
+            </ul>
         </md-tab>
-        <md-tab>
-            <template md-tab-label>GOALS</template>
-            <template md-tab-content>
-                <ul class="tab-content goal-contributions">
-                    <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
-                        <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
-                    </li>
-                </ul>
-            </template>
+        <md-tab label="GOALS">
+            <ul class="tab-content goal-contributions">
+                <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
+                    <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
+                </li>
+            </ul>
         </md-tab>
     </md-tab-group>
 </div>

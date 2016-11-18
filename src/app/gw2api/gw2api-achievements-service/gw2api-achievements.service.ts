@@ -40,7 +40,7 @@ export class Gw2ApiAchievementsService {
     }
 
     parseAchievement(json: any): Achievement {
-        if(json.text && json.text == "no such id") return null;
+        if (json.text && json.text === "no such id") { return null; }
 
         return {
             id: json.id,

@@ -2,36 +2,47 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/concat';
 
 import { Daily } from './models/daily';
 import { DailyContentRequirement } from './models/daily-content-requirement';
 import { DailyGroup } from './models/daily-group';
 import { DailyGroupType } from './models/daily-group-type';
 
-// NOTE: daily fractals: https://api.guildwars2.com/v2/achievements/categories/88
-const API_ENDPOINT: string = 'https://api.guildwars2.com/v2/achievements/daily';
+const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/daily';
+// i'm sure there's no way this bites me later
+const API_ENDPOINT_FRACTALS = 'https://api.guildwars2.com/v2/achievements/categories/88';
 
 @Injectable()
 export class Gw2ApiDailiesService {
     constructor(private http: Http) { }
 
     public getDailies(): Observable<DailyGroup[]> {
-        return this.http
-            .get(API_ENDPOINT)
-            .map(r => this.adaptData(r));
+        let standardDailies = this
+            .http.get(API_ENDPOINT)
+            .map(r => this.parseDailiesData(r));
+        
+        let fractalDailies = this
+            .http.get(API_ENDPOINT_FRACTALS)
+            .map(r => this.parseFractalDailiesData(r));
+
+        return standardDailies.concat(fractalDailies);
     }
 
-    private adaptData(response: Response): DailyGroup[] {
+    parseDailiesData(response: Response): DailyGroup[] {
         let dailyGroups: DailyGroup[] = [];
 
-        if(response.ok) {
+        if (response.ok) {
             let json: any = response.json();
             
-            for(let dailyGroupJson in json) {
-                let dailyGroup = this.adaptDailyGroup(dailyGroupJson, json[dailyGroupJson]);
+            for (let dailyGroupJson in json) {
+                // http://stackoverflow.com/questions/1963102/what-does-the-jslint-error-body-of-a-for-in-should-be-wrapped-in-an-if-statemen
+                if (json.hasOwnProperty(dailyGroupJson)) {
+                    let dailyGroup = this.parseDailyGroup(dailyGroupJson, json[dailyGroupJson]);
                 
-                if(dailyGroup) {
-                    dailyGroups.push(dailyGroup);
+                    if (dailyGroup) {
+                        dailyGroups.push(dailyGroup);
+                    }
                 }
             }
         }
@@ -39,13 +50,13 @@ export class Gw2ApiDailiesService {
         return dailyGroups;
     }
 
-    adaptDailyGroup(groupKey: any, groupDataJson: any): DailyGroup {
-        let groupType: DailyGroupType = this.adaptDailyGroupType(groupKey);
+    parseDailyGroup(groupKey: any, groupDataJson: any): DailyGroup {
+        let groupType: DailyGroupType = this.parseDailyGroupType(groupKey);
 
-        if(groupType) {
-            let dailies = this.adaptDailies(groupDataJson);
+        if (groupType) {
+            let dailies = this.parseDailies(groupDataJson);
 
-            if(dailies.length) {
+            if (dailies.length) {
                 return {
                     type: groupType,
                     dailies: dailies
@@ -56,14 +67,14 @@ export class Gw2ApiDailiesService {
         return null;
     }
 
-    adaptDailyGroupType(json: any): DailyGroupType {
+    parseDailyGroupType(json: any): DailyGroupType {
         let jsonString: string = json.toString();
-        if(DailyGroupType[jsonString] != undefined) return DailyGroupType[jsonString];
+        if (DailyGroupType[jsonString] !== undefined) { return DailyGroupType[jsonString]; }
 
         return null;
     }
 
-    adaptDailies(json: any): Daily[] {
+    parseDailies(json: any): Daily[] {
         let dailies: Daily[] = [];
 
         for(let dailyJson of json) {
@@ -74,9 +85,23 @@ export class Gw2ApiDailiesService {
                     max: dailyJson.level.max
                 },
                 contentRequirement: dailyJson.required_access.map(r => DailyContentRequirement[r])
-            }); 
+            });
         }
 
         return dailies;
+    }
+
+    parseFractalDailiesData(response: Response): DailyGroup {
+        return {
+            type: DailyGroupType.fractals,
+            dailies: [{
+                achievementId: 2956,
+                level: {
+                    min: 80,
+                    max: 80
+                },
+                contentRequirement: [ DailyContentRequirement.GuildWars2, DailyContentRequirement.HeartOfThorns ]
+            }]
+        };
     }
 }
