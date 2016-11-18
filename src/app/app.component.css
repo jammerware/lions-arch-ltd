@@ -14,18 +14,16 @@
   background-color: var(--color-accent);
   display: flex;
   flex-shrink: 0;
-  height: 4.2em;
   align-items: center;
   padding: 1em;
 }
 
-#app-titlebar h1 {
+h1, h1 a {
   color: var(--color-primary);
   display: inline;
   flex: 1;
   font-family: EasonPro-Caps;
-  font-size: 2.5em;
-	font-weight: bold;
+  font-size: 2em;
 }
 
 nav {

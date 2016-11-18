@@ -1,9 +1,9 @@
 import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
 import { ClipboardService } from '../../core/services/clipboard.service';
 
-@Directive({ selector: '[lalClipboardTrigger]' })
+@Directive({ selector: '[lal-clipboard-trigger]' })
 export class ClipboardTriggerDirective implements OnInit {
-    @Input('lalClipboardTrigger') clipboardText: string;
+    @Input('lal-clipboard-trigger') clipboardText: string;
 
     constructor(private elementRef: ElementRef, private renderer: Renderer) { }
 

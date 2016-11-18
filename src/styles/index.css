@@ -19,6 +19,7 @@ body {
 .loading-title div {
   font-family: EasonPro-Caps;
   font-size: 5em;
+  font-weight: bold;
 }
 
 /* controls */

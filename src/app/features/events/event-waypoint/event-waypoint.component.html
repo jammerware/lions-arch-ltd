@@ -4,7 +4,9 @@
         src="/assets/images/icons/waypoint-large.png"
         [alt]="eventWaypointViewModel.name" />
     <div class="waypoint-info">
-        <h3>{{eventWaypointViewModel?.waypoint.name}}</h3>
+        <button class="link-button" [lal-clipboard-trigger]="eventWaypoinViewModel?.waypoint.code">
+            <h3>{{eventWaypointViewModel?.waypoint.name}}</h3>
+        </button>
         <p class="event-waypoint-desc" [innerHtml]="eventWaypointViewModel?.description | markdown"></p>
     </div>
 </div>
