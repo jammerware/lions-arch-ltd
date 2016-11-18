@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'lal-settings',
-    templateUrl: 'settings.component.html'
+    templateUrl: 'settings-landing.component.html'
 })
-export class SettingsComponent implements OnInit {
+export class SettingsLandingComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }

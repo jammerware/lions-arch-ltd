@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 // feature modules
 import { DailiesModule } from './features/dailies/dailies.module';
 import { EventsModule } from './features/events/events.module';
+import { SettingsModule } from './features/settings/settings.module';
 
 // local components
 import { AppComponent } from './app.component';
@@ -23,11 +24,10 @@ import { AppComponent } from './app.component';
     CoreModule,
     SharedModule,
     DailiesModule,
-    EventsModule
+    EventsModule,
+    SettingsModule
   ],
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

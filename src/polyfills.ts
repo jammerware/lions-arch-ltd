@@ -17,3 +17,6 @@ import 'core-js/es6/reflect';
 
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
+
+// TODO: find out why i have to import hammerjs here, and if there's a way to do it in typings or something. i don't understand js modules.
+import 'hammerjs';
