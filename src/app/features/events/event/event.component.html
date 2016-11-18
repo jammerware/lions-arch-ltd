@@ -1,4 +1,4 @@
-<h3>{{viewModel?.zone}}'s</h3>
+<h3><a routerLink="/events">events</a> &gt; {{viewModel?.zone}}'s</h3>
 <h2>{{viewModel?.name}}</h2>
 <div class="event-start-info">
     <waypoint [waypoint]="viewModel?.primaryWaypoint | async"></waypoint>
@@ -7,7 +7,7 @@
     <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
 </div>
 
-<h4>{{viewModel?.description}}</h4>
+<h4 [innerHtml]="viewModel?.description | markdown"></h4>
 
 <div class="event-content">
     <md-tab-group>

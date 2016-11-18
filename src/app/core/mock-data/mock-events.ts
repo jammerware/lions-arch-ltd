@@ -65,7 +65,9 @@ export const MOCK_EVENTS: Event[] = [
     id: "5aff38bd-ffe0-4753-9ef2-e272b213d4de",
     name: "The Octovine",
     zone: "Auric Basin",
-    description: "Stop the Mordrem from taking Tarir. Don't screw up South.",
+    description: `Fly armors. Save the Exalted. Stop the Mordrem from taking Tarir.
+    
+  Don't screw up South.`,
     primaryWaypointId: "299425a1-b208-4b7b-9bbe-b216bc5e85e1",
     waypoints: [
       { 

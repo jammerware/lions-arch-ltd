@@ -14,12 +14,12 @@ import { EventsRoutingModule } from './events-routing.module';
         GoalContributionsModule,
         SharedModule
     ],
-    exports: [ EventsRoutingModule ],
     declarations: [
         EventCardComponent,
         EventComponent,
         EventsComponent,
         EventWaypointComponent
-    ]
+    ],
+    exports: [ EventsRoutingModule ]
 })
 export class EventsModule { }
