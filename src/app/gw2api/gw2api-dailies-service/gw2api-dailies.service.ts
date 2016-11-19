@@ -10,7 +10,7 @@ import { DailyGroup } from './models/daily-group';
 import { DailyGroupType } from './models/daily-group-type';
 
 const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/daily';
-// i'm sure there's no way this bites me later
+// i'm sure this is in no way a terrible idea
 const API_ENDPOINT_FRACTALS = 'https://api.guildwars2.com/v2/achievements/categories/88';
 
 @Injectable()
@@ -91,8 +91,35 @@ export class Gw2ApiDailiesService {
         return dailies;
     }
 
-    parseFractalDailiesData(response: Response): DailyGroup {
-        return {
+    parseFractalDailiesData(response: Response): DailyGroup[] {
+        let dailies: Daily[] = [];
+
+        if(response.ok) {
+            let json: any = response.json();
+            
+            for (let fractalAchievementId of json.achievements) {
+                dailies.push({
+                    achievementId: fractalAchievementId,
+                    level: {
+                        min: 80,
+                        max: 80
+                    },
+                    contentRequirement: [
+                        DailyContentRequirement.GuildWars2,
+                        DailyContentRequirement.HeartOfThorns
+                    ]
+                });
+            }
+        }
+
+        if(dailies.length) {
+            return [{
+                type: DailyGroupType.fractals,
+                dailies: dailies
+            }];
+        }
+
+        return [{
             type: DailyGroupType.fractals,
             dailies: [{
                 achievementId: 2956,
@@ -102,6 +129,6 @@ export class Gw2ApiDailiesService {
                 },
                 contentRequirement: [ DailyContentRequirement.GuildWars2, DailyContentRequirement.HeartOfThorns ]
             }]
-        };
+        }];
     }
 }

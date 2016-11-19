@@ -1,10 +1,8 @@
 <h2>Dailies</h2>
 
 <md-tab-group>
-    <md-tab *ngFor="let dailyGroup of dailyGroups" >
-        <template md-tab-label>
-            {{dailyGroup.name | uppercase}}
-        </template>
+    <md-tab *ngFor="let dailyGroup of dailyGroups">
+        <template md-tab-label>{{dailyGroup.name | uppercase}}</template>
         <ul class="tab-content">
             <li *ngFor="let daily of dailyGroup.dailies">
                 <lal-daily [daily]="daily"></lal-daily>            

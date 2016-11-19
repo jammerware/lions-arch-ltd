@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
-import { ClipboardService } from '../../core/services/clipboard.service';
+import { ClipboardService } from '../../core/services/clipboard/clipboard.service';
 
 @Directive({ selector: '[lal-clipboard-trigger]' })
 export class ClipboardTriggerDirective implements OnInit {

@@ -22,9 +22,9 @@ export class DailiesLandingComponent implements OnInit, OnDestroy {
         private dailyViewModelsService: DailyViewModelsService) { }
 
     ngOnInit() {
-        this.routeParamsSubscription = this.activatedRoute.params.subscribe(p => {
-            // TODO: investigate child routes and somehow use that to do the /dailies/wvw kinda route
-        });
+        // this.routeParamsSubscription = this.activatedRoute.params.subscribe(p => {
+        //     // TODO: investigate child routes and somehow use that to do the /dailies/wvw kinda route
+        // });
 
         this.dailiesService
             .getDailies()
