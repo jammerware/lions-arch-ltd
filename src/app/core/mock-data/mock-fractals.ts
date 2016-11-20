@@ -147,5 +147,50 @@ export const FRACTALS: Fractal[] = [
             { value: 87, recommendedAR: 127 },
             { value: 92, recommendedAR: 136 },
         ]
+    },
+    {
+        name: "Mai Trin",
+        isNight: false,
+        scales: [
+            { value: 25, recommendedAR: 17 },
+            { value: 50, recommendedAR: 61 },
+            { value: 75, recommendedAR: 106 },
+            { value: 100, recommendedAR: 150 },
+        ]
+    },
+    {
+        name: "Molten Boss",
+        isNight: false,
+        scales: [
+            { value: 10, recommendedAR: 0 },
+            { value: 40, recommendedAR: 43 },
+            { value: 70, recommendedAR: 97 },
+            { value: 90, recommendedAR: 132 },
+        ]
+    },
+    {
+        name: "Solid Ocean",
+        isNight: true,
+        scales: [
+            { value: 20, recommendedAR: 8 },
+            { value: 35, recommendedAR: 34 },
+            { value: 45, recommendedAR: 52 },
+            { value: 60, recommendedAR: 79 },
+            { value: 80, recommendedAR: 115 },
+            { value: 98, recommendedAR: 147 },
+        ]
+    },
+    {
+        name: "Chaos Isles",
+        isNight: true,
+        scales: [
+            { value: 13, recommendedAR: 0 },
+            { value: 30, recommendedAR: 26 },
+            { value: 38, recommendedAR: 40 },
+            { value: 54, recommendedAR: 68 },
+            { value: 63, recommendedAR: 84 },
+            { value: 88, recommendedAR: 129 },
+            { value: 99, recommendedAR: 148 },
+        ]
     }
 ];
