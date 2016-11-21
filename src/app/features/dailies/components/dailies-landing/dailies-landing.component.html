@@ -1,0 +1,15 @@
+<h2>Dailies</h2>
+
+<md-tab-group>
+    <md-tab *ngFor="let dailyGroup of dailyGroups">
+        <template md-tab-label>{{dailyGroup.name | uppercase}}</template>
+        <ul class="tab-content">
+            <lal-daily-group [dailyGroup]="dailyGroup"></lal-daily-group>
+        </ul>
+    </md-tab>
+    <md-tab label="FRACTALS">
+        <div class="tab-content">
+            <lal-daily-group-fractals [fractalDailies]="fractalDailies"></lal-daily-group-fractals>
+        </div>
+    </md-tab>
+</md-tab-group>

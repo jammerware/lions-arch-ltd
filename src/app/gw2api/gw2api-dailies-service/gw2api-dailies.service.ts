@@ -112,7 +112,7 @@ export class Gw2ApiDailiesService {
             }
         }
 
-        if(dailies.length) {
+        if (dailies.length) {
             return [{
                 type: DailyGroupType.fractals,
                 dailies: dailies

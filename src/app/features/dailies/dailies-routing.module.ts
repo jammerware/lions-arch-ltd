@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DailiesLandingComponent } from './dailies-landing/dailies-landing.component';
+import { DailiesLandingComponent } from './components/dailies-landing/dailies-landing.component';
 
 @NgModule({
     imports: [

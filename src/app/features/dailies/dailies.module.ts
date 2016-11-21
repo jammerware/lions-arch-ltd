@@ -9,8 +9,10 @@ import { Gw2ApiModule } from '../../gw2api/gw2api.module';
 
 import { DailyViewModelsService } from './services/daily-viewmodels.service';
 import { DailiesRoutingModule } from './dailies-routing.module';
-import { DailiesLandingComponent } from './dailies-landing/dailies-landing.component';
-import { DailyComponent } from './daily/daily.component';
+import { DailiesLandingComponent } from './components/dailies-landing/dailies-landing.component';
+import { DailyComponent } from './components/daily/daily.component';
+import { DailyGroupComponent } from './components/daily-group/daily-group.component';
+import { DailyGroupFractalsComponent } from './components/daily-group-fractals/daily-group-fractals.component';
 
 @NgModule({
     imports: [
@@ -23,6 +25,8 @@ import { DailyComponent } from './daily/daily.component';
     providers: [DailyViewModelsService],
     declarations: [
         DailyComponent,
+        DailyGroupComponent,
+        DailyGroupFractalsComponent,
         DailiesLandingComponent
     ]
 })

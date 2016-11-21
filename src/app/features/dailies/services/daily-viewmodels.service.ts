@@ -3,8 +3,10 @@ import { Observable } from 'rxjs/Observable';
 
 import { AssetService } from '../../../core/services/asset.service';
 import { Daily } from '../../../gw2api/gw2api-dailies-service/models/daily';
+import { DailyGroup } from '../../../gw2api/gw2api-dailies-service/models/daily-group';
 import { DailyGroupType } from '../../../gw2api/gw2api-dailies-service/models/daily-group-type';
 import { DailyViewModel } from '../viewmodels/daily.viewmodel';
+import { DailyGroupFractalsViewModel } from '../viewmodels/daily-group-fractals.viewmodel';
 import { Gw2ApiAchievementsService } from '../../../gw2api/gw2api-achievements-service/gw2api-achievements.service';
 
 @Injectable()
@@ -14,7 +16,7 @@ export class DailyViewModelsService {
         private achievementsService: Gw2ApiAchievementsService) { }
 
     getDailyGroupName(dailyGroupType: DailyGroupType): string {
-        switch(dailyGroupType) {
+        switch (dailyGroupType) {
             case DailyGroupType.pve: return 'PvE';
             case DailyGroupType.pvp: return 'PvP';
             case DailyGroupType.wvw: return 'WvW';
@@ -27,8 +29,8 @@ export class DailyViewModelsService {
         return {
             achievement: this.achievementsService
                 .getAchievement(daily.achievementId)
-                .map((a) => { 
-                    if(!a.iconUrl) {
+                .map((a) => {
+                    if (!a.iconUrl) {
                         a.iconUrl = this.assetService.getUrl('images/icons/pve-icon.png');
                     }
 
@@ -36,6 +38,25 @@ export class DailyViewModelsService {
                 }),
             contentRequirement: daily.contentRequirement,
             level: daily.level
-        }
+        };
+    }
+
+    getFractalDailyGroupViewModel(dailyGroups: DailyGroup[]): Observable<DailyGroupFractalsViewModel> {
+        let fractalDailyGroup = dailyGroups.filter(dg => dg.type === DailyGroupType.fractals)[0];
+        if (!fractalDailyGroup) { return Observable.of(null); }
+
+        let achievementIds = fractalDailyGroup.dailies.map(d => d.achievementId);
+
+        return this.achievementsService
+            .getAchievements(achievementIds)
+            .map(achievements => {
+                console.log('donk');
+                let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended'));
+
+                return {
+                    recommendedFractalDailies: []
+                };
+
+            });
     }
 }

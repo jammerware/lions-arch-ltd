@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Achievement } from './models/achievement';
 
-const API_ENDPOINT: string = 'https://api.guildwars2.com/v2/achievements/';
+const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/';
 
 @Injectable()
 export class Gw2ApiAchievementsService {
@@ -15,7 +15,7 @@ export class Gw2ApiAchievementsService {
         return this.http
             .get(API_ENDPOINT + `/${id}`)
             .map((r) => {
-                if(r.ok) {
+                if (r.ok) {
                     return this.parseAchievement(r.json());
                 }
 
@@ -29,14 +29,14 @@ export class Gw2ApiAchievementsService {
             .map((r) => {
                 let achievements: Achievement[] = [];
 
-                if(r.ok) {
-                    for(let achievementJson of r.json()) {
+                if (r.ok) {
+                    for (let achievementJson of r.json()) {
                         achievements.push(this.parseAchievement(achievementJson));
                     }
                 }
 
                 return null;
-            })
+            });
     }
 
     parseAchievement(json: any): Achievement {

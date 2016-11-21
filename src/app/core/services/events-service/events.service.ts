@@ -37,13 +37,17 @@ export class EventsService {
   getMsTilNextOccurrenceOfSync(event: Event): number {
     let msSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds;
     let offsetOfNextEvent = this.getOffsetOfNextOccurrenceSync(event);
-  
+
     return offsetOfNextEvent - msSinceMidnightUtc;
   }
 
   getMsTilNextOccurrenceOf(event: Event): Observable<number> {
-    return Observable
+    // this is the only way I know of right now to emit the value right now and then again every 20 seconds
+    let timeTilOccurrenceFromNow = Observable.of(this.getMsTilNextOccurrenceOfSync(event));
+    let timeTilOccurrenceFromEveryInterval = Observable
       .interval(20000)
       .map(() =>  { return this.getMsTilNextOccurrenceOfSync(event); });
+
+    return timeTilOccurrenceFromNow.concat(timeTilOccurrenceFromEveryInterval);
   }
 }
