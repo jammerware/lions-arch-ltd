@@ -7,13 +7,16 @@ import { DailyGroup } from '../../../gw2api/gw2api-dailies-service/models/daily-
 import { DailyGroupType } from '../../../gw2api/gw2api-dailies-service/models/daily-group-type';
 import { DailyViewModel } from '../viewmodels/daily.viewmodel';
 import { DailyGroupFractalsViewModel } from '../viewmodels/daily-group-fractals.viewmodel';
+import { DailyRecommendedFractalViewModel } from '../viewmodels/daily-recommended-fractal.viewmodel';
+import { FractalsService } from '../../../core/services/fractals-service/fractals.service';
 import { Gw2ApiAchievementsService } from '../../../gw2api/gw2api-achievements-service/gw2api-achievements.service';
 
 @Injectable()
 export class DailyViewModelsService {
     constructor(
         private assetService: AssetService,
-        private achievementsService: Gw2ApiAchievementsService) { }
+        private achievementsService: Gw2ApiAchievementsService,
+        private fractalsService: FractalsService) { }
 
     getDailyGroupName(dailyGroupType: DailyGroupType): string {
         switch (dailyGroupType) {
@@ -47,16 +50,34 @@ export class DailyViewModelsService {
 
         let achievementIds = fractalDailyGroup.dailies.map(d => d.achievementId);
 
-        return this.achievementsService
-            .getAchievements(achievementIds)
-            .map(achievements => {
-                console.log('donk');
-                let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended'));
+        return Observable.of({
+            recommendedFractalDailies: []
+        });
 
-                return {
-                    recommendedFractalDailies: []
-                };
+        // return
+        //     this.fractalsService.getFractals()
+        //         .flatMap(fractals => fractals)
+        //         .flatMap(fractals => {
 
-            });
+        //         });
+        // this.achievementsService
+        //     .getAchievements(achievementIds)
+
+        //     .map(achievements => {
+        //         let recommendedFractalDailyViewModels: DailyRecommendedFractalViewModel[] = [];
+        //         let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended'));
+
+        //         for(let achievement of achievements.filter(a => a.name.indexOf('Recommended') >= 0)) {
+        //             recommendedFractalDailyViewModels.push({
+        //                 daily: fractalDailyGroup.dailies.filter(d => d.achievementId == achievement.id)[0],
+        //                 fractal: 
+        //             });
+        //         }
+
+        //         return {
+        //             recommendedFractalDailies: recommendedFractalDailyViewModels
+        //         };
+
+        //     });
     }
 }

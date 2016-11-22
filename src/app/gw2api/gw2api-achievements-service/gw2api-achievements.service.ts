@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { Achievement } from './models/achievement';
 
-const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/';
+const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements';
 
 @Injectable()
 export class Gw2ApiAchievementsService {
@@ -35,7 +35,7 @@ export class Gw2ApiAchievementsService {
                     }
                 }
 
-                return null;
+                return achievements;
             });
     }
 

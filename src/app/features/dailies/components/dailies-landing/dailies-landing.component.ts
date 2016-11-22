@@ -19,6 +19,7 @@ export class DailiesLandingComponent implements OnInit, OnDestroy {
     private dailyGroups: DailyGroupViewModel[] = [];
     private fractalDailies: Observable<DailyGroupFractalsViewModel>;
     private routeParamsSubscription: Subscription;
+    private dailiesSubscription: Subscription;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -30,10 +31,9 @@ export class DailiesLandingComponent implements OnInit, OnDestroy {
             // TODO: investigate child routes and somehow use that to do the /dailies/wvw kinda route
         });
 
-        this.dailiesService
+        this.dailiesSubscription = this.dailiesService
             .getDailies()
             .subscribe((dgs) => {
-
                 for (let dailyGroup of dgs.filter(dg => dg.type !== DailyGroupType.fractals)) {
                     let dailyViewModels: DailyViewModel[] = [];
 
@@ -46,15 +46,15 @@ export class DailiesLandingComponent implements OnInit, OnDestroy {
                         dailies: dailyViewModels
                     });
                 }
-                
+
                 // TODO: think about this. fractal dailies need special treatment because the data coming out of the official
                 // api is so semantically different from other daily groups, but obviously this is kinda messed up.
                 this.fractalDailies = this.dailyViewModelsService.getFractalDailyGroupViewModel(dgs);
-                console.log('our fractal dailies are', this.fractalDailies);
             });
     }
 
     ngOnDestroy() {
         if (this.routeParamsSubscription) { this.routeParamsSubscription.unsubscribe(); }
+        if (this.dailiesSubscription) { this.dailiesSubscription.unsubscribe(); }
     }
 }

@@ -10,6 +10,7 @@ import { ErrorService } from './services/error.service';
 import { EventsService } from './services/events-service/events.service';
 import { EventViewModelsService } from './services/viewmodels-services/event-viewmodels.service';
 import { EventWaypointViewModelsService } from './services/viewmodels-services/event-waypoint-viewmodels.service';
+import { FractalsService } from './services/fractals-service/fractals.service';
 import { GoalsService } from './services/goals.service';
 import { GoalContributionsViewModelsService } from './services/viewmodels-services/goal-contributions-viewmodels.service';
 import { LoggingService } from './services/logging.service';
@@ -32,6 +33,7 @@ import { WaypointsService } from './services/waypoints.service';
     EventsService,
     EventViewModelsService,
     EventWaypointViewModelsService,
+    FractalsService,
     GoalsService,
     GoalContributionsViewModelsService,
     localizationServiceProvider,

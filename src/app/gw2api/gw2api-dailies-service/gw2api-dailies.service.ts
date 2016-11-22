@@ -34,12 +34,12 @@ export class Gw2ApiDailiesService {
 
         if (response.ok) {
             let json: any = response.json();
-            
+
             for (let dailyGroupJson in json) {
                 // http://stackoverflow.com/questions/1963102/what-does-the-jslint-error-body-of-a-for-in-should-be-wrapped-in-an-if-statemen
                 if (json.hasOwnProperty(dailyGroupJson)) {
                     let dailyGroup = this.parseDailyGroup(dailyGroupJson, json[dailyGroupJson]);
-                
+
                     if (dailyGroup) {
                         dailyGroups.push(dailyGroup);
                     }
@@ -96,7 +96,7 @@ export class Gw2ApiDailiesService {
 
         if(response.ok) {
             let json: any = response.json();
-            
+
             for (let fractalAchievementId of json.achievements) {
                 dailies.push({
                     achievementId: fractalAchievementId,
