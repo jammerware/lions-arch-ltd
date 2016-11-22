@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/mergeMap';
 
+// things that will hopefully be npm packages someday
+import '../../../modules/tslinq/tslinq';
+
+// local declarations
 import { AssetService } from '../../../core/services/asset.service';
 import { Daily } from '../../../gw2api/gw2api-dailies-service/models/daily';
 import { DailyGroup } from '../../../gw2api/gw2api-dailies-service/models/daily-group';
@@ -8,6 +13,7 @@ import { DailyGroupType } from '../../../gw2api/gw2api-dailies-service/models/da
 import { DailyViewModel } from '../viewmodels/daily.viewmodel';
 import { DailyGroupFractalsViewModel } from '../viewmodels/daily-group-fractals.viewmodel';
 import { DailyRecommendedFractalViewModel } from '../viewmodels/daily-recommended-fractal.viewmodel';
+import { Fractal } from '../../../shared/models/fractal';
 import { FractalsService } from '../../../core/services/fractals-service/fractals.service';
 import { Gw2ApiAchievementsService } from '../../../gw2api/gw2api-achievements-service/gw2api-achievements.service';
 
@@ -50,34 +56,45 @@ export class DailyViewModelsService {
 
         let achievementIds = fractalDailyGroup.dailies.map(d => d.achievementId);
 
-        return Observable.of({
-            recommendedFractalDailies: []
-        });
+        return this.fractalsService
+            .getFractals()
+            .mergeMap(fractals => {
+                return this.achievementsService
+                    .getAchievements(achievementIds)
+                    .map(achievements => {
+                        let recommendedFractalDailyViewModels: DailyRecommendedFractalViewModel[] = [];
+                        let tierFractals: Fractal[] = [];
+                        let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended') >= 0);
+                        let tierFractalDailies = achievements.filter(a => a.name.indexOf('Tier') >= 0);
 
-        // return
-        //     this.fractalsService.getFractals()
-        //         .flatMap(fractals => fractals)
-        //         .flatMap(fractals => {
+                        for (let achievement of recommendedFractalDailies) {
+                            let recommendedScaleValue = +achievement.name.match(/\d+/)[0];
+                            let daily = fractalDailyGroup.dailies.find(d => d.achievementId === achievement.id);
 
-        //         });
-        // this.achievementsService
-        //     .getAchievements(achievementIds)
+                            let fractal = fractals.find(f => {
+                                return f.scales.any(s => s.value === recommendedScaleValue);
+                            });
 
-        //     .map(achievements => {
-        //         let recommendedFractalDailyViewModels: DailyRecommendedFractalViewModel[] = [];
-        //         let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended'));
+                            recommendedFractalDailyViewModels.push({
+                                daily: daily,
+                                fractal: fractal,
+                                recommendedScale: fractal.scales.find(s => s.value === recommendedScaleValue)
+                            });
+                        }
 
-        //         for(let achievement of achievements.filter(a => a.name.indexOf('Recommended') >= 0)) {
-        //             recommendedFractalDailyViewModels.push({
-        //                 daily: fractalDailyGroup.dailies.filter(d => d.achievementId == achievement.id)[0],
-        //                 fractal: 
-        //             });
-        //         }
+                        for (let achievement of tierFractalDailies) {
+                            let fractalName = achievement.name.match(/Daily Tier \d+ ([\s\S]+)/i)[1];
 
-        //         return {
-        //             recommendedFractalDailies: recommendedFractalDailyViewModels
-        //         };
+                            if (!tierFractals.find(tf => tf.name === fractalName)) {
+                                tierFractals.push(fractals.find(f => f.name === fractalName));
+                            }
+                        }
 
-        //     });
+                        return {
+                            recommendedFractalDailies: recommendedFractalDailyViewModels,
+                            tierFractalDailies: tierFractals
+                        };
+                    });
+            });
     }
 }

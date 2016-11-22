@@ -48,7 +48,7 @@ export class DailiesLandingComponent implements OnInit, OnDestroy {
                 }
 
                 // TODO: think about this. fractal dailies need special treatment because the data coming out of the official
-                // api is so semantically different from other daily groups, but obviously this is kinda messed up.
+                // api is so semantically different from other daily groups, but obviously this feels pretty weird.
                 this.fractalDailies = this.dailyViewModelsService.getFractalDailyGroupViewModel(dgs);
             });
     }

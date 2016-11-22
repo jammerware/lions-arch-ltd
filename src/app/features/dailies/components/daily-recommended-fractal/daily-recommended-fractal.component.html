@@ -1,0 +1,9 @@
+<div class="recommended-fractal-card content-card">
+    <div class="content-card-subtitle">Scale {{viewModel?.recommendedScale.value}}</div>
+    <div class="content-card-title fractal-title">{{viewModel?.fractal.name}}</div>
+    <div class="fractal-description" [innerHtml]="viewModel?.fractal.description | markdown"></div>
+    <div class="content-card-footer">
+        <span class="recommended-ar-label">recommended agony resistance: </span>
+        <span class="recommended-ar">{{viewModel?.recommendedScale.recommendedAR}}</span>
+    </div>
+</div>

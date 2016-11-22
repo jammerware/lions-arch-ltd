@@ -1,8 +1,13 @@
 <h3>Recommended Fractal Dailies</h3>
-<ul class="fractal-daily-subgroup">
-    <!--<li *ngFor"fractalDailies?.recommendedFractalDailies"></li>-->
+<ul *ngIf="fractalDailies" class="fractal-daily-subgroup content-card-container">
+    <li *ngFor="let fractalDaily of (fractalDailies | async)?.recommendedFractalDailies">
+        <lal-daily-recommended-fractal [viewModel]="fractalDaily"></lal-daily-recommended-fractal>
+    </li>
 </ul>
 
 <h3>Tiered Fractal Dailies</h3>
-<div class="fractal-daily-subgroup">
-</div>
+<ul class="fractal-daily-subgroup content-card-container">
+    <li *ngFor="let fractalDaily of (fractalDailies | async)?.tierFractalDailies">
+        <lal-daily-tier-fractal [viewModel]="fractalDaily"></lal-daily-tier-fractal>
+    </li>
+</ul>

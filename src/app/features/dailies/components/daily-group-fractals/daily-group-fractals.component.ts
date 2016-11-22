@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { DailyGroupFractalsViewModel } from '../../viewmodels/daily-group-fractals.viewmodel';
 import { Observable } from 'rxjs/Observable';
 
@@ -7,10 +7,6 @@ import { Observable } from 'rxjs/Observable';
     styleUrls: [ './daily-group-fractals.component.css' ],
     templateUrl: 'daily-group-fractals.component.html'
 })
-export class DailyGroupFractalsComponent implements OnInit {
+export class DailyGroupFractalsComponent {
     @Input() fractalDailies: Observable<DailyGroupFractalsViewModel>;
-
-    ngOnInit() {
-        console.log('received dailies', this.fractalDailies);
-    }
 }

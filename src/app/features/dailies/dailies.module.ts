@@ -13,6 +13,8 @@ import { DailiesLandingComponent } from './components/dailies-landing/dailies-la
 import { DailyComponent } from './components/daily/daily.component';
 import { DailyGroupComponent } from './components/daily-group/daily-group.component';
 import { DailyGroupFractalsComponent } from './components/daily-group-fractals/daily-group-fractals.component';
+import { DailyRecommendedFractalComponent } from './components/daily-recommended-fractal/daily-recommended-fractal.component';
+import { DailyTierFractalComponent } from './components/daily-tier-fractal/daily-tier-fractal.component';
 
 @NgModule({
     imports: [
@@ -27,6 +29,8 @@ import { DailyGroupFractalsComponent } from './components/daily-group-fractals/d
         DailyComponent,
         DailyGroupComponent,
         DailyGroupFractalsComponent,
+        DailyRecommendedFractalComponent,
+        DailyTierFractalComponent,
         DailiesLandingComponent
     ]
 })

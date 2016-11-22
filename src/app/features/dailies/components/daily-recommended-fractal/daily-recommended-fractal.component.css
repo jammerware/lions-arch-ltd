@@ -1,0 +1,12 @@
+.recommended-fractal-card {
+    height: 10.5em;
+}
+
+.recommended-ar-label {
+    color: var(--color-subtle);
+    font-weight:lighter;
+}
+
+.recommended-ar {
+    color: var(--color-accent);
+}

@@ -3,6 +3,7 @@ import { Fractal } from '../../shared/models/fractal';
 export const FRACTALS: Fractal[] = [
     {
         name: "Aquatic Ruins",
+        description: "Hunt krait. Free hapless villagers. Be a dolphin, apparently.",
         isNight: false,
         paths: ["Dolphin", "Dark"],
         scales: [
@@ -16,6 +17,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Swampland",
+        description: "Mossman & Bloomhunger: Attorneys at Swamp.",
         isNight: true,
         scales: [
             { value: 2, recommendedAR: 0 },
@@ -30,6 +32,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Uncategorized",
+        description: "MEOW MEOW MEOW MEOW MEOW",
         isNight: false,
         scales: [
             { value: 4, recommendedAR: 0 },
@@ -43,6 +46,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Urban Battleground",
+        description: "Siegemaster Dulfy is a lot less friendly than her [eponymous website](http://dulfy.net/).",
         isNight: false,
         scales: [
             { value: 1, recommendedAR: 0 },
@@ -56,6 +60,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Molten Furnace",
+        description: "Dodge tornadoes. Get hit by shockwaves. Abandon the achievement and hide in the corner.",
         isNight: false,
         scales: [
             { value: 9, recommendedAR: 0 },
@@ -68,6 +73,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Snowblind",
+        description: "Winter is coming.",
         isNight: true,
         scales: [
             { value: 5, recommendedAR: 0 },
@@ -82,6 +88,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Cliffside",
+        description: "Stop! Hammertime.",
         isNight: false,
         scales: [
             { value: 7, recommendedAR: 0 },
@@ -96,6 +103,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Underground Facility",
+        description: "Raise your hand if you're rooting for bombs.",
         isNight: true,
         paths: [ "Bombs", "Guns" ],
         scales: [
@@ -111,6 +119,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Aetherblade",
+        description: "Round and around and around we go. Where do we stop? Where there are two blades going at different and insane speeds.",
         isNight: false,
         scales: [
             { value: 14, recommendedAR: 0 },
@@ -123,6 +132,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Thaumanova Reactor",
+        description: "You can even see the floor now.",
         isNight: false,
         scales: [
             { value: 15, recommendedAR: 0 },
@@ -136,6 +146,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Volcanic",
+        description: "Hard mode: play your mouse on your subwoofer to make that camera shake last the whole run!",
         isNight: true,
         scales: [
             { value: 6, recommendedAR: 0 },
@@ -150,16 +161,14 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Mai Trin",
+        description: "She seems angrier since she was demoted from scale 100.",
         isNight: false,
         scales: [
-            { value: 25, recommendedAR: 17 },
-            { value: 50, recommendedAR: 61 },
-            { value: 75, recommendedAR: 106 },
-            { value: 100, recommendedAR: 150 },
         ]
     },
     {
         name: "Molten Boss",
+        description: "\"Oh I got it! Chredge! Hmmm. Sounds like a skin condition.\"",
         isNight: false,
         scales: [
             { value: 10, recommendedAR: 0 },
@@ -170,6 +179,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Solid Ocean",
+        description: "Frustrating pursuers of the [timed mote](https://wiki.guildwars2.com/wiki/Jade_Kraken_Timed_Mote) since 2013.",
         isNight: true,
         scales: [
             { value: 20, recommendedAR: 8 },
@@ -182,6 +192,7 @@ export const FRACTALS: Fractal[] = [
     },
     {
         name: "Chaos Isles",
+        description: "What's worse than running Snowblind? Running it with Thaumanova in front and Aetherblade stapled behind.",
         isNight: true,
         scales: [
             { value: 13, recommendedAR: 0 },
@@ -191,6 +202,17 @@ export const FRACTALS: Fractal[] = [
             { value: 63, recommendedAR: 84 },
             { value: 88, recommendedAR: 129 },
             { value: 99, recommendedAR: 148 },
+        ]
+    },
+    {
+        name: "Nightmare",
+        description: "Move over, Mai. There's a new kid in town.",
+        isNight: true,
+        scales: [
+            { value: 25, recommendedAR: 17 },
+            { value: 50, recommendedAR: 61 },
+            { value: 75, recommendedAR: 106 },
+            { value: 100, recommendedAR: 150 },
         ]
     }
 ];
