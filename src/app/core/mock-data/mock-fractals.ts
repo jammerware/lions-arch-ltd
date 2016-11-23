@@ -191,7 +191,7 @@ export const FRACTALS: Fractal[] = [
         ]
     },
     {
-        name: "Chaos Isles",
+        name: "Chaos",
         description: "What's worse than running Snowblind? Running it with Thaumanova in front and Aetherblade stapled behind.",
         isNight: true,
         scales: [

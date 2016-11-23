@@ -64,6 +64,7 @@ export class DailyViewModelsService {
                     .map(achievements => {
                         let recommendedFractalDailyViewModels: DailyRecommendedFractalViewModel[] = [];
                         let tierFractals: Fractal[] = [];
+
                         let recommendedFractalDailies = achievements.filter(a => a.name.indexOf('Recommended') >= 0);
                         let tierFractalDailies = achievements.filter(a => a.name.indexOf('Tier') >= 0);
 
@@ -84,7 +85,6 @@ export class DailyViewModelsService {
 
                         for (let achievement of tierFractalDailies) {
                             let fractalName = achievement.name.match(/Daily Tier \d+ ([\s\S]+)/i)[1];
-
                             if (!tierFractals.find(tf => tf.name === fractalName)) {
                                 tierFractals.push(fractals.find(f => f.name === fractalName));
                             }
