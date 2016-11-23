@@ -146,10 +146,81 @@ The core mechanic of the southern Octovine is centered around the [Sage Bombmake
 The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in the western courtyard next to a pool of green goo that transforms anyone who steps into it into an adorable mushroom. In addition to being a massive boost to the attractiveness of some characters, becoming a mushroom grants you two abilities that are key to taking down the western Octovine. If you can hop, skip, or jump your way across the courtyard to get close enough to the Octovine to activate "Poison Spores" (bound to 1 by default), you'll remove a few stacks of slime protection. To this end, you're also given the ability "Jump" on 2 that propels you high into the air. If you've unlocked the gliding mastery, you can also glide in mushroom form, which is pretty useful for avoiding the mordrem congregated in your path.`
   },
   {
+    id: "2647883d-39a2-47b2-ba34-6ab0ecdf7263",
+    name: "King of the Jungle",
+    zone: "Tangled Depths",
+    description: "Join forces with ogres, Nuhoch, Rata Novus, and SCAR to kill chak, steal loot, and [learn new words](http://www.dictionary.com/browse/gerent).",
+    primaryWaypointId: "7dae3d65-d3cb-4233-965c-6b93a228c467",
+    waypoints: [
+      {
+        waypointId: "8d66a34b-4db3-4ad5-a500-1c5bac446432",
+        description: "The primary waypoint for the Ogre lane of the event."
+      },
+      {
+        waypointId: "21f67d75-99eb-474e-86eb-d28867c036b5",
+        description: "The primary waypoint for the Teku Nuhoch (usually just called \"Nuhoch\" or \"frog\") lane of the event."
+      },
+      {
+        waypointId: "1e2bfa4f-8d34-4756-a283-1cc9a901640a",
+        description: "The primary waypoint for the Rata Novus lane of the event."
+      },
+      {
+        waypointId: "abcb645e-408c-4419-b6de-ed3929183022",
+        description: "The primary waypoint for the SCAR (sometimes called \"charr\") lane of the event."
+      },
+    ],
+    duration: 1.2e6,
+    occurrenceOffsets: [
+      Timespan.fromHours(1.5),
+      Timespan.fromHours(3.5),
+      Timespan.fromHours(5.5),
+      Timespan.fromHours(7.5),
+      Timespan.fromHours(9.5),
+      Timespan.fromHours(11.5),
+      Timespan.fromHours(13.5),
+      Timespan.fromHours(15.5),
+      Timespan.fromHours(17.5),
+      Timespan.fromHours(19.5),
+      Timespan.fromHours(21.5),
+      Timespan.fromHours(23.5),
+    ],
+    goalContributions: [
+      {
+        description: `Successful completion of this event rewards [chak eggs](https://wiki.guildwars2.com/wiki/Chak_Egg), which can be exchanged for special [chak weapon skins](https://wiki.guildwars2.com/wiki/Chak_weapons) at Nuhoch vendors in Tangled depths (once you've unlocked the [appropriate mastery](https://wiki.guildwars2.com/wiki/Nuhoch_Language)). If you're into weapons that look like they could kill you in your sleep if you take your eye off them, these are the skins for you.
+
+Additionally, this event is a good source of [leyline crystals](https://wiki.guildwars2.com/wiki/Ley_Line_Crystal), a currency which you can use to buy components necessary for the [machined weapon](https://wiki.guildwars2.com/wiki/Machined_weapons) skins.`,
+        goalId: "c09db606-b8d4-4314-855b-a1cf51b628b8" // unique skins
+      }
+    ],
+    key: "td",
+    guide: `
+#Overview
+The goal of the event is to prevent each of the four chak gerents from destroying four cannons positioned around the Leyline Confluence. Each cannon has a corresponding lane, and each lane has its own mechanic it needs to execute to bring its gerent out of hiding.
+
+#Lanes
+While each lane has a few characteristics unique to it, each of the four chak gerents behave pretty similarly. Each event starts with its gerent underground, and you'll need to navigate the lane's unique mechanics (see below) to bring it up so you can wail on it. Once you do, you'll have about two minutes to damage the boss. When time's up, the gerent will poison the area of the lane you're currently in and move closer to the cannon, and the cycle begins again. If your lane doesn't kill the gerent before it reaches the cannon, it'll destroy it, and the event will end in failure.
+
+While the chak gerent is above ground, it'll AOE furiously with falling stalactites and blue-purple pools of ley energy. Keep out of both, especially the pools - they'll kill most players in two to three ticks of damage.
+
+##Ogre Lane
+While they aren't the crystals in the leyline, the ogres are here and ready to help with the gerent problem. In typical ogre fashion, their solution is to OGRE SMASH the gerent out of hiding - in this case, by smashing chak eggs until the gerent can't take it anymore. Run around, kill eggs, and kill chak, until it's time to kill an even bigger chak. Is that an ogrey-enough plan for you? 
+
+##Nuhoch Lane
+The lovable froggies from Teku Nuhoch are no friends of the chak gerent, and to prove it, they've hatched a plan to lure out their gerent. Unlike the bored residents of crappy towns in the American midwest, the gerent has no love of mushrooms. Use bouncing mushrooms to reach areas around the lane stomp the nodules around the ceiling of the lane. Doing so release spores, and releasing spores is apparently like waving a red flag in front of a bull to the giant chak.
+
+##Rata Novus Lane
+The Asura are also here, and they characteristically make everything seem a lot more complicated than it needs to be. They've brought a golem to help combat the gerent, but it needs power. While the boss is underground, smash leyline collectors to release interactable ley energy bundles. Carry the bundles to the golem and interact with it to feed it the power. The more you feed it, the more powerful it is, and more those squeaky asura will pipe down.
+
+##SCAR Lane
+SCAR Lane is among the conceptually easiest of the four lanes. Here, the SCAR unit will do a lot of the work for you - you just need to kill enough chak to let them do it. Protect the NPCs around the megathumper while the meter fills, then go bananas on the gerent. So easy, even a charr can (and does) do it.
+
+`
+  },
+  {
     id: "f5c8aeb1-0949-4fa6-be6e-41a7ce19c567",
     name: "Shadow of the Dragon",
     zone: "Dragon's Stand",
-    description: "Three lanes. Three towers. One mouth. Also a weird body. Don't forget your machetes!",
+    description: "Three paths. Three towers. One mouth. Also, a weird body. Don't forget your machetes!",
     primaryWaypointId: "95718376-f193-49bb-895e-ebe66c966c41",
     waypoints: [
       {
@@ -178,19 +249,19 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
     ],
     goalContributions: [
       {
-        description: "This meta-event is the only source of [Crystalline Ore](https://wiki.guildwars2.com/wiki/Crystalline_Ore) in the game, which is used for all kinds of stuff",
+        description: "This meta-event is the only source of [Crystalline Ore](https://wiki.guildwars2.com/wiki/Crystalline_Ore) in the game, which is used to make [Crystalline Ingots](https://wiki.guildwars2.com/wiki/Crystalline_Ingot) and ultimately a [Gift of Maguuma Mastery](https://wiki.guildwars2.com/wiki/Gift_of_Maguuma_Mastery), which is required for every Heart of Thorns legendary. ",
         goalId: "d2382979-d918-4242-92b7-45d140ea399c" // legendary crafting: hot
       },
       {
-        description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons, and some of them lead to \"Specialization Collection\" achievements that grant relatively cheap ascended weapons if you have the required mastery.",
+        description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons, and some of them lead to [\"Specialization Collection\"](https://wiki.guildwars2.com/wiki/Specialization_Collections) achievements that grant relatively cheap ascended weapons if you have the required mastery.",
         goalId: "907320dc-3e21-4b78-83e4-a31eae8867d0" // ascended weapons
       },
       {
-        description: "Most Heart of Thorns meta-events give good XP, but Dragon's Stand is one of the best. Pop an XP booster, do your local events, and spank some Mordrem. You'll be gliding on leylines before you know it.",
+        description: "Most Heart of Thorns meta-events give good XP, but Dragon's Stand is one of the best. Pop an XP booster, do your local events, and spank some Mordrem. You'll have leyline gliding before you know it.",
         goalId: "78c9fff9-2136-4bd8-9976-7c06ef898b32" // XP
       },
       {
-        description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons. These skins are unique, and by following their related collection achievement, you can even turn them into exotic Machined Weapons. And if you think the _plated_ ones look good...",
+        description: "A vendor that appears at the entrance of this zone prior to the beginning of the meta-event (and again at the final area of the event) sells plated weapons. These skins are unique, and by completing their related collection achievement, you can even turn them into exotic Machined Weapons. And if you think the _plated_ ones look good...",
         goalId: "c09db606-b8d4-4314-855b-a1cf51b628b8" // unique skins
       }
     ],
@@ -209,7 +280,7 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
       },
       {
         waypointId: "e9cfb5f5-bcfe-479f-8073-c71ecf1ebbe8",
-        description: "No idea. This seems important, though. \"Refuge\" has a nice ring to it." 
+        description: "No idea. This seems important, though. \"Refuge\" has a nice ring to it."
       },
       {
         waypointId: "9bf28b0e-e164-40f5-bcfe-88613f3316a9",
@@ -245,8 +316,12 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
     ],
     goalContributions: [
       {
-        description: "Who can resist the call of Eternity?",
+        description: "Most (all?) legendary weapons have a component of their second collection requiring that you bring 400 geodes to Scholar Mossi (like [this one](https://wiki.guildwars2.com/wiki/Jungle_Magics:_Daysword_Edition) for Sunrise). The sandstorm event is geode prime-time.",
         goalId: "a4ce8e59-f752-4572-89b0-c37481865a7c" // legendary crafting: classic
+      },
+      {
+        description: "Most (all?) legendary weapons have a component of their second collection requiring that you bring 400 geodes to Scholar Mossi (like [this one](https://wiki.guildwars2.com/wiki/Jungle_Magics:_Axe_Edition_Vol._2) for Astralaria). The sandstorm event is geode prime-time.",
+        goalId: "d2382979-d918-4242-92b7-45d140ea399c" // legendary crafting: hot
       }
     ],
     key: 'dt'

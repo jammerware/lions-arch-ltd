@@ -40,7 +40,7 @@ export const GOALS: Goal[] = [
   {
     id: "a4ce8e59-f752-4572-89b0-c37481865a7c",
     name: "Legendary Crafting (Classic)",
-    description: "Because who resists the call of Eternity?",
+    description: "Who can resist the call of Eternity?",
     key: "legendary"
   },
   {

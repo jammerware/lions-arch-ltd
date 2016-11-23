@@ -69,6 +69,32 @@ export const WAYPOINTS: Waypoint[] = [
         name: "Forgotten City",
         code: "[&BMYHAAA=]"
     },
+    // tangled depths
+    {
+        id: "7dae3d65-d3cb-4233-965c-6b93a228c467",
+        name: "Leyline Confluence",
+        code: "[&BPUHAAA=]"
+    },
+    {
+        id: "abcb645e-408c-4419-b6de-ed3929183022",
+        name: "SCAR Camp",
+        code: "[&BAAIAAA=]"
+    },
+    {
+        id: "8d66a34b-4db3-4ad5-a500-1c5bac446432",
+        name: "Ogre Camp",
+        code: "[&BMwHAAA=]"
+    },
+    {
+        id: "21f67d75-99eb-474e-86eb-d28867c036b5",
+        name: "Teku Nuhoch",
+        code: "[&BAwIAAA=]"
+    },
+    {
+        id: "1e2bfa4f-8d34-4756-a283-1cc9a901640a",
+        name: "Rata Novus",
+        code: "[&BAMIAAA=]"
+    },
     // dragon's stand
     {
         id: "95718376-f193-49bb-895e-ebe66c966c41",

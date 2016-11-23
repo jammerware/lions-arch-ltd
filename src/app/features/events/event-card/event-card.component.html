@@ -1,9 +1,7 @@
 <div class="event-card content-card">
   <h3><a routerLink="/event/{{viewModel?.name | slug}}/{{viewModel?.id}}">{{viewModel?.name}}</a></h3>
   <h4>{{viewModel.zone}}</h4>
-  <div class="event-desc">
-    {{viewModel.description}}
-  </div>
+  <div class="event-desc" [innerHtml]="viewModel.description | markdown"></div>
   <ul class="event-goal-contribution">
       <li *ngFor="let goalContribution of viewModel.goalContributions | async">
         <img 
