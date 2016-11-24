@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.upcomingEventsSub = this.eventNotificationsService
-      .getUpcomingEvents(1.8e6, 15000)
+      .getUpcomingEvents(3.6e+6, 15000)
       .subscribe(events => {
         for (let event of events) {
           this.notificationsService.say(

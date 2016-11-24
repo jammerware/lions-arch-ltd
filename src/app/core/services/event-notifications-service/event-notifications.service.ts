@@ -14,6 +14,9 @@ export class EventNotificationsService {
     }
 
     getHasNotifiedFor(eventId: string, offset: number): boolean {
+        if (this.cache[eventId] === offset) {
+            console.log('cache hit, already notified');
+        } else { console.log('cache miss, notification going'); }
         return this.cache[eventId] === offset;
     }
 
@@ -28,7 +31,6 @@ export class EventNotificationsService {
                 return this.eventsService
                     .getEvents()
                     .map(events => {
-                        console.log('processing event ', events);
                         let upcomingEvents: Event[] = [];
 
                         for (let event of events) {

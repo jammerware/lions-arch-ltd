@@ -71,7 +71,9 @@ describe('The GW2API dailies service', function() {
             {"pve":[{"id":1984,"level":{"min":1,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1839,"level":{"min":11,"max":79},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1937,"level":{"min":80,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1963,"level":{"min":11,"max":79},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1963,"level":{"min":80,"max":80},"required_access":["GuildWars2"]},{"id":2968,"level":{"min":80,"max":80},"required_access":["HeartOfThorns"]},{"id":2893,"level":{"min":31,"max":39},"required_access":["GuildWars2","HeartOfThorns"]},{"id":2914,"level":{"min":40,"max":75},"required_access":["GuildWars2","HeartOfThorns"]},{"id":2931,"level":{"min":76,"max":80},"required_access":["GuildWars2","HeartOfThorns"]}],"pvp":[{"id":1857,"level":{"min":1,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":2816,"level":{"min":11,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":2103,"level":{"min":11,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":2640,"level":{"min":31,"max":80},"required_access":["GuildWars2","HeartOfThorns"]}],"wvw":[{"id":1848,"level":{"min":1,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":437,"level":{"min":11,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1845,"level":{"min":11,"max":80},"required_access":["GuildWars2","HeartOfThorns"]},{"id":1843,"level":{"min":31,"max":80},"required_access":["GuildWars2","HeartOfThorns"]}],"special":[]}
         `.trim();
 
-        let fakeHttp: Http = FakeHttpService.thatRespondsWith(fakeBody);
+        let fakeHttp: Http = FakeHttpService
+            .thatRespondsTo(Gw2ApiDailiesService.API_ENDPOINT)
+            .with(fakeBody);
         let service = new Gw2ApiDailiesService(fakeHttp);
 
         // act

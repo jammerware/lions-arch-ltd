@@ -9,21 +9,20 @@ import { DailyContentRequirement } from './models/daily-content-requirement';
 import { DailyGroup } from './models/daily-group';
 import { DailyGroupType } from './models/daily-group-type';
 
-const API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/daily';
-// i'm sure this is in no way a terrible idea
-const API_ENDPOINT_FRACTALS = 'https://api.guildwars2.com/v2/achievements/categories/88';
-
 @Injectable()
 export class Gw2ApiDailiesService {
+    public static API_ENDPOINT = 'https://api.guildwars2.com/v2/achievements/daily';
+    // i'm sure this is in no way a terrible idea
+    public static API_ENDPOINT_FRACTALS = 'https://api.guildwars2.com/v2/achievements/categories/88';
     constructor(private http: Http) { }
 
     public getDailies(): Observable<DailyGroup[]> {
         let standardDailies = this
-            .http.get(API_ENDPOINT)
+            .http.get(Gw2ApiDailiesService.API_ENDPOINT)
             .map(r => this.parseDailiesData(r));
-        
+
         let fractalDailies = this
-            .http.get(API_ENDPOINT_FRACTALS)
+            .http.get(Gw2ApiDailiesService.API_ENDPOINT_FRACTALS)
             .map(r => this.parseFractalDailiesData(r));
 
         return standardDailies.concat(fractalDailies);
@@ -94,7 +93,7 @@ export class Gw2ApiDailiesService {
     parseFractalDailiesData(response: Response): DailyGroup[] {
         let dailies: Daily[] = [];
 
-        if(response.ok) {
+        if (response.ok) {
             let json: any = response.json();
 
             for (let fractalAchievementId of json.achievements) {

@@ -32,18 +32,18 @@ export const MOCK_EVENTS: Event[] = [
     ],
     duration: 2.7e+6,
     occurrenceOffsets: [
-      Timespan.fromMinutes(45),
-      Timespan.fromHours(2.75),
-      Timespan.fromHours(4.75),
-      Timespan.fromHours(6.75),
-      Timespan.fromHours(8.75),
-      Timespan.fromHours(10.75),
-      Timespan.fromHours(12.75),
-      Timespan.fromHours(14.75),
-      Timespan.fromHours(16.75),
-      Timespan.fromHours(18.75),
-      Timespan.fromHours(20.75),
-      Timespan.fromHours(22.75)
+      Timespan.fromHours(1.75),
+      Timespan.fromHours(3.75),
+      Timespan.fromHours(5.75),
+      Timespan.fromHours(7.75),
+      Timespan.fromHours(9.75),
+      Timespan.fromHours(11.75),
+      Timespan.fromHours(13.75),
+      Timespan.fromHours(15.75),
+      Timespan.fromHours(17.75),
+      Timespan.fromHours(19.75),
+      Timespan.fromHours(21.75),
+      Timespan.fromHours(23.75)
     ],
     goalContributions: [
       {

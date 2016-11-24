@@ -19,9 +19,9 @@ export class NotificationsService {
 
     public say(title: string, message: string, iconUrl: string, callback: () => void = null): void {
         this.requestPermission();
+        console.log('saying for', title);
         this.pushNotificationsService.create(title, {
             body: message,
-            renotify: false,
             icon: iconUrl
         }).subscribe(
             (notificationEvent) => {
