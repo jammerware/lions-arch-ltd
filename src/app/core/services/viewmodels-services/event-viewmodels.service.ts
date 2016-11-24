@@ -32,7 +32,7 @@ export class EventViewModelsService {
             waypoints: this.eventWaypointViewModelsService.getEventWaypointViewModels(event.waypoints),
             guide: event.guide,
             goalContributions: this.goalContributionsViewModelsService.getViewModels(event.goalContributions),
-            msTilNextOccurrence: this.eventsService.getMsTilNextOccurrenceOf(event),
+            msTilNextOccurrence: this.eventsService.getMsTilNextOccurrenceOf(event, 1.2e+6),
             // TODO: call to getCountdownLocalization
             countdownLocalization: this.localizationService.getCountdownLocalization(event.key, 1)
         };

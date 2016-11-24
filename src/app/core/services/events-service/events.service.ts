@@ -21,9 +21,9 @@ export class EventsService {
     return Observable.of(MOCK_EVENTS);
   }
 
-  getOffsetOfNextOccurrenceSync(event: Event): number {
+  getOffsetOfNextOccurrenceSync(event: Event, includePastEventsOffset = 0): number {
     let msInADay = Timespan.fromHours(24).totalMilliseconds;
-    let nowish = (this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds - 900000 + msInADay) % msInADay;
+    let nowish = (this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds - includePastEventsOffset + msInADay) % msInADay;
     let eventOffsetIndex = 0;
     let eventOffset = event.occurrenceOffsets[eventOffsetIndex];
 
@@ -34,14 +34,14 @@ export class EventsService {
     return eventOffset.totalMilliseconds;
   }
 
-  getMsTilNextOccurrenceOfSync(event: Event): number {
+  getMsTilNextOccurrenceOfSync(event: Event, includePastEventsOffset = 0): number {
     let msSinceMidnightUtc = this.timespanService.getTimespanSinceMidnightUtc().totalMilliseconds;
     let offsetOfNextEvent = this.getOffsetOfNextOccurrenceSync(event);
 
     return offsetOfNextEvent - msSinceMidnightUtc;
   }
 
-  getMsTilNextOccurrenceOf(event: Event): Observable<number> {
+  getMsTilNextOccurrenceOf(event: Event, includePastEventsOffset = 0): Observable<number> {
     // this is the only way I know of right now to emit the value right now and then again every 20 seconds
     let timeTilOccurrenceFromNow = Observable.of(this.getMsTilNextOccurrenceOfSync(event));
     let timeTilOccurrenceFromEveryInterval = Observable

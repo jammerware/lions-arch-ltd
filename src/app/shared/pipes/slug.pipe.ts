@@ -1,14 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { SlugService } from '../../core/services/slug-service/slug.service';
 
 @Pipe({ name: 'slug' })
 export class SlugPipe implements PipeTransform {
-    // todo: don't mutate passed-in value. lol... does js pass by ref? i don't even know.
+    constructor(private slugService: SlugService) { }
     transform(value: any): string {
-        if(!value) return '';
-        
-        value = value.replace(/\s+/g, '-');
-        value = value.replace(/[^a-zA-Z0-9-]/g, '').toLocaleLowerCase();
-
-        return value;       
+        return this.slugService.getSlug((value || '').toString());
     }
 }

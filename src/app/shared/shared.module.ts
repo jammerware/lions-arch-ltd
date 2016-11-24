@@ -17,6 +17,7 @@ import { WaypointComponent } from './components/waypoint/waypoint.component';
     WaypointComponent
   ],
   imports: [
+    CommonModule,
     MaterialModule.forRoot(),
   ],
   exports: [

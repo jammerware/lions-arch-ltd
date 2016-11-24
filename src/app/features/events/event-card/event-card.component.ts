@@ -3,7 +3,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
 import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'event-card',
@@ -11,9 +10,8 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './event-card.component.html'
 })
 export class EventCardComponent implements OnInit {
+  private viewModel: EventViewModel;
   @Input() event: Event;
-
-  private viewModel: EventViewModel; 
 
   constructor(private eventViewModelsService: EventViewModelsService) { }
 

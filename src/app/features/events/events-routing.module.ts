@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { EventsComponent } from './events.component';
+import { EventsLandingComponent } from './events-landing/events-landing.component';
 import { EventComponent } from './event/event.component';
 
 @NgModule({
     imports: [
         RouterModule.forChild([
-            { path: 'events', component: EventsComponent },
+            { path: 'events', component: EventsLandingComponent },
             { path: 'event/:slug/:id', component: EventComponent }
         ])
     ],

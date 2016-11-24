@@ -7,6 +7,7 @@ import { PushNotificationsModule } from 'angular2-notifications';
 import { AssetService } from './services/asset.service';
 import { ClipboardService } from './services/clipboard.service';
 import { ErrorService } from './services/error.service';
+import { EventNotificationsService } from './services/event-notifications-service/event-notifications.service';
 import { EventsService } from './services/events-service/events.service';
 import { EventViewModelsService } from './services/viewmodels-services/event-viewmodels.service';
 import { EventWaypointViewModelsService } from './services/viewmodels-services/event-waypoint-viewmodels.service';
@@ -17,6 +18,7 @@ import { LoggingService } from './services/logging.service';
 import { localizationServiceProvider } from './services/localization/localization-service.provider';
 import { NotificationsService } from './services/notifications.service';
 import { NowService } from './services/now.service';
+import { SlugService } from './services/slug-service/slug.service';
 import { TimespanService } from '../timespan/timespan.service';
 import { ToastService } from './services/toast.service';
 import { WaypointsService } from './services/waypoints.service';
@@ -31,6 +33,7 @@ import { WaypointsService } from './services/waypoints.service';
     ClipboardService,
     ErrorService,
     EventsService,
+    EventNotificationsService,
     EventViewModelsService,
     EventWaypointViewModelsService,
     FractalsService,
@@ -40,6 +43,7 @@ import { WaypointsService } from './services/waypoints.service';
     LoggingService,
     NotificationsService,
     NowService,
+    SlugService,
     TimespanService,
     ToastService,
     WaypointsService
