@@ -7,8 +7,8 @@ export class ToastService {
         private snackBar: MdSnackBar
     ) { }
 
-    show(message: string, viewContainerRef: ViewContainerRef = null): void {
+    show(message: string, actionText = "Got it", viewContainerRef: ViewContainerRef = null): void {
         let config = new MdSnackBarConfig();
-        this.snackBar.open(message, "Got it" , config);
+        this.snackBar.open(message, actionText, config);
     }
 }

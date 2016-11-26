@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SettingsService } from '../../../../core/services/settings-service/settings.service';
 
 @Component({
     selector: 'lal-settings',
     templateUrl: 'settings-landing.component.html'
 })
-export class SettingsLandingComponent implements OnInit {
-    constructor() { }
+export class SettingsLandingComponent {
+    public isEnabledNotifications: boolean;
+    constructor(private settingsService: SettingsService) { }
 
-    ngOnInit() { }
+    updateSettings() {
+        this.settingsService.save();
+    }
 }

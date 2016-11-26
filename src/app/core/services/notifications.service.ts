@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { PushNotificationsService } from 'angular2-notifications';
 import 'rxjs/Observable';
 
 import { ErrorService } from './error.service';
+import { PushNotificationsService } from 'angular2-notifications';
+import { SettingsService } from './settings-service/settings.service';
 
 @Injectable()
 export class NotificationsService {
     constructor(
         private errorService: ErrorService,
-        private pushNotificationsService: PushNotificationsService
+        private pushNotificationsService: PushNotificationsService,
+        private settingsService: SettingsService
     ) { }
 
     public getHasPermission(): boolean {
@@ -22,18 +24,20 @@ export class NotificationsService {
     }
 
     public say(title: string, message: string, iconUrl: string, callback: () => void = null): void {
-        this.pushNotificationsService
-            .create(title, {
-                body: message,
-                icon: iconUrl
-            })
-            .subscribe(
-                (notificationEvent) => {
-                    if (notificationEvent.event.type === "click" && callback) {
-                        callback();
-                    }
-                },
-                (notificationError: any) => { this.errorService.logError(notificationError);  }
-            );
+        if (this.getHasPermission() && this.settingsService.isEnabledNotifications) {
+            this.pushNotificationsService
+                .create(title, {
+                    body: message,
+                    icon: iconUrl
+                })
+                .subscribe(
+                    (notificationEvent) => {
+                        if (notificationEvent.event.type === "click" && callback) {
+                            callback();
+                        }
+                    },
+                    (notificationError: any) => { this.errorService.logError(notificationError);  }
+                );
+        }
     }
 }

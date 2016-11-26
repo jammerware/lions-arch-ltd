@@ -22,7 +22,6 @@ import { WaypointComponent } from './components/waypoint/waypoint.component';
   ],
   exports: [
     ClipboardTriggerDirective,
-    MaterialModule,
     CommonModule,
     MarkdownPipe,
     MaterialModule,

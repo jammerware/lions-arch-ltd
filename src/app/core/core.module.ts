@@ -18,6 +18,7 @@ import { LoggingService } from './services/logging.service';
 import { localizationServiceProvider } from './services/localization/localization-service.provider';
 import { NotificationsService } from './services/notifications.service';
 import { NowService } from './services/now.service';
+import { SettingsService } from './services/settings-service/settings.service';
 import { SlugService } from './services/slug-service/slug.service';
 import { TimespanService } from '../timespan/timespan.service';
 import { ToastService } from './services/toast.service';
@@ -43,6 +44,7 @@ import { WaypointsService } from './services/waypoints.service';
     LoggingService,
     NotificationsService,
     NowService,
+    SettingsService,
     SlugService,
     TimespanService,
     ToastService,

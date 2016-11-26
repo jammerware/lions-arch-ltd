@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/combineLatest';
 
 import { Event } from '../../../shared/models/event';
@@ -28,7 +27,7 @@ export class EventNotificationsService {
         return this.cache[eventId] === offset;
     }
 
-    getSubscription(eventWindowDuration: number, pollingInterval: number): Observable<void> {
+    getUpcomingEvents(eventWindowDuration: number, pollingInterval: number): Observable<void> {
         // ask for notification permission
         this.notificationsService.requestPermission();
 
