@@ -1,10 +1,10 @@
-import { AngularCliRawPage } from './app.po';
+import { LionsArchLtdPage } from './app.po';
 
-describe('angular-cli-raw App', function() {
-  let page: AngularCliRawPage;
+describe('lions-arch-ltd App', function() {
+  let page: LionsArchLtdPage;
 
   beforeEach(() => {
-    page = new AngularCliRawPage();
+    page = new LionsArchLtdPage();
   });
 
   it('should display message saying app works', () => {

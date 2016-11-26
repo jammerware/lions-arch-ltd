@@ -9,7 +9,7 @@
       "check-space"
     ],
     "curly": true,
-    "eofline": false,
+    "eofline": true,
     "forin": true,
     "indent": [
       true,
@@ -18,7 +18,7 @@
     "label-position": true,
     "label-undefined": true,
     "max-line-length": [
-      false,
+      true,
       140
     ],
     "member-access": false,
@@ -62,7 +62,7 @@
       "check-whitespace"
     ],
     "quotemark": [
-      false,
+      true,
       "single"
     ],
     "radix": true,
