@@ -11,6 +11,10 @@ export class NotificationsService {
         private pushNotificationsService: PushNotificationsService
     ) { }
 
+    public getHasPermission(): boolean {
+        return this.pushNotificationsService.permission === "granted";
+    }
+
     public requestPermission(forceRequest?: boolean): void {
         if (this.pushNotificationsService.permission === "default" || forceRequest) {
             this.pushNotificationsService.requestPermission();
@@ -18,18 +22,18 @@ export class NotificationsService {
     }
 
     public say(title: string, message: string, iconUrl: string, callback: () => void = null): void {
-        this.requestPermission();
-        console.log('saying for', title);
-        this.pushNotificationsService.create(title, {
-            body: message,
-            icon: iconUrl
-        }).subscribe(
-            (notificationEvent) => {
-                if (notificationEvent.event.type === "click" && callback) {
-                    callback();
-                }
-            },
-            (notificationError: any) => { this.errorService.logError(notificationError);  }
-        );
+        this.pushNotificationsService
+            .create(title, {
+                body: message,
+                icon: iconUrl
+            })
+            .subscribe(
+                (notificationEvent) => {
+                    if (notificationEvent.event.type === "click" && callback) {
+                        callback();
+                    }
+                },
+                (notificationError: any) => { this.errorService.logError(notificationError);  }
+            );
     }
 }
