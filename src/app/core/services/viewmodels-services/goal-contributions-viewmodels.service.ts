@@ -30,14 +30,15 @@ export class GoalContributionsViewModelsService {
 
         for(let goalContribution of goalContributions) {
             let goal = goals.find(g => g.id === goalContribution.goalId);
-            
+
             result.push({
                 description: goalContribution.description,
                 goal: {
                     id: goalContribution.goalId,
                     name: goal.name,
                     description: goal.description,
-                    iconUrl: this.assetService.getUrl(`images/icons/${goal.key}.png`)
+                    iconUrl: this.assetService.getUrl(`images/icons/${goal.key}.png`),
+                    key: goal.key
                 }
             });
         };

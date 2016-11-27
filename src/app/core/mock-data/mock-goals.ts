@@ -2,16 +2,16 @@ import { Goal } from '../../shared/models/goal';
 
 export const GOALS: Goal[] = [
   {
-    id: "566c01d0-380e-413b-9173-3012cb1e25d2",
-    name: "Ascended Crafting",
-    description: "The cheapest way to gear up ever. Well, it would be if it weren't for all those non-ascended mats you'll need.",
-    key: "ascended-crafting"
-  },
-  {
     id: "b40fb9c2-65a2-46d4-a3c3-dbb1b907bdd5",
     name: "Ascended Backpack",
     description: "Ad Infinitum isn't for everyone.",
     key: "ascended-backpack"
+  },
+  {
+    id: "566c01d0-380e-413b-9173-3012cb1e25d2",
+    name: "Ascended Crafting",
+    description: "The cheapest way to gear up ever. Well, it would be if it weren't for all those non-ascended mats you'll need.",
+    key: "ascended-crafting"
   },
   {
     id: "907320dc-3e21-4b78-83e4-a31eae8867d0",
@@ -33,7 +33,7 @@ export const GOALS: Goal[] = [
   },
   {
     id: "78c9fff9-2136-4bd8-9976-7c06ef898b32",
-    name: "Mastery Experience",
+    name: "Experience",
     description: "Wait, you don't have Leyline Gliding yet?",
     key: "xp"
   },
@@ -53,12 +53,12 @@ export const GOALS: Goal[] = [
     id: "c09db606-b8d4-4314-855b-a1cf51b628b8",
     name: "Unique Runes",
     description: "Because Runes of the Commander should _totally_ be this difficult to get.",
-    key: "runes"
+    key: "unique-runes"
   },
   {
     id: "005449d2-391d-48cc-abca-77758e5c2bdf",
     name: "Unique Skins",
     description: "Beauty is in the eye of the beholder... except when you're talking about machined weapon skins. Those are just awesome.",
-    key: "skins"
+    key: "unique-skins"
   },
 ];
