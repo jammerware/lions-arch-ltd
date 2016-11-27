@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { GoalViewModel } from '../../viewmodels/goal.viewmodel';
 
 @Component({
-    moduleId: module.id,
     selector: 'lal-goal-icon',
-    templateUrl: 'goal-icon.component.html'
+    styleUrls: ['goal-icon.component.css'],
+    template: `<div [class]="'goal-icon ' + (isLarge ? 'large ' : '') + viewModel.key"></div>`
 })
-export class GoalIconComponent implements OnInit {
-    constructor() { }
-
-    ngOnInit() { }
+export class GoalIconComponent {
+    @Input() isLarge: boolean;
+    @Input() viewModel: GoalViewModel;
 }

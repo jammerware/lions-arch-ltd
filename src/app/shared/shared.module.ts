@@ -6,11 +6,14 @@ import { ClipboardTriggerDirective } from './directives/clipboard-trigger.direct
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SlugPipe } from './pipes/slug.pipe';
 import { TimeUntilPipe } from './pipes/time-until.pipe';
+
+import { GoalIconComponent } from './components/goal-icon/goal-icon.component';
 import { WaypointComponent } from './components/waypoint/waypoint.component';
 
 @NgModule({
   declarations: [
     ClipboardTriggerDirective,
+    GoalIconComponent,
     MarkdownPipe,
     SlugPipe,
     TimeUntilPipe,
@@ -27,6 +30,7 @@ import { WaypointComponent } from './components/waypoint/waypoint.component';
     MaterialModule,
     SlugPipe,
     TimeUntilPipe,
+    GoalIconComponent,
     WaypointComponent
   ]
 })

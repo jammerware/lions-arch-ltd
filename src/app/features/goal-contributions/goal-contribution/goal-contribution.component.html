@@ -1,7 +1,7 @@
 <div class="goal-contribution">
-    <img class="goal-contribution-large" [src]="goalContribution?.goal.iconUrl" />
+    <lal-goal-icon [viewModel]="goalContribution?.goal" isLarge="true"></lal-goal-icon>
     <div class="goal-contribution-info">
         <h3 class="goal-name">{{goalContribution?.goal.name}}</h3>
-        <div class="goal-contribution-info" [innerHtml]="goalContribution?.description | markdown"></div>
+        <div [innerHtml]="goalContribution?.description | markdown"></div>
     </div>
 </div>

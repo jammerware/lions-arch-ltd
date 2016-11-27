@@ -1,14 +1,14 @@
 <div class="event-card content-card">
-  <h3><a routerLink="/event/{{viewModel?.name | slug}}/{{viewModel?.id}}">{{viewModel?.name}}</a></h3>
+  <h3><a routerLink="/event/{{viewModel.name | slug}}/{{viewModel.id}}">{{viewModel.name}}</a></h3>
   <h4>{{viewModel.zone}}</h4>
   <div class="event-desc" [innerHtml]="viewModel.description | markdown"></div>
   <ul class="event-goal-contribution">
       <li *ngFor="let goalContribution of viewModel.goalContributions | async">
-        <div [class]="'goal-icon ' + goalContribution.goal.key"></div>
+        <lal-goal-icon [viewModel]="goalContribution.goal"></lal-goal-icon>
       </li>
     </ul>
   <div class="event-next-occurrence">
-    <span class="event-countdown-text">{{ viewModel?.countdownLocalization }}</span>
-    <span class="event-countdown">{{ viewModel?.msTilNextOccurrence | async | timeUntil }}</span>
+    <span class="event-countdown-text">{{ viewModel.countdownLocalization }}</span>
+    <span class="event-countdown">{{ viewModel.msTilNextOccurrence | async | timeUntil }}</span>
   </div>
 </div>

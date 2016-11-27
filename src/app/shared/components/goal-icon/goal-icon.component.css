@@ -1,0 +1,61 @@
+.goal-icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent);
+  -webkit-mask-origin: center center;
+  -webkit-mask-size: 24px 24px;
+}
+
+.goal-icon.large {
+  width: 64px;
+  height: 64px;
+  -webkit-mask-origin: center center;
+  -webkit-mask-size: 64px 64px;
+}
+
+.goal-icon.ascended-backpack {
+  background-color: var(--color-rarity-ascended);
+  -webkit-mask-image: url(/assets/images/icons/goal-backpack.png);
+}
+
+.goal-icon.ascended-crafting {
+  background: var(--color-rarity-ascended);
+  -webkit-mask-image: url(/assets/images/icons/goal-crafting.png);
+}
+
+.goal-icon.ascended-weapons {
+  background: var(--color-rarity-ascended);
+  -webkit-mask-image: url(/assets/images/icons/goal-weapons.png);
+}
+
+.goal-icon.exotic-armor {
+  background: var(--color-rarity-exotic);
+  -webkit-mask-image: url(/assets/images/icons/goal-armor.png);
+}
+
+.goal-icon.exotic-crafting {
+  background: var(--color-rarity-exotic);
+  -webkit-mask-image: url(/assets/images/icons/goal-crafting.png);
+}
+
+.goal-icon.legendary {
+  background: var(--color-rarity-legendary);
+  -webkit-mask-image: url(/assets/images/icons/goal-weapons.png);
+}
+
+.goal-icon.hot-legendary {
+  background: var(--color-rarity-legendary);
+  -webkit-mask-image: url(/assets/images/icons/goal-weapons.png);
+}
+
+.goal-icon.unique-runes {
+  -webkit-mask-image: url(/assets/images/icons/goal-runes.png);
+}
+
+.goal-icon.unique-skins {
+  -webkit-mask-image: url(/assets/images/icons/goal-skins.png);
+}
+
+.goal-icon.xp {
+  -webkit-mask-image: url(/assets/images/icons/goal-xp.png);
+}
