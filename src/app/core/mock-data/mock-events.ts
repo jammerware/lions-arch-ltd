@@ -11,7 +11,7 @@ export const MOCK_EVENTS: Event[] = [
     waypoints: [
       {
         waypointId: "8a8469e9-7f6b-4a58-ad20-f3420dac3468",
-        description: "Helicopters that land at camps near Faren's Flyer take players up to the [Axemaster Gwyllion](https://wiki.guildwars2.com/wiki/Kill_Axemaster_Gwyllion) boss event." 
+        description: "Helicopters that land at camps near Faren's Flyer (referred to in-game as the Noble camps) take players up to the [Axemaster Gwyllion](https://wiki.guildwars2.com/wiki/Kill_Axemaster_Gwyllion) boss event." 
       },
       {
         waypointId: "5ad9f305-f23f-4a14-85e8-c4586684ac72",
@@ -19,7 +19,7 @@ export const MOCK_EVENTS: Event[] = [
       },
       {
         waypointId: "ffeb2cc3-75a6-43e6-a973-421af2d3a107",
-        description: "Helicopters that land at camps near Mellaggan's Valor take players up to the [Mordrem Tetrad](https://wiki.guildwars2.com/wiki/Kill_the_tetrad_of_Mordrem_champions) boss event."
+        description: "Helicopters that land at camps near Mellaggan's Valor (referred to in-game as the Ordnance camps) take players up to the [Mordrem Tetrad](https://wiki.guildwars2.com/wiki/Kill_the_tetrad_of_Mordrem_champions) boss event."
       },
       {
         waypointId: "58151f49-8998-4c51-b6d1-351ca5ee7bb9",
@@ -27,7 +27,7 @@ export const MOCK_EVENTS: Event[] = [
       },
       {
         waypointId: "7c458799-f14f-4e8f-801e-91352d7b6828",
-        description: "Helicopters that land at camps just south of the Shipwreck Peak waypoint take players up to the [Wyvern Patriarch](https://wiki.guildwars2.com/wiki/Kill_the_Wyvern_Patriarch) boss event."
+        description: "Helicopters that land at camps just south of the Shipwreck Peak waypoint (referred to in-game as the Pale Reaver camps) take players up to the [Wyvern Patriarch](https://wiki.guildwars2.com/wiki/Kill_the_Wyvern_Patriarch) boss event."
       }
     ],
     duration: 2.7e+6,
@@ -57,9 +57,30 @@ export const MOCK_EVENTS: Event[] = [
     ],
     key: "vb",
     guide: `# Overview
+The event is loosely divided into two parts. Over the first 25 minutes of the event (while the timer indicates that between 20:30 and 45 minutes remain), you're tasked with defending the camps scattered across the zone and reclaiming them from the Mordrem if they've been taken. During this phase of the meta-event, you should prioritize, in order:
 
-      
-    `
+- Recapturing fallen camps
+- Defending friendly camps
+- Defending soldiers as they transport supplies to camps
+- Defeating rampaging Mordrem
+- Running supplies yourself
+
+## Bosses
+When 20:30 remains on the timer, choppers will land at all controlled camps (and will land at any camp that is retaken by the good guys until the end of the event). When they do, you can use any chopper to travel up to the canopy of the jungle. When you arrive, depending on which chopper you took, you'll be confronted with one of five (5) mighty bosses.
+
+| If you took a chopper near | You'll meet | Tips | Suggested masteries
+| --- | --- | ---
+| Pact Encampment waypoint | The Wyvern Matriarch | Avoid her AOEs and break her defiance bar when it appears | --
+| Jaka Itzel waypoint | Champions Cotoni and Huetzi | Try to keep them apart and use Bouncing Mushrooms to chase them down when they run away to heal | Bouncing mushrooms
+| Faren's Flyer | Axemaster Gwyllion | Save CC abilities until he teleports away, then follow the smoke trails to find him. Break his defiance bar before you find yourself waypointing home. | Nuhoch Stealth Detection
+| Mellaggan's Valor | The Mordrem Tetrad | Keep all three members of the Tetrad apart. Dodge shockwaves by jumping over (or rolling through) them. | -- 
+| Shrouded Ruins | The Wyvern Patriarch | Stay away from the edges of the platform so his wing buffet doesn't send you back to the jungle floor. When his shield appears, glide around the platform to find wyvern eggs, and use updrafts to gain height and drop them on his fat head. | Bouncing mushrooms, gliding, updrafts
+
+
+# Trivia
+- The Verdant Brink meta-event is the best, and all other meta-events can (and should) bow before it.
+- The day/night cycle of this event is actually synchronized with the solar day in the rest of the world. That is, when night falls in Frostgorge Sound (for example), this event will become active in Verdant Brink at the same time.      
+`
   },
   {
     id: "5aff38bd-ffe0-4753-9ef2-e272b213d4de",

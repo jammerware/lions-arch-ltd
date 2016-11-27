@@ -130,4 +130,18 @@ img.game-content-list-icon {
 
 .markdown ul {
 	list-style: square inside;
+	margin-bottom: 1.3em;
+}
+
+.markdown table {
+	margin-bottom: 1.3em;
+}
+
+.markdown th {
+	text-align: left;
+}
+
+.markdown td, .markdown th {
+	padding-bottom: 0.4em;
+	padding-right: 1em;
 }
