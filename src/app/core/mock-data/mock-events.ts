@@ -57,7 +57,7 @@ export const MOCK_EVENTS: Event[] = [
     ],
     key: "vb",
     guide: `# Overview
-The event is loosely divided into two parts. Over the first 25 minutes of the event (while the timer indicates that between 20:30 and 45 minutes remain), you're tasked with defending the camps scattered across the zone and reclaiming them from the Mordrem if they've been taken. During this phase of the meta-event, you should prioritize, in order:
+The event is loosely divided into two parts. Over the first 25 minutes of the event (while the timer indicates that between 20:30 and 45 minutes remain), you're tasked with defending the camps scattered across the zone and reclaiming them from the Mordrem if they've been taken. Additionally, to reinforce camps under your control, you can bring them supplies to increase the quality of their defenses. During this phase of the meta-event, you should prioritize, in order:
 
 - Recapturing fallen camps
 - Defending friendly camps
@@ -69,7 +69,7 @@ The event is loosely divided into two parts. Over the first 25 minutes of the ev
 When 20:30 remains on the timer, choppers will land at all controlled camps (and will land at any camp that is retaken by the good guys until the end of the event). When they do, you can use any chopper to travel up to the canopy of the jungle. When you arrive, depending on which chopper you took, you'll be confronted with one of five (5) mighty bosses.
 
 | If you took a chopper near | You'll meet | Tips | Suggested masteries
-| --- | --- | ---
+| --- | --- | --- | ---
 | Pact Encampment waypoint | The Wyvern Matriarch | Avoid her AOEs and break her defiance bar when it appears | --
 | Jaka Itzel waypoint | Champions Cotoni and Huetzi | Try to keep them apart and use Bouncing Mushrooms to chase them down when they run away to heal | Bouncing mushrooms
 | Faren's Flyer | Axemaster Gwyllion | Save CC abilities until he teleports away, then follow the smoke trails to find him. Break his defiance bar before you find yourself waypointing home. | Nuhoch Stealth Detection
@@ -77,9 +77,10 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
 | Shrouded Ruins | The Wyvern Patriarch | Stay away from the edges of the platform so his wing buffet doesn't send you back to the jungle floor. When his shield appears, glide around the platform to find wyvern eggs, and use updrafts to gain height and drop them on his fat head. | Bouncing mushrooms, gliding, updrafts
 
 
-# Trivia
+# Other notes & trivia
+- While parts of the canopy are accessible during the day via some [clever tricks](https://www.youtube.com/watch?v=irNBueEfMx8), the presence of the choppers during the back half of this event present easy access to a lot of areas that are otherwise pretty difficult to reach. If you're going for map completion and can take a chopper up to the canopy just before the end of the event, considering hitting the [infamous guano hero point](https://wiki.guildwars2.com/wiki/Pile_of_Guano), the [Precarious Ruin POI]([&BOUHAAA=]), and all the platforms where the meta-event bosses spawn. Maybe do that guano thing last. It's kind of a dillhole.  
+- The day/night cycle of this event is actually synchronized with the solar day in the rest of the world. That is, when night falls in Frostgorge Sound (for example), this event will become active in Verdant Brink at the same time.
 - The Verdant Brink meta-event is the best, and all other meta-events can (and should) bow before it.
-- The day/night cycle of this event is actually synchronized with the solar day in the rest of the world. That is, when night falls in Frostgorge Sound (for example), this event will become active in Verdant Brink at the same time.      
 `
   },
   {
