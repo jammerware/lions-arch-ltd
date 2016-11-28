@@ -5,7 +5,6 @@ import { PushNotificationsModule } from 'angular2-notifications';
 
 // general application services
 import { AssetService } from './services/asset.service';
-import { ClipboardService } from './services/clipboard.service';
 import { ErrorService } from './services/error.service';
 import { EventNotificationsService } from './services/event-notifications-service/event-notifications.service';
 import { EventsService } from './services/events-service/events.service';
@@ -31,7 +30,6 @@ import { WaypointsService } from './services/waypoints.service';
   ],
   providers: [
     AssetService,
-    ClipboardService,
     ErrorService,
     EventsService,
     EventNotificationsService,

@@ -17,7 +17,7 @@
         <md-tab label="WAYPOINTS">
             <ul class="tab-content">
                 <li *ngFor="let waypoint of viewModel?.waypoints | async">
-                    <event-waypoint [eventWaypointViewModel]="waypoint"></event-waypoint>
+                    <lal-event-waypoint [viewModel]="waypoint"></lal-event-waypoint>
                 </li>
             </ul>
         </md-tab>

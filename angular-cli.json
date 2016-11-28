@@ -18,7 +18,8 @@
       "prefix": "lal",
       "mobile": false,
       "styles": [
-        "styles/styles.css"
+        "styles/styles.css",
+        "styles/material-themes/lal-theme.scss"
       ],
       "scripts": [],
       "environments": {

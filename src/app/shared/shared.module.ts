@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
-import { ClipboardTriggerDirective } from './directives/clipboard-trigger.directive';
+import { ClipboardModule } from '../clipboard/clipboard.module';
+
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SlugPipe } from './pipes/slug.pipe';
 import { TimeUntilPipe } from './pipes/time-until.pipe';
@@ -12,7 +13,6 @@ import { WaypointComponent } from './components/waypoint/waypoint.component';
 
 @NgModule({
   declarations: [
-    ClipboardTriggerDirective,
     GoalIconComponent,
     MarkdownPipe,
     SlugPipe,
@@ -20,11 +20,12 @@ import { WaypointComponent } from './components/waypoint/waypoint.component';
     WaypointComponent
   ],
   imports: [
+    ClipboardModule,
     CommonModule,
     MaterialModule.forRoot(),
   ],
   exports: [
-    ClipboardTriggerDirective,
+    ClipboardModule,
     CommonModule,
     MarkdownPipe,
     MaterialModule,

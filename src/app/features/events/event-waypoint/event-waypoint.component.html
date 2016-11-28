@@ -1,12 +1,12 @@
-<div class="event-waypoint">
+<div *ngIf="viewModel" class="event-waypoint">
     <img
         class="game-content-list-icon"
         src="/assets/images/icons/waypoint-large.png"
-        [alt]="eventWaypointViewModel.name" />
+        [alt]="viewModel.name" />
     <div class="waypoint-info">
-        <button class="link-button" [lal-clipboard-trigger]="eventWaypoinViewModel?.waypoint.code">
-            <h3>{{eventWaypointViewModel?.waypoint.name}}</h3>
+        <button class="link-button" [lal-clipboard-trigger]="viewModel.waypoint.code">
+            <h3>{{viewModel.waypoint.name}}</h3>
         </button>
-        <p class="event-waypoint-desc" [innerHtml]="eventWaypointViewModel?.description | markdown"></p>
+        <p class="event-waypoint-desc" [innerHtml]="viewModel.description | markdown"></p>
     </div>
 </div>
