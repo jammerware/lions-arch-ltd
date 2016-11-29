@@ -21,7 +21,8 @@ export class ClipboardTriggerDirective implements OnInit {
         this.renderer.setElementClass(this.elementRef.nativeElement, ClipboardService.ClipboardTriggerClass, true);
         this.renderer.setElementAttribute(this.elementRef.nativeElement, 'type', 'button');
         this.renderer.setElementAttribute(this.elementRef.nativeElement, 'data-clipboard-text', this.clipboardText);
-        console.log('initting for ', this.clipboardText);
+
+        console.log(this.elementRef);
 
         this.clipboardService = new ClipboardService();
         this.clipboardService.init(

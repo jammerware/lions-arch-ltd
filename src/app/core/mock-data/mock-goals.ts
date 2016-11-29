@@ -52,7 +52,7 @@ export const GOALS: Goal[] = [
   {
     id: "c09db606-b8d4-4314-855b-a1cf51b628b8",
     name: "Unique Runes",
-    description: "Because Runes of the Commander should _totally_ be this difficult to get.",
+    description: "Because Runes of Leadership should _totally_ be this difficult to get.",
     key: "unique-runes"
   },
   {

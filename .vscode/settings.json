@@ -1,4 +1,5 @@
 {
+    "editor.formatOnSave": true,
     "files.exclude": {
         "node_modules/": true,
         "typings/": true,
@@ -8,6 +9,7 @@
         "**/*.spec.js": true,
         "dist/": true
     },
+    "files.trimTrailingWhitespace": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
     "codeGuid.showNotificationWhenGuidGenerated": false
 }
