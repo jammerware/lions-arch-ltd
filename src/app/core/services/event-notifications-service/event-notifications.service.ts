@@ -11,7 +11,7 @@ import { SlugService } from '../slug-service/slug.service';
 
 @Injectable()
 export class EventNotificationsService {
-    private cache: { [eventId: string]: number; } =  { };
+    private cache: { [eventId: string]: number; } = {};
     constructor(
         private assetsService: AssetService,
         private eventsService: EventsService,
@@ -45,9 +45,7 @@ export class EventNotificationsService {
                                 `${event.name}`,
                                 `It's starting soon in ${event.zone}!`,
                                 this.assetsService.getUrl('images/icons/event-notification-icons/' + event.key + '.jpg'),
-                                () => {
-                                this.router.navigate(['/event', this.slugService.getSlug(event.name), event.id ]);
-                                }
+                                () => this.router.navigate(['/event', this.slugService.getSlug(event.name), event.id])
                             );
 
                             this.addToCache(event.id, offsetOfNextOccurrence);

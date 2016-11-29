@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import { BrowserStorageService } from '../browser-storage.service';
 
 @Injectable()
 export class SettingsService {
-    public isEnabledNotifications: boolean;
+    constructor(private browserStorageService: BrowserStorageService) { }
 
-    init(): void {
-        this.isEnabledNotifications = (localStorage.getItem('isEnabledNotifications') === 'true');
+    get isEnabledNotifications(): boolean {
+        return this.browserStorageService.getItem('isEnabledNotifications') === 'true';
     }
 
-    save(): void {
-        localStorage.setItem('isEnabledNotifications', this.isEnabledNotifications.toString());
+    set isEnabledNotifications(value: boolean) {
+        this.browserStorageService.setItem('isEnabledNotifications', value.toString());
     }
 }

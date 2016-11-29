@@ -6,10 +6,5 @@ import { SettingsService } from '../../../../core/services/settings-service/sett
     templateUrl: 'settings-landing.component.html'
 })
 export class SettingsLandingComponent {
-    public isEnabledNotifications: boolean;
     constructor(private settingsService: SettingsService) { }
-
-    updateSettings() {
-        this.settingsService.save();
-    }
 }

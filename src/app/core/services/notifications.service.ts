@@ -31,12 +31,12 @@ export class NotificationsService {
                     icon: iconUrl
                 })
                 .subscribe(
-                    (notificationEvent) => {
-                        if (notificationEvent.event.type === "click" && callback) {
-                            callback();
-                        }
-                    },
-                    (notificationError: any) => { this.errorService.logError(notificationError);  }
+                (notificationEvent) => {
+                    if (notificationEvent.event.type === "click" && callback) {
+                        callback();
+                    }
+                },
+                (notificationError: any) => { this.errorService.logError(notificationError); }
                 );
         }
     }

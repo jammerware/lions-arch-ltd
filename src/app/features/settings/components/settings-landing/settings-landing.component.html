@@ -1,12 +1,5 @@
 <h2>Settings</h2>
 
 <h3>Notifications</h3>
-<md-slide-toggle
-    (change)="updateSettings()"
-    [(ngModel)]="settingsService.isEnabledNotifications">
-    Enable desktop-style notifications
-</md-slide-toggle>
-<md-slider
-    min="1" 
-    max="30" 
-    tick-interval="5">Time prior to an event's start time you want to be notified</md-slider>
+<md-slide-toggle [(ngModel)]="settingsService.isEnabledNotifications">Enable desktop-style notifications</md-slide-toggle>
+<md-slider min="1" max="30" tick-interval="5">Time prior to an event's start time you want to be notified</md-slider>
