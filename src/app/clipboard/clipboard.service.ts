@@ -1,17 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as Clipboard from 'clipboard';
+import * as Clipboard from 'clipboard-js';
 
 @Injectable()
 export class ClipboardService {
-    public static ClipboardTriggerClass: string = 'clipboard-trigger';
-
-    init(
-        onSuccess?: (clipboardEvent: any) => void,
-        onFailure?: (clipboardEvent: any) => void
-    ): void {
-        let clipboard = new Clipboard(`.${ClipboardService.ClipboardTriggerClass}`);
-
-        clipboard.on('success', onSuccess);
-        clipboard.on('error', onFailure);
+    copy(text: string, successCallback?: () => void, errorCallback?: (error) => void): void {
+        Clipboard.copy(text).then(
+            successCallback,
+            errorCallback
+        );
     }
 }

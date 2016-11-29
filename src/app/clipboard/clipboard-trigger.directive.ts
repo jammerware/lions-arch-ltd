@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
+import { Directive, HostListener, Input } from '@angular/core';
 import { ClipboardService } from './clipboard.service';
 import { ErrorService } from '../core/services/error.service';
 import { ToastService } from '../core/services/toast.service';
@@ -7,31 +7,18 @@ import { ToastService } from '../core/services/toast.service';
     providers: [ClipboardService],
     selector: '[lal-clipboard-trigger]'
 })
-export class ClipboardTriggerDirective implements OnInit {
+export class ClipboardTriggerDirective {
     @Input('lal-clipboard-trigger') clipboardText: string;
-    clipboardService: ClipboardService;
-
     constructor(
-        private elementRef: ElementRef,
-        private renderer: Renderer,
+        private clipboardService: ClipboardService,
         private errorService: ErrorService,
         private toastService: ToastService) { }
 
-    ngOnInit(): void {
-        this.renderer.setElementClass(this.elementRef.nativeElement, ClipboardService.ClipboardTriggerClass, true);
-        this.renderer.setElementAttribute(this.elementRef.nativeElement, 'type', 'button');
-        this.renderer.setElementAttribute(this.elementRef.nativeElement, 'data-clipboard-text', this.clipboardText);
-
-        console.log(this.elementRef);
-
-        this.clipboardService = new ClipboardService();
-        this.clipboardService.init(
-            (successEvent) => {
-                this.toastService.show(`Copied "${this.clipboardText}" to your clipboard.`, `Got it`);
-            },
-            (errorEvent) => {
-                this.errorService.logError(errorEvent);
-            }
+    @HostListener('click') onClick() {
+        this.clipboardService.copy(
+            this.clipboardText,
+            () => { this.toastService.show(`Copied "${this.clipboardText}" to your clipboard.`, `Got it`); },
+            (error) => this.errorService.logError(error)
         );
     }
 }
