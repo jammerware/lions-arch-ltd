@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { Timespan } from './timespan/timespan';
+import { Timespan } from './modules/timespan/timespan';
 
 import { EventNotificationsService } from './core/services/event-notifications-service/event-notifications.service';
 

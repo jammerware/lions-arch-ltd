@@ -1,5 +1,5 @@
 import { Event } from '../../shared/models/event';
-import { Timespan } from '../../timespan/timespan';
+import { Timespan } from '../../modules/timespan/timespan';
 
 export const MOCK_EVENTS: Event[] = [
     {

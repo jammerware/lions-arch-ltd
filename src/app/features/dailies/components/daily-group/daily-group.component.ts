@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DailyGroup } from '../../../../gw2api/gw2api-dailies-service/models/daily-group';
+import { DailyGroup } from '../../../../modules/gw2api/gw2api-dailies-service/models/daily-group';
 
 @Component({
     selector: 'lal-daily-group',

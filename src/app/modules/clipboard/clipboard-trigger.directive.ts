@@ -1,7 +1,7 @@
 import { Directive, HostListener, Input } from '@angular/core';
 import { ClipboardService } from './clipboard.service';
-import { ErrorService } from '../core/services/error.service';
-import { ToastService } from '../core/services/toast.service';
+import { ErrorService } from '../../core/services/error.service';
+import { ToastService } from '../../core/services/toast.service';
 
 @Directive({
     providers: [ClipboardService],

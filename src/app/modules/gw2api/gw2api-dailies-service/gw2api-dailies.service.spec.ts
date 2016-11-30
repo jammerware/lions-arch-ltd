@@ -1,7 +1,7 @@
 import { fakeAsync, tick } from '@angular/core/testing';
 import { Http } from '@angular/http';
 
-import { FakeHttpService } from '../../../test/fake-http.service';
+import { FakeHttpService } from '../../../../test/fake-http.service';
 import { Gw2ApiDailiesService } from './gw2api-dailies.service';
 import { DailyContentRequirement } from './models/daily-content-requirement';
 import { DailyGroup } from './models/daily-group';
@@ -11,8 +11,8 @@ function getService(http?: Http): Gw2ApiDailiesService {
     return new Gw2ApiDailiesService(http);
 }
 
-describe('The GW2API dailies service', function() {
-    it('should adapt a json string representing an array of a single daily to a class as expected when adaptDaily is called', function() {
+describe('The GW2API dailies service', function () {
+    it('should adapt a json string representing an array of a single daily to a class as expected when adaptDaily is called', function () {
         // arrange
         let json = JSON.parse(`[{ "id": 1234, "level": {"min": 1, "max": 80 }, "required_access": ["GuildWars2","HeartOfThorns"] }]`);
         let service = getService();
@@ -29,7 +29,7 @@ describe('The GW2API dailies service', function() {
         expect(result[0].contentRequirement).toContain(DailyContentRequirement.HeartOfThorns);
     });
 
-    it('should return a DailyGroup with a DailyGroupType corresponding to the passed string when adaptDailyGroup is called', function() {
+    it('should return a DailyGroup with a DailyGroupType corresponding to the passed string when adaptDailyGroup is called', function () {
         // arrange
         let json = JSON.parse(`{ "wvw": [{ "id": 1234, "level": { "min": 1, "max": 80 }, "required_access": ["GuildWars2"] }] }`);
         let service = getService();
@@ -41,7 +41,7 @@ describe('The GW2API dailies service', function() {
         expect(result.type).toBe(DailyGroupType.wvw);
     });
 
-    it('should return null when adaptDailyGroup is called with a string that can\'t be found in the DailyGroupType enum', function() {
+    it('should return null when adaptDailyGroup is called with a string that can\'t be found in the DailyGroupType enum', function () {
         // arrange
         let json = JSON.parse(`{ "wvw": [{ "id": 1234, "level": { "min": 1, "max": 80 }, "required_access": ["GuildWars2"] }] }`);
         let service = getService();
@@ -53,7 +53,7 @@ describe('The GW2API dailies service', function() {
         expect(result).toBeNull();
     });
 
-    it('shouldn\'t return a daily group that has no dailies in it', function() {
+    it('shouldn\'t return a daily group that has no dailies in it', function () {
         // arrange
         let json = JSON.parse(`{ "special": { } }`);
         let service = getService();

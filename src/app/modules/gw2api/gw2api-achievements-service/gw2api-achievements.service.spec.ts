@@ -1,7 +1,7 @@
 import { Http } from '@angular/http';
 import { fakeAsync, tick } from '@angular/core/testing';
 
-import { FakeHttpService } from '../../../test/fake-http.service';
+import { FakeHttpService } from '../../../../test/fake-http.service';
 import { Gw2ApiAchievementsService } from './gw2api-achievements.service';
 import { Achievement } from './models/achievement';
 
@@ -9,10 +9,10 @@ function getService(http?: Http): Gw2ApiAchievementsService {
     return new Gw2ApiAchievementsService(http);
 }
 
-describe('The GW2API achievements service', function() {
-    it('should parse achievement json into an achievement object as expected', function() {
+describe('The GW2API achievements service', function () {
+    it('should parse achievement json into an achievement object as expected', function () {
         // arrange
-        let json = JSON.parse(`{ 
+        let json = JSON.parse(`{
             "id": 1234,
             "name": "King Donkleflatz's Court Jumping Puzzle",
             "description": "Don't mess with the court.",
@@ -35,7 +35,7 @@ describe('The GW2API achievements service', function() {
 
     it('should integrate sortakinda', fakeAsync(() => {
         // arrange
-        let fakeBody = ` 
+        let fakeBody = `
             {"id":1409,"icon":"https://render.guildwars2.com/file/A047720652E1F4F1F678F06E0AD343BC0A17D70A/740012.png","name":"Harsh Detox","description":"","requirement":"Kill members of the Toxic Alliance in Lion's Arch.","locked_text":"","type":"Default","flags":[],"tiers":[{"count":10,"points":1}]}
         `.trim();
         let fakeHttp = FakeHttpService.thatRespondsWith(fakeBody);

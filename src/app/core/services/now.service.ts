@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Timespan } from '../../modules/timespan/timespan';
 
 @Injectable()
 export class NowService {
+    public static MS_IN_DAY = 86400000;
+
     get(): Date {
         return new Date();
     }
@@ -9,5 +12,17 @@ export class NowService {
     // returns the offset from UTC in ms
     getUtcOffset(): number {
         return new Date().getTimezoneOffset() * 60 * 1000;
+    }
+
+    getTimespanSinceMidnightUtc(): Timespan {
+        let date = this.get();
+        let copyOfDate = new Date(date);
+        copyOfDate.setHours(0, 0, 0, 0);
+
+        // this is ms since midnight, local time
+        let result = date.getTime() - copyOfDate.getTime();
+        let utcOffset = this.getUtcOffset();
+
+        return Timespan.fromMilliseconds((result + utcOffset) % NowService.MS_IN_DAY);
     }
 }

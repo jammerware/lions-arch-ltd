@@ -7,15 +7,15 @@ import '../../../modules/tslinq/tslinq';
 
 // local declarations
 import { AssetService } from '../../../core/services/asset.service';
-import { Daily } from '../../../gw2api/gw2api-dailies-service/models/daily';
-import { DailyGroup } from '../../../gw2api/gw2api-dailies-service/models/daily-group';
-import { DailyGroupType } from '../../../gw2api/gw2api-dailies-service/models/daily-group-type';
+import { Daily } from '../../../modules/gw2api/gw2api-dailies-service/models/daily';
+import { DailyGroup } from '../../../modules/gw2api/gw2api-dailies-service/models/daily-group';
+import { DailyGroupType } from '../../../modules/gw2api/gw2api-dailies-service/models/daily-group-type';
 import { DailyViewModel } from '../viewmodels/daily.viewmodel';
 import { DailyGroupFractalsViewModel } from '../viewmodels/daily-group-fractals.viewmodel';
 import { DailyRecommendedFractalViewModel } from '../viewmodels/daily-recommended-fractal.viewmodel';
 import { Fractal } from '../../../shared/models/fractal';
 import { FractalsService } from '../../../core/services/fractals-service/fractals.service';
-import { Gw2ApiAchievementsService } from '../../../gw2api/gw2api-achievements-service/gw2api-achievements.service';
+import { Gw2ApiAchievementsService } from '../../../modules/gw2api/gw2api-achievements-service/gw2api-achievements.service';
 
 @Injectable()
 export class DailyViewModelsService {

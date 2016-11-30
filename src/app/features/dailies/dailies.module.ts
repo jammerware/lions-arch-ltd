@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 
 // GW2 API modules
-import { Gw2ApiModule } from '../../gw2api/gw2api.module';
+import { Gw2ApiModule } from '../../modules/gw2api/gw2api.module';
 
 import { DailyViewModelsService } from './services/daily-viewmodels.service';
 import { DailiesRoutingModule } from './dailies-routing.module';

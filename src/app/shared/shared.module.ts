@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
-import { ClipboardModule } from '../clipboard/clipboard.module';
+import { ClipboardModule } from '../modules/clipboard/clipboard.module';
 
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SlugPipe } from './pipes/slug.pipe';

@@ -1,7 +1,7 @@
 import { IGoalContributor } from './igoalcontributor';
 import { GoalContribution } from './goal-contribution';
 import { EventWaypoint } from './event-waypoint';
-import { Timespan } from '../../timespan/timespan';
+import { Timespan } from '../../modules/timespan/timespan';
 
 export class Event implements IGoalContributor {
   id: string;

@@ -3,16 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Gw2ApiDailiesService } from '../../../../gw2api/gw2api-dailies-service/gw2api-dailies.service';
+import { Gw2ApiDailiesService } from '../../../../modules/gw2api/gw2api-dailies-service/gw2api-dailies.service';
 import { DailyViewModelsService } from '../../services/daily-viewmodels.service';
 import { DailyGroupViewModel } from '../../viewmodels/daily-group.viewmodel';
 import { DailyGroupFractalsViewModel } from '../../viewmodels/daily-group-fractals.viewmodel';
 import { DailyViewModel } from '../../viewmodels/daily.viewmodel';
-import { DailyGroupType } from '../../../../gw2api/gw2api-dailies-service/models/daily-group-type';
+import { DailyGroupType } from '../../../../modules/gw2api/gw2api-dailies-service/models/daily-group-type';
 
 @Component({
     selector: 'lal-dailies-landing',
-    styleUrls: [ 'dailies-landing.component.css' ],
+    styleUrls: ['dailies-landing.component.css'],
     templateUrl: 'dailies-landing.component.html'
 })
 export class DailiesLandingComponent implements OnInit, OnDestroy {
