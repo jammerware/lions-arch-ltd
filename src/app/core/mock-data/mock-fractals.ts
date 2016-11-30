@@ -8,9 +8,7 @@ export const FRACTALS: Fractal[] = [
         paths: ["Dolphin", "Dark"],
         scales: [
             { value: 3, recommendedAR: 0, path: "Dark" },
-            { value: 18, recommendedAR: 0, path: "Dolphin" },
-            { value: 26, recommendedAR: 18, path: "Dolphin"},
-            { value: 42, recommendedAR: 47, path: "Dolphin"},
+            { value: 26, recommendedAR: 18, path: "Dolphin" },
             { value: 61, recommendedAR: 81, path: "Dark" },
             { value: 76, recommendedAR: 107, path: "Dolphin" }
         ]
@@ -67,7 +65,6 @@ export const FRACTALS: Fractal[] = [
             { value: 23, recommendedAR: 13 },
             { value: 39, recommendedAR: 42 },
             { value: 58, recommendedAR: 75 },
-            { value: 73, recommendedAR: 102 },
             { value: 83, recommendedAR: 120 },
         ]
     },
@@ -105,7 +102,7 @@ export const FRACTALS: Fractal[] = [
         name: "Underground Facility",
         description: "Raise your hand if you're rooting for bombs.",
         isNight: true,
-        paths: [ "Bombs", "Guns" ],
+        paths: ["Bombs", "Guns"],
         scales: [
             { value: 8, recommendedAR: 0, path: "Guns" },
             { value: 17, recommendedAR: 0, path: "Bombs" },
@@ -164,6 +161,10 @@ export const FRACTALS: Fractal[] = [
         description: "She seems angrier since she was demoted from scale 100.",
         isNight: false,
         scales: [
+            { value: 18, recommendedAR: 0 },
+            { value: 42, recommendedAR: 47 },
+            { value: 73, recommendedAR: 102 },
+            { value: 98, recommendedAR: 147 },
         ]
     },
     {
@@ -186,8 +187,7 @@ export const FRACTALS: Fractal[] = [
             { value: 35, recommendedAR: 34 },
             { value: 45, recommendedAR: 52 },
             { value: 60, recommendedAR: 79 },
-            { value: 80, recommendedAR: 115 },
-            { value: 98, recommendedAR: 147 },
+            { value: 80, recommendedAR: 115 }
         ]
     },
     {
