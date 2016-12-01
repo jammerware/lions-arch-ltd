@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { EventWaypointViewModel } from '../../../shared/viewmodels/event-waypoint.viewmodel';
+import { EventWaypointViewModel } from '../../../../shared/viewmodels/event-waypoint.viewmodel';
 
 @Component({
     selector: 'lal-event-waypoint',
-    styleUrls: [ 'event-waypoint.component.css' ],
+    styleUrls: ['event-waypoint.component.scss'],
     templateUrl: 'event-waypoint.component.html'
 })
 export class EventWaypointComponent implements OnChanges {

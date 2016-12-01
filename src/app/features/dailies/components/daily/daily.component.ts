@@ -3,7 +3,7 @@ import { DailyViewModel } from '../../viewmodels/daily.viewmodel';
 
 @Component({
     selector: 'lal-daily',
-    styleUrls: [ 'daily.component.css' ],
+    styleUrls: ['daily.component.scss'],
     templateUrl: 'daily.component.html'
 })
 export class DailyComponent {

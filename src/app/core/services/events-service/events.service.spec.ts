@@ -14,6 +14,7 @@ function getTestEventWithOffsets(offsets: Timespan[]): Event {
         zone: 'Donkland',
         description: 'The testiest of events',
         key: 'te',
+        eventTypeId: '',
         primaryWaypointId: '',
         waypoints: [],
         occurrenceOffsets: offsets || [Timespan.fromMilliseconds(0)],
@@ -21,7 +22,7 @@ function getTestEventWithOffsets(offsets: Timespan[]): Event {
     };
 }
 
-describe('Events service', () => {
+describe('The events service', () => {
     it('should indicate that the offset of the next event is 0 when the event has a 0 offset from UTC midnight and now is UTC midnight', function() {
         // arrange
         let event: Event = getTestEvent();

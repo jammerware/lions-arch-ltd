@@ -18,7 +18,7 @@
       "prefix": "lal",
       "mobile": false,
       "styles": [
-        "styles/styles.css",
+        "styles/styles.scss",
         "styles/material-themes/lal-theme.scss"
       ],
       "scripts": [],
@@ -42,7 +42,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,

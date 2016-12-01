@@ -7,6 +7,7 @@ export const MOCK_EVENTS: Event[] = [
         name: "Night and the Enemy",
         zone: "Verdant Brink",
         description: "Help Pact forces survive the darkest of nights against the servants of Mordremoth.",
+        eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
         primaryWaypointId: "58151f49-8998-4c51-b6d1-351ca5ee7bb9",
         waypoints: [
             {
@@ -96,6 +97,7 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
         description: `Fly armors. Save the Exalted. Stop the Mordrem from taking Tarir.
 
   Don't screw up South.`,
+        eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
         primaryWaypointId: "299425a1-b208-4b7b-9bbe-b216bc5e85e1",
         waypoints: [
             {
@@ -178,6 +180,7 @@ The [Mushroom Master](https://wiki.guildwars2.com/wiki/Mushroom_Master) waits in
         name: "King of the Jungle",
         zone: "Tangled Depths",
         description: "Join forces with ogres, Nuhoch, Rata Novus, and SCAR to kill chak, steal loot, and [learn new words](http://www.dictionary.com/browse/gerent).",
+        eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
         primaryWaypointId: "7dae3d65-d3cb-4233-965c-6b93a228c467",
         waypoints: [
             {
@@ -247,6 +250,7 @@ SCAR Lane is among the conceptually easiest of the four lanes. Here, the SCAR un
         name: "Shadow of the Dragon",
         zone: "Dragon's Stand",
         description: "Three paths. Three towers. One mouth. Also, a weird body. Don't forget your machetes!",
+        eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
         primaryWaypointId: "95718376-f193-49bb-895e-ebe66c966c41",
         waypoints: [
             {
@@ -336,6 +340,7 @@ When you've sent the Mouth of Mordremoth packing, experienced a heart attack at 
         name: "Sandstorm!",
         zone: "Dry Top",
         description: "The most profitable recurring environmental disaster since Disney World.",
+        eventTypeId: "ec3525ff-58cd-4f25-b727-d3085e60c5de",
         primaryWaypointId: "9941ef2d-98eb-4c82-afc1-58fb2e2961c9",
         waypoints: [
             {

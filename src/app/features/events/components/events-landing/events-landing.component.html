@@ -1,0 +1,8 @@
+<div class="events">
+  <div *ngFor="let eventTypeGroup of (viewModel | async)?.eventTypeGroups" class="event-type-group">
+    <h2>{{eventTypeGroup.eventType.name}}</h2>
+    <div class="event-cards">
+      <event-card [viewModel]="event" *ngFor="let event of eventTypeGroup.events"></event-card>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ import { DailyGroupType } from '../../../../modules/gw2api/gw2api-dailies-servic
 
 @Component({
     selector: 'lal-dailies-landing',
-    styleUrls: ['dailies-landing.component.css'],
+    styleUrls: ['dailies-landing.component.scss'],
     templateUrl: 'dailies-landing.component.html'
 })
 export class DailiesLandingComponent implements OnInit, OnDestroy {

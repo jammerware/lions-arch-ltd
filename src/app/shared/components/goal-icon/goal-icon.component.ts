@@ -3,7 +3,7 @@ import { GoalViewModel } from '../../viewmodels/goal.viewmodel';
 
 @Component({
     selector: 'lal-goal-icon',
-    styleUrls: ['goal-icon.component.css'],
+    styleUrls: ['goal-icon.component.scss'],
     template: `<div [md-tooltip]="viewModel.name" [class]="'goal-icon ' + (isLarge ? 'large ' : '') + viewModel.key"></div>`
 })
 export class GoalIconComponent {

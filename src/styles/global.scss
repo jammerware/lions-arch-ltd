@@ -1,26 +1,4 @@
-/* variables */
-:root {
-	/* brand colors */
-	--color-accent: #2980b9;
-	--color-primary: #ecf0f1;
-	--color-subtle: #aaaaaa;
-
-	/* rarity */
-	--color-rarity-legendary: #4c139d;
-	--color-rarity-ascended: #fb3e8d;
-	--color-rarity-exotic: #ffa405;
-}
-
-/* fonts */
-@font-face {
-  font-family: "EasonPro-Caps";
-  src: url(../assets/fonts/easonpro-displaycaps-webfont.woff);
-}
-
-@font-face {
-  font-family: "EasonPro";
-  src: url(../assets/fonts/easonpro-regular-webfont.woff);
-}
+@import '_vars';
 
 /* Master Styles */
 html, body {
@@ -31,16 +9,16 @@ html, body {
 }
 
 h2 {
-  color: var(--color-accent);
-  font-family: EasonPro-Caps;
+  color: $color-accent;
+  font-family: $brand-font-caps;
 	font-size: 2.2em;
 	font-weight: bold;
 	margin-bottom: 1em;
 }
 
-a {
-	color: var(--color-accent);
-  text-decoration: none;
+a, a:hover {
+	color: $color-accent;
+  	text-decoration: none;
 }
 
 * {
@@ -55,23 +33,23 @@ a {
 }
 
 .content-card {
-  background-color: #e2e8e9;
+  	background-color: #e2e8e9;
 	display: flex;
 	flex-direction: column;
-  width: 320px;
-  padding:6px;
-  margin: 0 1em 1em 0;
-  margin-right: 16px;
+	width: 320px;
+	padding:6px;
+	margin: 0 1em 1em 0;
+	margin-right: 16px;
 }
 
 .content-card .content-card-title {
-	font-family: EasonPro;
+	font-family: $brand-font;
 	font-size: 1.4em;
 	font-weight: bold;
 }
 
 .content-card .content-card-subtitle {
-	font-family: EasonPro;
+	font-family: $brand-font;
 	font-size: 0.9em;
 	font-weight: bold;
 }
@@ -79,7 +57,7 @@ a {
 .link-button {
 	border: none;
 	background: none;
-	color: var(--color-accent);
+	color: $color-accent;
 	cursor: pointer;
 	font-size: 1em;
 	padding: 0;
@@ -111,7 +89,7 @@ img.game-content-list-icon {
 }
 
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-	color: var(--color-accent);
+	color: $color-accent;
 	font-family: EasonPro;
 	margin-bottom:0.2em;
 }

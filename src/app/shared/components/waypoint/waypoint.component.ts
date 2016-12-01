@@ -5,7 +5,7 @@ import { Waypoint } from '../../models/waypoint';
 
 @Component({
     selector: 'waypoint',
-    styleUrls: [ 'waypoint.component.css' ],
+    styleUrls: ['waypoint.component.scss'],
     templateUrl: 'waypoint.component.html'
 })
 export class WaypointComponent implements OnInit {

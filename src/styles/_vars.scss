@@ -1,0 +1,24 @@
+/* VARIABLES  */
+/* brand colors */
+$color-accent: #2980b9;
+$color-primary: #ecf0f1;
+$color-subtle: #aaaaaa;
+
+/* rarity */
+$color-rarity-legendary: #4c139d;
+$color-rarity-ascended: #fb3e8d;
+$color-rarity-exotic: #ffa405;
+
+/* fonts */
+@font-face {
+  font-family: "EasonPro-Caps";
+  src: url(../assets/fonts/easonpro-displaycaps-webfont.woff);
+}
+
+@font-face {
+  font-family: "EasonPro";
+  src: url(../assets/fonts/easonpro-regular-webfont.woff);
+}
+
+$brand-font-caps: "EasonPro-Caps";
+$brand-font: "EasonPro";

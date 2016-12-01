@@ -9,6 +9,7 @@ export class Event implements IGoalContributor {
   zone: string;
   description: string;
   key: string; // used to localize the throwaway joke text in front of the event timer, like "the lootsplosion starts in 48 minutes"
+  eventTypeId: string;
   primaryWaypointId: string;
   waypoints: EventWaypoint[];
   duration?: number; // length of the event. we'll do this in ms for now. can be null if the event length is dependent on performance

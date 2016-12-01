@@ -1,16 +1,15 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';
-import { EventViewModelsService } from '../../../core/services/viewmodels-services/event-viewmodels.service';
-import { EventsService } from '../../../core/services/events-service/events.service';
+import { EventViewModel } from '../../../../shared/viewmodels/event.viewmodel';
+import { EventViewModelsService } from '../../../../core/services/viewmodels-services/event-viewmodels.service';
+import { EventsService } from '../../../../core/services/events-service/events.service';
 
 @Component({
   selector: 'lal-event',
-  styleUrls: ['./event.component.css'],
-  templateUrl: './event.component.html'
+  styleUrls: ['event.component.scss'],
+  templateUrl: 'event.component.html'
 })
 export class EventComponent implements OnInit, OnDestroy {
   private routeParamsSubscription: Subscription;

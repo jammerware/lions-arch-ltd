@@ -1,17 +1,17 @@
 export class Timespan {
-  milliseconds: number;
-  seconds: number;
-  minutes: number;
-  hours: number;
-  days: number;
-  weeks: number;
+  milliseconds: number = 0;
+  seconds: number = 0;
+  minutes: number = 0;
+  hours: number = 0;
+  days: number = 0;
+  weeks: number = 0;
   // months?
-  years: number;
-  decades: number;
-  centuries: number;
-  millennia: number;
+  years: number = 0;
+  decades: number = 0;
+  centuries: number = 0;
+  millennia: number = 0;
 
-  totalMilliseconds: number;
+  totalMilliseconds: number = 0;
 
   static fromMilliseconds(milliseconds: number): Timespan {
     milliseconds = milliseconds || 0;
@@ -21,7 +21,7 @@ export class Timespan {
       seconds: Math.floor(milliseconds / 1000),
       minutes: Math.floor(milliseconds / 60000),
       hours: Math.floor(milliseconds / 3.6e6),
-      days:  Math.floor(milliseconds / 8.64e7),
+      days: Math.floor(milliseconds / 8.64e7),
       weeks: Math.floor(milliseconds / 6.048e+8),
       years: Math.floor(milliseconds / 3.154e10),
       decades: Math.floor(milliseconds / 3.154e11),
@@ -38,7 +38,7 @@ export class Timespan {
       this.fromSeconds(seconds).totalMilliseconds
     );
   }
-  
+
   static fromSeconds(seconds: number): Timespan {
     return this.fromMilliseconds((seconds || 0) * 1000);
   }

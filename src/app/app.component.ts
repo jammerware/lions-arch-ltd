@@ -7,7 +7,7 @@ import { EventNotificationsService } from './core/services/event-notifications-s
 @Component({
   selector: 'lal-app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
   private title: string = `Lion's Arch, Ltd.`;

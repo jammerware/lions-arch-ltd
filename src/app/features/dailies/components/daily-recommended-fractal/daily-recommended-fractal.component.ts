@@ -3,7 +3,7 @@ import { DailyRecommendedFractalViewModel } from '../../viewmodels/daily-recomme
 
 @Component({
     selector: 'lal-daily-recommended-fractal',
-    styleUrls: ['daily-recommended-fractal.component.css'],
+    styleUrls: ['daily-recommended-fractal.component.scss'],
     templateUrl: 'daily-recommended-fractal.component.html'
 })
 export class DailyRecommendedFractalComponent {

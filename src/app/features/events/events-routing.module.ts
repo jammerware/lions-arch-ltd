@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { EventsLandingComponent } from './events-landing/events-landing.component';
-import { EventComponent } from './event/event.component';
+import { EventsLandingComponent } from './components/events-landing/events-landing.component';
+import { EventComponent } from './components/event/event.component';
 
 @NgModule({
     imports: [

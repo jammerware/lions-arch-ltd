@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'lal-daily-group-fractals',
-    styleUrls: [ './daily-group-fractals.component.css' ],
+    styleUrls: ['./daily-group-fractals.component.scss'],
     templateUrl: 'daily-group-fractals.component.html'
 })
 export class DailyGroupFractalsComponent {
