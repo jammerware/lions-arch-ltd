@@ -1,32 +1,32 @@
 <h3><a routerLink="/events">events</a> &gt; {{viewModel?.zone}}'s</h3>
 <h2>{{viewModel?.name}}</h2>
 <div class="event-start-info">
-    <waypoint [waypoint]="viewModel?.primaryWaypoint | async"></waypoint>
-    |
-    <span class="subtle-label">starts</span>
-    <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
+  <waypoint [waypoint]="viewModel?.primaryWaypoint | async"></waypoint>
+  |
+  <span class="subtle-label">starts</span>
+  <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
 </div>
 
 <h4 [innerHtml]="viewModel?.description | markdown"></h4>
 
 <div class="event-content">
-    <md-tab-group>
-        <md-tab *ngIf="viewModel?.guide" label="QUICK GUIDE">
-            <div class="tab-content event-goals" [innerHtml]="viewModel?.guide | markdown"></div>
-        </md-tab>
-        <md-tab label="WAYPOINTS">
-            <ul class="tab-content">
-                <li *ngFor="let waypoint of viewModel?.waypoints | async">
-                    <lal-event-waypoint [viewModel]="waypoint"></lal-event-waypoint>
-                </li>
-            </ul>
-        </md-tab>
-        <md-tab *ngIf="viewModel?.goalContributions" label="GOALS">
-            <ul class="tab-content goal-contributions">
-                <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
-                    <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
-                </li>
-            </ul>
-        </md-tab>
-    </md-tab-group>
+  <md-tab-group>
+    <md-tab *ngIf="viewModel?.guide" label="QUICK GUIDE">
+      <div class="tab-content event-goals" [innerHtml]="viewModel?.guide | markdown"></div>
+    </md-tab>
+    <md-tab label="WAYPOINTS">
+      <ul class="tab-content">
+        <li *ngFor="let waypoint of viewModel?.waypoints | async">
+          <lal-event-waypoint [viewModel]="waypoint"></lal-event-waypoint>
+        </li>
+      </ul>
+    </md-tab>
+    <md-tab *ngIf="(viewModel.goalContributions | async).length" label="GOALS">
+      <ul class="tab-content goal-contributions">
+        <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
+          <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
+        </li>
+      </ul>
+    </md-tab>
+  </md-tab-group>
 </div>
