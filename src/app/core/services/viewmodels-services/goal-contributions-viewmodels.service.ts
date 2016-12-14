@@ -20,15 +20,17 @@ export class GoalContributionsViewModelsService {
         return this.goalsService
             .getGoals()
             .map(
-                goals => this.composeGoalContributionViewModels(goalContributions, goals),
-                (error: any) => this.errorService.logError(error)
+            goals => this.composeGoalContributionViewModels(goalContributions, goals),
+            (error: any) => this.errorService.logError(error)
             );
     }
 
     private composeGoalContributionViewModels(goalContributions: GoalContribution[], goals: Goal[]): GoalContributionViewModel[] {
         let result: GoalContributionViewModel[] = [];
 
-        for(let goalContribution of goalContributions) {
+        if (!goalContributions) { return result; }
+
+        for (let goalContribution of goalContributions) {
             let goal = goals.find(g => g.id === goalContribution.goalId);
 
             result.push({

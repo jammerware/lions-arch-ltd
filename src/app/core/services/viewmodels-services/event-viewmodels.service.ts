@@ -1,8 +1,4 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/interval';
 
 import { Event } from '../../../shared/models/event';
 import { EventViewModel } from '../../../shared/viewmodels/event.viewmodel';

@@ -2,7 +2,7 @@
   <div *ngFor="let eventTypeGroup of (viewModel | async)?.eventTypeGroups" class="event-type-group">
     <h2>{{eventTypeGroup.eventType.name}}</h2>
     <div class="event-cards">
-      <event-card [viewModel]="event" *ngFor="let event of eventTypeGroup.events"></event-card>
+      <lal-event-card [viewModel]="event" *ngFor="let event of eventTypeGroup.events"></lal-event-card>
     </div>
   </div>
 </div>

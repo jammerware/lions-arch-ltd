@@ -28,13 +28,12 @@ export class EventsLandingViewModelService {
                         events: []
                     });
                 }
+                eventsLandingViewModel.eventTypeGroups.sort((a, b) => a.eventType.sort < b.eventType.sort ? -1 : 1);
 
                 for (let event of events) {
                     let eventTypeGroupViewModel = eventsLandingViewModel.eventTypeGroups.first(group => group.eventType.id === event.eventTypeId);
                     eventTypeGroupViewModel.events.push(this.eventViewModelsService.getViewModel(event));
                 }
-
-                console.log(eventsLandingViewModel);
 
                 return eventsLandingViewModel;
             }

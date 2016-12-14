@@ -1,5 +1,6 @@
 body {
-  background-color: $color-accent;
+  background: $color-accent url(../assets/images/logo.svg) no-repeat center left 10em;
+  background-size: 50em;
 }
 
 .loading {
@@ -8,7 +9,7 @@ body {
   justify-content: center;
   color: $color-primary;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
 }
 
 .loading-subtitle {

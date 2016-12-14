@@ -1,6 +1,7 @@
 import { Waypoint } from '../../shared/models/waypoint';
 
 export const WAYPOINTS: Waypoint[] = [
+    // META-EVENTS
     // dry top
     {
         id: "9941ef2d-98eb-4c82-afc1-58fb2e2961c9",
@@ -105,5 +106,11 @@ export const WAYPOINTS: Waypoint[] = [
         id: "84b876d6-d215-4e6d-8497-4a6f227def52",
         name: "Pact Base Camp Southern",
         code: "[&BHoIAAA=]"
+    },
+    // WORLD BOSSES
+    {
+        id: "297a4e7a-8f35-45a3-a5c2-6fe28248d215",
+        name: "Splintered Coast",
+        code: "[&BNABAAA=]"
     }
 ];

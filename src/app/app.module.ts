@@ -14,20 +14,22 @@ import { SettingsModule } from './features/settings/settings.module';
 
 // local components
 import { AppComponent } from './app.component';
+import { EventsLandingComponent } from './features/events/components/events-landing/events-landing.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/events', pathMatch: 'full' }
-    ]),
+    RouterModule.forRoot([{
+      path: '',
+      component: EventsLandingComponent
+    }]),
     CoreModule,
     SharedModule,
     DailiesModule,
     EventsModule,
     SettingsModule
   ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

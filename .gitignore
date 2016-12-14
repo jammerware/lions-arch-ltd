@@ -26,6 +26,9 @@ testem.log
 /src/*.js
 /src/*.map
 
+# secret keys
+config/sendgrid/sendgrid.json
+
 #System Files
 .DS_Store
 Thumbs.db

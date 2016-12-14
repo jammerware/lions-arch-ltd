@@ -2,6 +2,7 @@ import { Event } from '../../shared/models/event';
 import { Timespan } from '../../modules/timespan/timespan';
 
 export const MOCK_EVENTS: Event[] = [
+    // meta events
     {
         id: "215af12c-e3be-4cc7-b041-c87f7a71fee7",
         name: "Night and the Enemy",
@@ -398,5 +399,25 @@ When you've sent the Mouth of Mordremoth packing, experienced a heart attack at 
 #Overview
 Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedicated to the mastery of Dry Top? It's a wonderful world.
 `
+    },
+    // meta events
+    {
+        id: "9f82ac4a-ec64-4dbc-8fe0-911b3374978e",
+        name: "Tequatl the Sunless",
+        zone: "Sparkfly Fen",
+        description: "The watery grave is waiting. Feel like a dip?",
+        eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
+        primaryWaypointId: "297a4e7a-8f35-45a3-a5c2-6fe28248d215",
+        duration: 9e5,
+        occurrenceOffsets: [
+            Timespan.fromMilliseconds(0),
+            Timespan.fromHours(3),
+            Timespan.fromHours(7),
+            Timespan.fromHours(11.5),
+            Timespan.fromHours(16),
+            Timespan.fromHours(19)
+        ],
+        goalContributions: null,
+        key: "teq"
     }
 ];

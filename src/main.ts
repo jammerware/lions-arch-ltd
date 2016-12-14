@@ -6,7 +6,7 @@ import { environment } from './environments/environment';
 import { AppModule } from './app/';
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
 // TODO: don't be a dork

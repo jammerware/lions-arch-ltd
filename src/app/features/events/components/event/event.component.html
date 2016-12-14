@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </md-tab>
-        <md-tab label="GOALS">
+        <md-tab *ngIf="viewModel?.goalContributions" label="GOALS">
             <ul class="tab-content goal-contributions">
                 <li *ngFor="let goalContribution of viewModel?.goalContributions | async">
                     <goal-contribution [goalContribution]="goalContribution"></goal-contribution>
