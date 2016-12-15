@@ -118,5 +118,21 @@ export const WAYPOINTS: Waypoint[] = [
     id: "9a0ba883-10d1-41bf-9363-056d6acc11d7",
     name: "Brooloonu",
     code: "[&BNEBAAA=]"
+  },
+  // karka queen
+  {
+    id: "2ffb23a1-7e1b-42cb-a9fd-1f5094adadb3",
+    name: "Camp Karka",
+    code: "[&BNcGAAA=]"
+  },
+  {
+    id: "7ab689f3-d3db-4edf-a0c3-a1137972aaca",
+    name: "Pride Point",
+    code: "[&BNIGAAA=]"
+  },
+  {
+    id: "e61a776d-3ac5-41ca-8ffd-42bd4ec4a0d3",
+    name: "Kiel's Outpost",
+    code: "[&BNwGAAA=]"
   }
 ];

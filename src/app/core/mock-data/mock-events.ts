@@ -7,7 +7,7 @@ export const MOCK_EVENTS: Event[] = [
     id: "215af12c-e3be-4cc7-b041-c87f7a71fee7",
     name: "Night and the Enemy",
     zone: "Verdant Brink",
-    description: "Help Pact forces survive the darkest of nights against the servants of Mordremoth.",
+    description: 'Defend Pact camps, run supplies, and try not to make "GET TO DA CHOPPA" jokes... like this one.',
     eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
     primaryWaypointId: "58151f49-8998-4c51-b6d1-351ca5ee7bb9",
     waypoints: [
@@ -95,9 +95,7 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
     id: "5aff38bd-ffe0-4753-9ef2-e272b213d4de",
     name: "The Octovine",
     zone: "Auric Basin",
-    description: `Fly armors. Save the Exalted. Stop the Mordrem from taking Tarir.
-
-  Don't screw up South.`,
+    description: `Fly armors. Save the Exalted. Stop the Mordrem from taking Tarir. Enjoy the multimap while it's still around!`,
     eventTypeId: "021146d9-2314-4e85-b964-279d9d0d745d",
     primaryWaypointId: "299425a1-b208-4b7b-9bbe-b216bc5e85e1",
     waypoints: [
@@ -340,7 +338,7 @@ When you've sent the Mouth of Mordremoth packing, experienced a heart attack at 
     id: "a36077c4-b80a-40f1-b26d-da8728fc9344",
     name: "Sandstorm!",
     zone: "Dry Top",
-    description: "The most profitable recurring environmental disaster since Disney World.",
+    description: "Kill Skritt, grab quartz, and experience the most profitable recurring environmental disaster since Disney World.",
     eventTypeId: "ec3525ff-58cd-4f25-b727-d3085e60c5de",
     primaryWaypointId: "9941ef2d-98eb-4c82-afc1-58fb2e2961c9",
     waypoints: [
@@ -400,7 +398,7 @@ When you've sent the Mouth of Mordremoth packing, experienced a heart attack at 
 Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedicated to the mastery of Dry Top? It's a wonderful world.
 `
   },
-  // meta events
+  // world bosses
   {
     id: "9f82ac4a-ec64-4dbc-8fe0-911b3374978e",
     name: "Tequatl the Sunless",
@@ -443,5 +441,39 @@ Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedica
 
 For a more detailed rundown of the fight, check out [Dulfy's guide](http://dulfy.net/2013/09/21/gw2-tequatl-the-sunless-strategy-guide/).
 `
+  },
+  {
+    id: "68182660-f265-4547-86fe-52928ad43fc8",
+    name: "The Karka Queen",
+    zone: "Southsun Cove",
+    description: '"I\'ve a Karka of a Tale to tell ya, lads" just doesn\'t have the same ring, does it?',
+    eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
+    primaryWaypointId: "2ffb23a1-7e1b-42cb-a9fd-1f5094adadb3",
+    waypoints: [
+      {
+        waypointId: "2ffb23a1-7e1b-42cb-a9fd-1f5094adadb3",
+        description: "Camp Karka is a good initial stop to check in on the status of the pre-event. It's also quite nice this time of year."
+      },
+      {
+        waypointId: "7ab689f3-d3db-4edf-a0c3-a1137972aaca",
+        description: "The Karka Queen spawns at one of a number of random locations, including one near this waypoint."
+      },
+      {
+        waypointId: "e61a776d-3ac5-41ca-8ffd-42bd4ec4a0d3",
+        description: "The Karka Queen spawns at one of a number of random locations, including one near this waypoint."
+      }
+    ],
+    duration: 6e5,
+    occurrenceOffsets: [
+      Timespan.fromHours(2),
+      Timespan.fromHours(6),
+      Timespan.fromHours(10.5),
+      Timespan.fromHours(15),
+      Timespan.fromHours(18),
+      Timespan.fromHours(23)
+    ],
+    goalContributions: null,
+    key: "wb-kq",
+    guide: ``
   }
 ];
