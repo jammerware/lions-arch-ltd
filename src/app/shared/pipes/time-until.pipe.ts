@@ -23,21 +23,21 @@ export class TimeUntilPipe implements PipeTransform {
     // minutes
     let remaining = Math.round(milliseconds / 60000);
     if (remaining < 60) {
-      if (remaining == 1) return `${about} ${this.localizationService.aMinute}`;
+      if (remaining === 1) { return `${about} ${this.localizationService.aMinute}`; }
       return `${about} ${remaining} ${this.localizationService.minutes}${ago}`;
     }
 
     // hours
     remaining = Math.round(remaining / 60);
     if (remaining < 24) {
-      if (remaining == 1) return `${about} ${this.localizationService.anHour}`;
+      if (remaining === 1) { return `${about} ${this.localizationService.anHour}`; }
       return `${about} ${remaining} ${this.localizationService.hours}${ago}`;
     }
 
     // days
     remaining = Math.round(remaining / 24);
     if (remaining < 7) {
-      if (remaining == 1) return `${about} ${this.localizationService.aDay}`;
+      if (remaining === 1) { return `${about} ${this.localizationService.aDay}`; }
       return `${about} ${remaining} ${this.localizationService.days}${ago}`;
     }
 

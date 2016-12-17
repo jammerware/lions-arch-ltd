@@ -134,5 +134,11 @@ export const WAYPOINTS: Waypoint[] = [
     id: "e61a776d-3ac5-41ca-8ffd-42bd4ec4a0d3",
     name: "Kiel's Outpost",
     code: "[&BNwGAAA=]"
+  },
+  // taidha
+  {
+    id: "5f24b983-ea70-45c3-b827-42d83d17e78b",
+    name: "Laughing Gull",
+    code: "[&BKgBAAA=]"
   }
 ];

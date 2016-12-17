@@ -20,12 +20,27 @@
   padding: 1em;
 }
 
+#app-titlebar-logo {
+  background-color: $color-logo;
+  display: inline-block;
+  -webkit-mask-image: url(../assets/images/logo.svg);
+  mask-image: url(../assets/images/logo.svg);
+  -webkit-mask-size: 20em;
+  mask-size: 20em;
+  height: 7em;
+  width: 20em;
+  position: absolute;
+  top: -1em;
+  left: 0;
+}
+
 h1, h1 a {
   color: $color-primary;
   display: inline;
   flex: 1;
   font-family: EasonPro-Caps;
   font-size: 2em;
+  z-index: 1;
 }
 
 nav {

@@ -11,6 +11,10 @@ body {
   flex-flow: row;
 }
 
+.loading-text {
+  z-index: 1;
+}
+
 .loading-subtitle {
   color: $color-primary;
   font-family: $brand-font;
@@ -32,23 +36,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
 }
 
 /* controls */
 .progress {
   position: relative;
-  height: 50em;
-  width: 50em;
-  background-color: #2c3e50;
+  height: 35em;
+  width: 35em;
+  background-color: $color-logo;
   background-clip: padding-box;
   -webkit-mask-image: url(../assets/images/logo.svg);
   mask-image: url(../assets/images/logo.svg);
-  -webkit-mask-size: 50em;
-  mask-size: 50em;
+  -webkit-mask-size: 35em;
+  mask-size: 35em;
   -webkit-mask-repeat: no-repeat;
   overflow: hidden;
-  top: -3em;
+  top: 3em;
 }
 
 .progress .determinate {
@@ -62,7 +65,6 @@ body {
 
 .progress .indeterminate {
   background-color: #34495e;
-  box-shadow: 4px 4px 12px rgb(241, 196, 15);
 }
 
 .progress .indeterminate:before

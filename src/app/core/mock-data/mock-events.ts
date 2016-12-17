@@ -403,7 +403,7 @@ Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedica
     id: "9f82ac4a-ec64-4dbc-8fe0-911b3374978e",
     name: "Tequatl the Sunless",
     zone: "Sparkfly Fen",
-    description: "The watery grave is waiting. Feel like a dip?",
+    description: "It's a nice day in Sparkfly Fen, and the watery grave is waiting. Feel like a dip?",
     eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
     primaryWaypointId: "297a4e7a-8f35-45a3-a5c2-6fe28248d215",
     waypoints: [
@@ -446,7 +446,7 @@ For a more detailed rundown of the fight, check out [Dulfy's guide](http://dulfy
     id: "68182660-f265-4547-86fe-52928ad43fc8",
     name: "The Karka Queen",
     zone: "Southsun Cove",
-    description: '"I\'ve a Karka of a Tale to tell ya, lads" just doesn\'t have the same ring, does it?',
+    description: '"A Karka of a Tale to tell ye, lads" just doesn\'t have the same ring, does it?',
     eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
     primaryWaypointId: "2ffb23a1-7e1b-42cb-a9fd-1f5094adadb3",
     waypoints: [
@@ -474,6 +474,33 @@ For a more detailed rundown of the fight, check out [Dulfy's guide](http://dulfy
     ],
     goalContributions: null,
     key: "wb-kq",
+    guide: ``
+  },
+  {
+    id: "a79976df-88af-44b0-88f1-3e02d9e82f1d",
+    name: "Tadiha Covington",
+    zone: "Bloodtide Coast",
+    description: "She's distinctly crabby for someone with a stronghold on \"Laughing\" Gull Island.",
+    eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
+    primaryWaypointId: "5f24b983-ea70-45c3-b827-42d83d17e78b",
+    waypoints: [
+      {
+        waypointId: "5f24b983-ea70-45c3-b827-42d83d17e78b",
+        description: "Some choices in life are hard. The choice of which waypoint to take to boop Taidha in the snoot is easy. All aboard the Laughing Gull Island train!"
+      }
+    ],
+    occurrenceOffsets: [
+      Timespan.fromHours(0),
+      Timespan.fromHours(3),
+      Timespan.fromHours(6),
+      Timespan.fromHours(9),
+      Timespan.fromHours(12),
+      Timespan.fromHours(15),
+      Timespan.fromHours(18),
+      Timespan.fromHours(21)
+    ],
+    goalContributions: null,
+    key: "wb-tc",
     guide: ``
   }
 ];
