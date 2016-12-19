@@ -478,9 +478,9 @@ For a more detailed rundown of the fight, check out [Dulfy's guide](http://dulfy
   },
   {
     id: "a79976df-88af-44b0-88f1-3e02d9e82f1d",
-    name: "Tadiha Covington",
+    name: "Taidha Covington",
     zone: "Bloodtide Coast",
-    description: "She's distinctly crabby for someone with a stronghold on \"Laughing\" Gull Island.",
+    description: "She's distinctly crabby for someone with a stronghold on _Laughing_ Gull Island.",
     eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
     primaryWaypointId: "5f24b983-ea70-45c3-b827-42d83d17e78b",
     waypoints: [
