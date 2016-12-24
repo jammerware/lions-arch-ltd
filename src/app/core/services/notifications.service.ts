@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/Observable';
 
+import { AssetService } from './asset.service';
 import { ErrorService } from './error.service';
 import { PushNotificationsService } from 'angular2-notifications';
 import { SettingsService } from './settings-service/settings.service';
+import { Sound, SfxService } from './sfx-service';
 
 @Injectable()
 export class NotificationsService {
   constructor(
+    private assetService: AssetService,
     private errorService: ErrorService,
     private pushNotificationsService: PushNotificationsService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private sfxService: SfxService
   ) { }
 
   public getHasPermission(): boolean {
@@ -25,10 +29,19 @@ export class NotificationsService {
 
   public say(title: string, message: string, iconUrl: string, callback: () => void = null): void {
     if (this.getHasPermission() && this.settingsService.isEnabledNotifications) {
+
+      let sound: Sound;
+      if (this.settingsService.notificationSoundId) {
+        sound = this.sfxService.getSound(this.settingsService.notificationSoundId);
+      }
+
+      console.log('sound is ', this.assetService.getUrl('sounds/' + sound.fileName, true));
+
       this.pushNotificationsService
         .create(title, {
           body: message,
-          icon: iconUrl
+          icon: iconUrl,
+          sound: this.assetService.getUrl('sounds/' + sound.fileName, true)
         })
         .subscribe(
         (notificationEvent) => {

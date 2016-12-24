@@ -19,34 +19,36 @@ import { localizationServiceProvider } from './services/localization/localizatio
 import { NotificationsService } from './services/notifications.service';
 import { NowService } from './services/now.service';
 import { SettingsService } from './services/settings-service/settings.service';
+import { SfxService } from './services/sfx-service';
 import { SlugService } from './services/slug-service/slug.service';
 import { ToastService } from './services/toast.service';
 import { WaypointsService } from './services/waypoints.service';
 
 @NgModule({
-    imports: [
-        HttpModule,
-        PushNotificationsModule
-    ],
-    providers: [
-        AssetService,
-        BrowserStorageService,
-        ErrorService,
-        EventsService,
-        EventNotificationsService,
-        EventViewModelsService,
-        EventWaypointViewModelsService,
-        FractalsService,
-        GoalsService,
-        GoalContributionsViewModelsService,
-        localizationServiceProvider,
-        LoggingService,
-        NotificationsService,
-        NowService,
-        SettingsService,
-        SlugService,
-        ToastService,
-        WaypointsService
-    ]
+  imports: [
+    HttpModule,
+    PushNotificationsModule
+  ],
+  providers: [
+    AssetService,
+    BrowserStorageService,
+    ErrorService,
+    EventsService,
+    EventNotificationsService,
+    EventViewModelsService,
+    EventWaypointViewModelsService,
+    FractalsService,
+    GoalsService,
+    GoalContributionsViewModelsService,
+    localizationServiceProvider,
+    LoggingService,
+    NotificationsService,
+    NowService,
+    SettingsService,
+    SfxService,
+    SlugService,
+    ToastService,
+    WaypointsService
+  ]
 })
 export class CoreModule { }

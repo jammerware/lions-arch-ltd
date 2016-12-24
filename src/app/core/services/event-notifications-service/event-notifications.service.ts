@@ -13,6 +13,7 @@ import { SlugService } from '../slug-service/slug.service';
 @Injectable()
 export class EventNotificationsService {
   private cache: { [eventId: string]: number; } = {};
+
   constructor(
     private assetsService: AssetService,
     private eventsService: EventsService,

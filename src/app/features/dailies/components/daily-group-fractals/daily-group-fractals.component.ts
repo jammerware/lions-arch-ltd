@@ -3,10 +3,10 @@ import { DailyGroupFractalsViewModel } from '../../viewmodels/daily-group-fracta
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector: 'lal-daily-group-fractals',
-    styleUrls: ['./daily-group-fractals.component.scss'],
-    templateUrl: 'daily-group-fractals.component.html'
+  selector: 'lal-daily-group-fractals',
+  styleUrls: ['./daily-group-fractals.component.scss'],
+  templateUrl: './daily-group-fractals.component.html'
 })
 export class DailyGroupFractalsComponent {
-    @Input() fractalDailies: Observable<DailyGroupFractalsViewModel>;
+  @Input() fractalDailies: Observable<DailyGroupFractalsViewModel>;
 }

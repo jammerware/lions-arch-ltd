@@ -1,0 +1,8 @@
+<h4>Enable desktop-style notifications</h4>
+<md-slide-toggle [(ngModel)]="settingsService.isEnabledNotifications"></md-slide-toggle>
+<h4>Sound</h4>
+<md-select [(ngModel)]="selectedSound" (ngModelChange)="updateSettings()" placeholder="notification sound" aria-placeholder="notification sound">
+  <md-option *ngFor="let sound of sounds" [value]="sound">{{sound.name}}</md-option>
+</md-select>
+<h4>Volume</h4>
+<md-slider min="1" max="30" tick-interval="5"></md-slider>

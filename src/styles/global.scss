@@ -26,7 +26,7 @@ a.active {
 }
 
 * {
-  font-family: Droid Sans, Arial, Helvetica, sans-serif;
+  font-family: $font-body;
 }
 
 /* controls */
@@ -37,7 +37,8 @@ a.active {
 }
 
 .content-card {
-  	background-color: #e2e8e9;
+  background-color: #e2e8e9;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
 	display: flex;
 	flex-direction: column;
 	width: 320px;

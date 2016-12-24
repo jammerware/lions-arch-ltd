@@ -12,6 +12,5 @@
     "dist/": true
   },
   "files.trimTrailingWhitespace": true,
-  "typescript.tsdk": "./node_modules/typescript/lib",
   "codeGuid.showNotificationWhenGuidGenerated": false
 }

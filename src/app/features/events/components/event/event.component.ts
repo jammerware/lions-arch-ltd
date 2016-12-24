@@ -8,8 +8,8 @@ import { EventsService } from '../../../../core/services/events-service/events.s
 
 @Component({
   selector: 'lal-event',
-  styleUrls: ['event.component.scss'],
-  templateUrl: 'event.component.html'
+  styleUrls: ['./event.component.scss'],
+  templateUrl: './event.component.html'
 })
 export class EventComponent implements OnInit, OnDestroy {
   private routeParamsSubscription: Subscription;
