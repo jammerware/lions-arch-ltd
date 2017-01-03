@@ -35,13 +35,10 @@ export class NotificationsService {
         sound = this.sfxService.getSound(this.settingsService.notificationSoundId);
       }
 
-      console.log('sound is ', this.assetService.getUrl('sounds/' + sound.fileName, true));
-
       this.pushNotificationsService
         .create(title, {
           body: message,
-          icon: iconUrl,
-          sound: this.assetService.getUrl('sounds/' + sound.fileName, true)
+          icon: iconUrl
         })
         .subscribe(
         (notificationEvent) => {
@@ -49,6 +46,9 @@ export class NotificationsService {
             callback();
             window.focus();
             notificationEvent.notification.close();
+          }
+          else {
+            console.log(notificationEvent.event.type);
           }
         },
         (notificationError: any) => { this.errorService.logError(notificationError); }

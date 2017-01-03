@@ -5,6 +5,7 @@ import { PushNotificationsModule } from 'angular2-notifications';
 
 // general application services
 import { AssetService } from './services/asset.service';
+import { AudioPlaybackService } from './services/audio-playback-service/audio-playback.service';
 import { BrowserStorageService } from './services/browser-storage.service';
 import { ErrorService } from './services/error.service';
 import { EventNotificationsService } from './services/event-notifications-service/event-notifications.service';
@@ -31,6 +32,7 @@ import { WaypointsService } from './services/waypoints.service';
   ],
   providers: [
     AssetService,
+    AudioPlaybackService,
     BrowserStorageService,
     ErrorService,
     EventsService,

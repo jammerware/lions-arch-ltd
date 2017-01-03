@@ -14,4 +14,8 @@ export class AssetService {
 
     return Location.joinWithSlash(assetRoot, fileName);
   }
+
+  getNotificationSoundUrl(fileName: string): string {
+    return this.getUrl(`/sounds/${fileName}`, true);
+  }
 }

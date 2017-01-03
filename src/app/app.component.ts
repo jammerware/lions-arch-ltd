@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // kick off the thing that listens for upcoming events and ticks every 10 seconds or whatever
     this.upcomingEventsSub = this.eventNotificationsService
-      .getUpcomingEvents(Timespan.fromMinutes(10).totalMilliseconds, 15000)
+      .listenForUpcomingEventNotifications(Timespan.fromMinutes(10).totalMilliseconds, 15000)
       .subscribe();
   }
 
