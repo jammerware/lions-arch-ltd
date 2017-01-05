@@ -5,9 +5,6 @@ h4 {
   font-family: $font-body;
   font-size: 0.75rem;
   margin: 0;
-  text-transform: uppercase;
-}
-
-h4:not(:first-child) {
   margin-top: 2em;
+  text-transform: uppercase;
 }

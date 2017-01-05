@@ -23,6 +23,14 @@ export class SettingsService {
     this.setProperty(SettingKey.notificationSoundId, value);
   }
 
+  get notificationVolume(): number {
+    return +this.getProperty(SettingKey.notificationVolume);
+  }
+
+  set notificationVolume(value: number) {
+    this.setProperty(SettingKey.notificationVolume, value.toString());
+  }
+
   private getProperty(key: SettingKey): string {
     return this.browserStorageService.getItem(key.toString());
   }

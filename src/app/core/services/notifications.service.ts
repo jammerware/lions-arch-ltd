@@ -3,6 +3,7 @@ import 'rxjs/Observable';
 
 import { AssetService } from './asset.service';
 import { ErrorService } from './error.service';
+import { LoggingService } from './logging.service';
 import { PushNotificationsService } from 'angular2-notifications';
 import { SettingsService } from './settings-service/settings.service';
 import { Sound, SfxService } from './sfx-service';
@@ -12,6 +13,7 @@ export class NotificationsService {
   constructor(
     private assetService: AssetService,
     private errorService: ErrorService,
+    private loggingService: LoggingService,
     private pushNotificationsService: PushNotificationsService,
     private settingsService: SettingsService,
     private sfxService: SfxService
@@ -46,9 +48,6 @@ export class NotificationsService {
             callback();
             window.focus();
             notificationEvent.notification.close();
-          }
-          else {
-            console.log(notificationEvent.event.type);
           }
         },
         (notificationError: any) => { this.errorService.logError(notificationError); }

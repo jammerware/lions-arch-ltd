@@ -26,13 +26,13 @@ export class EnLocalizationService implements ILocalizationService {
     // HOT meta
     'ab': 'The Mordrem are about to breach the walls!',
     'ds': 'The Mouth will awaken soon...',
-    'td': 'Chak are rushing the cannon! ... Or, you know. They will soon.',
+    'td': 'Chak are rushing the cannon (soon)!',
     'vb': 'The sun\'s setting in Verdant Brink...',
     // classic meta
     'dt': 'The winds are starting to blow...',
     // world bosses
     'wb-teq': 'Tequatl is stirring...',
-    'wb-kq': 'The Queen is coming, and she\'s not the one with the Corgis.',
+    'wb-kq': 'The Queen is coming. Not the one with the Corgis.',
     'wb-tc': 'Taidha\'s starting to look a little upset...'
   };
 

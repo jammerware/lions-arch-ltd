@@ -1,4 +1,5 @@
 export enum SettingKey {
   isEnabledNotifications,
-  notificationSoundId
+  notificationSoundId,
+  notificationVolume
 }
