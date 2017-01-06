@@ -119,6 +119,12 @@ export const WAYPOINTS: Waypoint[] = [
     name: "Brooloonu",
     code: "[&BNEBAAA=]"
   },
+  // jungle wurm
+  {
+    id: "24f43f37-0400-4cd6-873a-828bf117a5e3",
+    name: "Firthside Vigil",
+    code: "[&BKoBAAA=]"
+  },
   // karka queen
   {
     id: "2ffb23a1-7e1b-42cb-a9fd-1f5094adadb3",

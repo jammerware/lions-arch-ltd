@@ -400,6 +400,31 @@ Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedica
   },
   // world bosses
   {
+    id: "09487b6d-bb10-4c61-8da5-577c97d65008",
+    name: "Great Jungle Wurm",
+    zone: "Bloodtide Coast",
+    description: "Triple your pleasure. Triple your fun. Triple your loot load with triple wurm puns.",
+    eventTypeId: "80940b84-7a00-4b3f-8e4d-bf9f3db17ff3",
+    primaryWaypointId: "24f43f37-0400-4cd6-873a-828bf117a5e3",
+    waypoints: [
+      {
+        waypointId: "24f43f37-0400-4cd6-873a-828bf117a5e3",
+        description: "All abord the Triple Trouble train - head to Firthside Vigil for the joy of Jungle Wurm hunting."
+      }
+    ],
+    occurrenceOffsets: [
+      Timespan.fromHours(2.5),
+      Timespan.fromHours(7),
+      Timespan.fromHours(10),
+      Timespan.fromHours(15),
+      Timespan.fromHours(18),
+      Timespan.fromHours(22)
+    ],
+    goalContributions: null,
+    key: "wb-jw",
+    guide: ``
+  },
+  {
     id: "9f82ac4a-ec64-4dbc-8fe0-911b3374978e",
     name: "Tequatl the Sunless",
     zone: "Sparkfly Fen",
