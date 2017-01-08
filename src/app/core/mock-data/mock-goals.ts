@@ -38,6 +38,12 @@ export const GOALS: Goal[] = [
     key: "xp"
   },
   {
+    id: "f2ab672d-4963-4a4e-97e3-e636371a041e",
+    name: "Gold",
+    description: "In Tyria, You can't buy happiness, but gold will let you rent it for awhile.",
+    key: "gold"
+  },
+  {
     id: "a4ce8e59-f752-4572-89b0-c37481865a7c",
     name: "Legendary Crafting (Classic)",
     description: "Who can resist the call of Eternity?",

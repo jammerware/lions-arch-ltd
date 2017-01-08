@@ -49,12 +49,12 @@ export const MOCK_EVENTS: Event[] = [
     ],
     goalContributions: [
       {
-        description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
-        goalId: "d2382979-d918-4242-92b7-45d140ea399c" // hot legendary crafting
-      },
-      {
         description: "If you achieve 100% (or greater) participation on a map that reaches tier 4 during this event, you'll get your [choice of an exotic armor piece](https://wiki.guildwars2.com/wiki/Bladed_Armor_Box) in any slot or weight. Great for gearing up alts!",
         goalId: "56662053-9f3f-49da-86ab-88a7a328661b" // exotic armor
+      },
+      {
+        description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
+        goalId: "d2382979-d918-4242-92b7-45d140ea399c" // hot legendary crafting
       },
       {
         description: `The aforementioned exotic armor pieces make up the Bladed armor sets, which can only be obtained as a reward from a Tier 4 performance in this event or from a vendor in the zone in exchange for Airship Parts, which are also aqcuired in plentiful amounts during the event.
@@ -137,6 +137,10 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
     ],
     goalContributions: [
       {
+        description: "Exalted Chests have a high chance to drop [Bloodstone Dust](https://wiki.guildwars2.com/wiki/Pile_of_Bloodstone_Dust), which is a reagent for just about every ascended recipe ever. Plus, you can feed it to [Herta](https://wiki.guildwars2.com/wiki/Herta).",
+        goalId: "566c01d0-380e-413b-9173-3012cb1e25d2" // ascended crafting
+      },
+      {
         description: "Most of the [Luminate's Backplate](https://wiki.guildwars2.com/wiki/Luminate's_Backplate_(achievement)) collection is connected to this event, so get cracking if you want to look like a giant floaty shinything. And also have an [ascended backpack](https://wiki.guildwars2.com/wiki/Luminate's_Backplate).",
         goalId: "b40fb9c2-65a2-46d4-a3c3-dbb1b907bdd5" // ascended gear
       },
@@ -145,8 +149,8 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
         goalId: "9779ac23-34ee-4033-97a9-85688cd939b9" // exotic crafting
       },
       {
-        description: "Exalted Chests have a high chance to drop [Bloodstone Dust](https://wiki.guildwars2.com/wiki/Pile_of_Bloodstone_Dust), which is a reagent for just about every ascended recipe ever. Plus, you can feed it to [Herta](https://wiki.guildwars2.com/wiki/Herta).",
-        goalId: "566c01d0-380e-413b-9173-3012cb1e25d2" // ascended crafting
+        description: "The nerf bat for the [multi-map](https://gw2efficiency.com/guides/text-guides/ab-multimap) trick [may be coming](https://www.reddit.com/r/Guildwars2/comments/5e6uxb/a_crack_in_the_ice_devs_here_ask_us_anything/daa4e1w/), but in the meantime, this event is one of the best sources of consistent income in the game. Join a multi-map squad, open the Grand Exalted Chests in each, salvage your rares, and sell the globs of ectoplasm and materials on the Trading Post. Don't let your wealth change you.",
+        goalId: "f2ab672d-4963-4a4e-97e3-e636371a041e" // gold
       }
     ],
     key: "ab",

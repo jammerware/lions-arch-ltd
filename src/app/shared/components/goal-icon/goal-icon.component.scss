@@ -40,6 +40,10 @@
   -webkit-mask-image: url(/assets/images/icons/goal-crafting.png);
 }
 
+.goal-icon.gold {
+  -webkit-mask-image: url(/assets/images/icons/goal-gold.png);
+}
+
 .goal-icon.legendary {
   background: $color-rarity-legendary;
   -webkit-mask-image: url(/assets/images/icons/goal-weapons.png);
