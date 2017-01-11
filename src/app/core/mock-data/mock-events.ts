@@ -149,7 +149,7 @@ When 20:30 remains on the timer, choppers will land at all controlled camps (and
         goalId: "9779ac23-34ee-4033-97a9-85688cd939b9" // exotic crafting
       },
       {
-        description: "The nerf bat for the [multi-map](https://gw2efficiency.com/guides/text-guides/ab-multimap) trick [may be coming](https://www.reddit.com/r/Guildwars2/comments/5e6uxb/a_crack_in_the_ice_devs_here_ask_us_anything/daa4e1w/), but in the meantime, this event is one of the best sources of consistent income in the game. Join a multi-map squad, open the Grand Exalted Chests in each, salvage your rares, and sell the globs of ectoplasm and materials on the Trading Post. Don't let your wealth change you.",
+        description: "The nerf bat for the [multi-map](https://gw2efficiency.com/guides/text-guides/ab-multimap) trick [may be coming](https://www.reddit.com/r/Guildwars2/comments/5e6uxb/a_crack_in_the_ice_devs_here_ask_us_anything/daa4e1w/), but in the meantime, this event is one of the best sources of consistent income in the game. Join a multi-map squad, open the [Grand Exalted Chests](https://wiki.guildwars2.com/wiki/Grand_Exalted_Chest) in each, salvage your rares, and sell the globs of ectoplasm and materials on the Trading Post. Don't let your wealth change you.",
         goalId: "f2ab672d-4963-4a4e-97e3-e636371a041e" // gold
       }
     ],
