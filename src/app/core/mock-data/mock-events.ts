@@ -458,7 +458,7 @@ Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedica
     key: "wb-teq",
     guide: `
 #Quick hits
-- Defend the Hylek turrets in the area - they're powerful tools. If you see one onoccupied, hop on and use your skills to buff your teammates.
+- Defend the Hylek turrets in the area - they're powerful tools. If you see one unoccupied, hop on and use your skills to buff your teammates.
 - When Tequatl takes to the air at 75%, 50%, and 25% health remaining, choose one of the megalasers at the west, south, and east areas of the event to defend. Keep the baddies away from the batteries around each one.
 - At the end of each megalaser phase, use the jump pad near your laser of choice to return to the center of the area ASAP and burn Tequatl.
 
@@ -466,7 +466,7 @@ Did you know that there's a [whole guild](https://twitter.com/DryTopSAND) dedica
 - **Shockwave** - At varying times, Tequatl will release a shockwave around him that can be either jumped over or dodged through. It expands outward about 30 yards and can also be outranged. Dodge 10 of these for a sweet achievement!
 - **Tail Sweep** - Tequatl will periodically attack players behind him with his tail. This can also be dodged through.
 - **Tequatl's Fingers** - Tequatl occasionally summons multiple Tequatl's Fingers, which are stationary enemies that create pools of poison periodically. Burn these quickly before the poison becomes unmanageable.
-- **Watery Grave** - Tequatl's most iconic ability creates vortexes on the ground near him. If you stand to close, you'll be sucked into the vortex and be forced to swim toward the light to return to the battle.
+- **Watery Grave** - Tequatl's most iconic ability creates vortexes on the ground near him. If you stand too close, you'll be sucked into the vortex and be forced to swim toward the light to return to the battle.
 
 For a more detailed rundown of the fight, check out [Dulfy's guide](http://dulfy.net/2013/09/21/gw2-tequatl-the-sunless-strategy-guide/).
 `
