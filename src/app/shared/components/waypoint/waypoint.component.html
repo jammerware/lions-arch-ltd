@@ -1,4 +1,4 @@
-<button *ngIf="waypoint" md-button [lal-clipboard-trigger]="waypoint.code">
+<button *ngIf="waypoint" class="link-button" [lal-clipboard-trigger]="waypoint.code">
     <img class="waypoint-icon" [src]="iconUrl" [alt]="waypoint.name" />
     <span class="waypoint-name">{{waypoint.name}}</span>
 </button>

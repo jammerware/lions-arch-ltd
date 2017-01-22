@@ -53,13 +53,15 @@ export const MOCK_EVENTS: Event[] = [
         goalId: "56662053-9f3f-49da-86ab-88a7a328661b" // exotic armor
       },
       {
-        description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.",
+        description: "Keep an eye out for [Airship Cargo](https://wiki.guildwars2.com/wiki/Airship_Cargo) nodes while you're running around during the night. You can crack them open with [Pact Crowbars](https://wiki.guildwars2.com/wiki/Pact_Crowbar) to get [Airship Oil](https://wiki.guildwars2.com/wiki/Bottle_of_Airship_Oil) (and other stuff), which is required in high quantities for any Heart of Thorns legendary.\n\nOnce per occurrence of the meta-event, you'll also receive a [Verdant Brink: Hero's Choice Chest](https://wiki.guildwars2.com/wiki/Verdant_Brink:_Hero's_Choice_Chest) when you participate in the defeat of one of the five bosses. One of the options contained within is an [Amalgamated Gemstone](https://wiki.guildwars2.com/wiki/Amalgamated_Gemstone), 250 of which are required for any Heart of Thorns legendary.",
         goalId: "d2382979-d918-4242-92b7-45d140ea399c" // hot legendary crafting
       },
       {
         description: `The aforementioned exotic armor pieces make up the Bladed armor sets, which can only be obtained as a reward from a Tier 4 performance in this event or from a vendor in the zone in exchange for Airship Parts, which are also aqcuired in plentiful amounts during the event.
 
-Note that in order to purchase Bladed armor from the vendor, you'll need the [Nuhoch Language](https://wiki.guildwars2.com/wiki/Nuhoch_Language) mastery.`,
+Note that in order to purchase Bladed armor from the vendor, you'll need the [Nuhoch Language](https://wiki.guildwars2.com/wiki/Nuhoch_Language) mastery.
+
+Additionally, the Hero's Choice Chest awarded for vanquishing one or more bosses during this event allows you to choose a [Reclaimed Metal Plate](https://wiki.guildwars2.com/wiki/Reclaimed_Metal_Plate). These can be used to buy plated weapons from the [Whispers Keeper](https://wiki.guildwars2.com/wiki/Whispers_Keeper_(Dragon's_Stand)) in Dragon's Stand.`,
         goalId: "005449d2-391d-48cc-abca-77758e5c2bdf" // unique skins
       }
     ],

@@ -1,29 +1,38 @@
 @import '../../../../../styles/_vars';
 
 h2 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 h3, h3 a {
-    font-family: EasonPro;
-    font-weight: lighter;
-    text-transform: lowercase;
+  font-family: EasonPro;
+  font-weight: lighter;
+  text-transform: lowercase;
 }
 
 h4 {
-    font-weight: lighter;
-    font-style: italic;
-    margin-bottom:48px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-bottom:48px;
 }
 
 .subtle-label {
-    color: $color-subtle;
+  color: $color-subtle;
 }
 
 .event-start-info {
-    margin-bottom: 1.8em;
+  display: flex;
+  flex-flow: horizontal;
+  margin-bottom: 1.8em;
+}
+
+.event-start-info .starts {
+  border-left: solid 1px #000;
+  padding-left: 0.8em;
+  padding-top: 2px;
+  margin: 0 1em;
 }
 
 .event-content {
-    margin-top: 2em;
+  margin-top: 2em;
 }

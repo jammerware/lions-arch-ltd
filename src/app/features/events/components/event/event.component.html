@@ -2,9 +2,11 @@
 <h2>{{viewModel?.name}}</h2>
 <div class="event-start-info">
   <waypoint [waypoint]="viewModel?.primaryWaypoint | async"></waypoint>
-  |
-  <span class="subtle-label">starts</span>
-  <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
+  <div class="starts">
+    <span class="subtle-label">starts</span>
+    <span class="accent-label">{{viewModel?.msTilNextOccurrence | async | timeUntil}}</span>
+    <span class="subtle-label"> ({{viewModel?.timeOfNextOccurrence | async | date:'shortTime'}})</span>
+  </div>
 </div>
 
 <h4 [innerHtml]="viewModel?.description | markdown"></h4>

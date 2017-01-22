@@ -5,14 +5,15 @@ import { EventWaypointViewModel } from '../viewmodels/event-waypoint.viewmodel';
 import { GoalContributionViewModel } from './goal-contribution.viewmodel';
 
 export class EventViewModel {
-    id: string;
-    name: string;
-    zone: string;
-    description: string;
-    primaryWaypoint: Observable<Waypoint>;
-    waypoints: Observable<EventWaypointViewModel[]>;
-    guide?: string;
-    countdownLocalization: string;
-    goalContributions: Observable<GoalContributionViewModel[]>;
-    msTilNextOccurrence: Observable<number>;
+  id: string;
+  name: string;
+  zone: string;
+  description: string;
+  primaryWaypoint: Observable<Waypoint>;
+  waypoints: Observable<EventWaypointViewModel[]>;
+  guide?: string;
+  countdownLocalization: string;
+  goalContributions: Observable<GoalContributionViewModel[]>;
+  msTilNextOccurrence: Observable<number>;
+  timeOfNextOccurrence: Observable<Date>;
 }
