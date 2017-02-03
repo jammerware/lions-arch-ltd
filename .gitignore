@@ -24,7 +24,7 @@ testem.log
 
 # src
 /src/*.js
-/src/*.map
+/src/*.js.map
 
 # secret keys
 config/sendgrid/sendgrid.json
